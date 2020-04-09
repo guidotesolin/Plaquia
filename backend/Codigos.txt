@@ -1,0 +1,15 @@
+Iniciar Json:
+npm init --yes
+
+Instalar paquetes necesarios:
+npm install express
+npm install --save mysql2
+npm install --save mariadb
+npm install --g nodemon
+npm install --save sequelize
+
+Ejecutar:
+npm run dev
+
+Obtener json de Distribuidores:
+http://localhost:3000/Distribuidores/list
