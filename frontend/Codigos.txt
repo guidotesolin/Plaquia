@@ -1,0 +1,9 @@
+Iniciar proyecto:
+npx create-react-app frontend
+
+Limpiar archivos, dejar solo:
+src/App.js
+src/index.js
+
+Paquetes agregados:
+npm install react-bootstrap bootstrap
