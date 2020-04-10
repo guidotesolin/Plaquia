@@ -1,9 +1,13 @@
 Iniciar proyecto:
 npx create-react-app frontend
 
-Limpiar archivos, dejar solo:
+Limpiar archivos de src, dejar solo:
 src/App.js
 src/index.js
 
+Iniciar:
+npm start
+
 Paquetes agregados:
 npm install react-bootstrap bootstrap
+npm install axios
