@@ -1,0 +1,7 @@
+h3 {
+  text-align: center;
+}
+.ModalImage:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

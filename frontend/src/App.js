@@ -1,13 +1,16 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
 
-import Distribuidores from "./components/distribuidores";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Renderizar from "./Renderizar";
+import BarraDeNavegacion from "./components/barradenavegacion";
 
 function App() {
+  const [idioma, setIdioma] = useState("Esp");
+
   return (
     <div className="App">
-      <h1>Plaquia</h1>
-      <Distribuidores />
+      <BarraDeNavegacion Idioma={idioma} CambiarIdioma={setIdioma} />
+      <Renderizar Idioma={idioma} />
     </div>
   );
 }

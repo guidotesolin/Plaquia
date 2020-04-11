@@ -18,25 +18,12 @@ class Distribuidores extends React.Component {
         this.setState({ listarDistribuidores: data });
       })
       .catch((error) => {
-        alert(error);
+        console.log(error);
       });
   }
 
   render() {
-    return (
-      <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>Pais</th>
-            <th>Provincia</th>
-            <th>Localidad</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-          </tr>
-        </thead>
-        <tbody>{this.loadFillData()}</tbody>
-      </Table>
-    );
+    return <div>{this.loadFillData()}</div>;
   }
   loadFillData() {
     return this.state.listarDistribuidores.map((distribuidor) => {
