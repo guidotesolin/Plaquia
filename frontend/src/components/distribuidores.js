@@ -1,5 +1,4 @@
 import React from "react";
-import Table from "react-bootstrap/Table";
 import axios from "axios";
 
 class Distribuidores extends React.Component {
@@ -23,7 +22,20 @@ class Distribuidores extends React.Component {
   }
 
   render() {
-    return <div>{this.loadFillData()}</div>;
+    return (
+      <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Pais</th>
+            <th scope="col">Provincia</th>
+            <th scope="col">Localidad</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Telefono</th>
+          </tr>
+        </thead>
+        <tbody>{this.loadFillData()}</tbody>
+      </table>
+    );
   }
   loadFillData() {
     return this.state.listarDistribuidores.map((distribuidor) => {

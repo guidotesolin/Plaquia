@@ -4,7 +4,6 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Table from "react-bootstrap/Table";
 
 // Componentes creados
 import Ventajas from "../components/ventajas";
@@ -12,6 +11,7 @@ import SliderColocacion from "../components/colocacion/colocacion";
 import ModelosPlacas from "../components/modelos/modelos";
 import SliderResultados from "../components/resultados";
 import Distribuidores from "../components/distribuidores";
+import Contacto from "../components/formulario/contacto";
 // Imagenes
 import Logo from "../img/esp/LogoCompleto.png";
 import imgFuncionamiento from "../img/esp/Funcionamiento.png";
@@ -80,20 +80,13 @@ class RenderizarSpa extends Component {
         <div id="Distribuidores">
           <Container>
             <h1>DISTRIBUIDORES</h1>
-            <Table striped bordered hover variant="dark">
-              <thead>
-                <tr>
-                  <th>Pais</th>
-                  <th>Provincia</th>
-                  <th>Localidad</th>
-                  <th>Direccion</th>
-                  <th>Telefono</th>
-                </tr>
-              </thead>
-              <tbody>
-                <Distribuidores />
-              </tbody>
-            </Table>
+            <iframe
+              title="Mapa"
+              src="https://www.google.com/maps/d/u/0/embed?mid=1qeeBbHhgLSC6DD5eiDsElU6enZRMQa4w"
+              width="640"
+              height="480"
+            ></iframe>
+            <Distribuidores />
           </Container>
         </div>
         <div id="Calculadora">
@@ -115,9 +108,16 @@ class RenderizarSpa extends Component {
           neque finibus. Nullam tempus, tortor ac semper euismod, mi tellus
         </div>
         <div id="Contacto">
-          {" "}
-          <h1>Contacto</h1>
-          asddasdasdsa
+          <h1>CONTACTO</h1>
+          <p>
+            Envienos un mail a <strong>contacto@plaquia.com.ar</strong>, o
+            contactese mediante el siguiente formulario.
+          </p>
+          <p>Todos los campos son obligatorios</p>
+          <br />
+          <Container>
+            <Contacto />
+          </Container>
         </div>
       </div>
     );
