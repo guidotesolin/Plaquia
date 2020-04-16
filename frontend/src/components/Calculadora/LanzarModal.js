@@ -9,7 +9,7 @@ export default function ModalPlaquia(props) {
   return (
     <>
       <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
+        Resultados
       </Button>
 
       <MyVerticallyCenteredModal
