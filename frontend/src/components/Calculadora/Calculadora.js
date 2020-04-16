@@ -3,19 +3,9 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import ModalPlaquia from "./LanzarModal";
 
 var Resultado = new Object();
-
-function lanzarModal(resultadoCalculadora) {
-  const Texto =
-    "Superficie: " +
-    resultadoCalculadora.superficie +
-    " m². Cantidad de cajas: " +
-    resultadoCalculadora.cantCajas +
-    ". Cantidad de baldes: " +
-    resultadoCalculadora.cantBaldes;
-  alert(Texto);
-}
 
 class Calculadora extends React.Component {
   constructor(props) {
@@ -27,6 +17,7 @@ class Calculadora extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleChange(event) {
     const target = event.target;
     const value = target.value;
@@ -44,7 +35,6 @@ class Calculadora extends React.Component {
     Resultado.cantBaldes = Math.ceil(Resultado.cantCajas / 5);
     event.preventDefault();
     document.getElementById("FormCalculadora").reset();
-    lanzarModal(Resultado);
     return Resultado;
   }
 
@@ -84,6 +74,7 @@ class Calculadora extends React.Component {
             Calcular
           </Button>
         </Form>
+        <ModalPlaquia Datos={Resultado} />
       </div>
     );
   }

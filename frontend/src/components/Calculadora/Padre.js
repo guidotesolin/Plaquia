@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 
 import Calculadora from "./Calculadora";
-import Modal from "./LanzarModal";
-
-var Ejemplo = new Object();
 
 function CalculadoraPlaquia(props) {
-  Ejemplo.superficie = 4;
-  Ejemplo.cantCajas = 2;
-  Ejemplo.cantBaldes = 3;
   switch (props.Idioma) {
     case "Por":
       return (
@@ -26,7 +20,6 @@ function CalculadoraPlaquia(props) {
       return (
         <div>
           <Calculadora />
-          <Modal Datos={Ejemplo} />
         </div>
       );
   }
