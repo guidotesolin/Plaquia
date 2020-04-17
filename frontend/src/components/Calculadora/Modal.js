@@ -23,7 +23,7 @@ export default function MyVerticallyCenteredModal(props) {
         <p>Baldes de pegamento: {props.Datos.cantBaldes}</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Volver</Button>
       </Modal.Footer>
     </Modal>
   );

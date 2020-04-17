@@ -2,8 +2,15 @@ import React from "react";
 
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Card from "react-bootstrap/Card";
+import CardDeck from "react-bootstrap/CardDeck";
 import Button from "react-bootstrap/Button";
+
 import ModalPlaquia from "./LanzarModal";
+
+import imgPresentacion from "../../img/esp/Presentacion.jpg";
+import imgRendimiento from "../../img/esp/Rendimiento.png";
 
 var Resultado = new Object();
 
@@ -41,40 +48,59 @@ class Calculadora extends React.Component {
   render() {
     return (
       <div>
-        <Form onSubmit={this.handleSubmit} id="FormCalculadora">
-          <Form.Group as={Col}>
-            <Form.Label>Alto</Form.Label>
-            <Form.Control
-              name="alto"
-              type="number"
-              step="0.01"
-              min="0.1"
-              max="200"
-              autocomplete="off"
-              value={this.state.value}
-              onChange={this.handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Ancho</Form.Label>
-            <Form.Control
-              name="ancho"
-              type="number"
-              step="0.01"
-              min="0.1"
-              max="200"
-              autocomplete="off"
-              value={this.state.value}
-              onChange={this.handleChange}
-              required
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Calcular
-          </Button>
-        </Form>
-        <ModalPlaquia Datos={Resultado} />
+        <CardDeck>
+          <Card>
+            <Card.Img variant="top" src={imgPresentacion} height="400" />
+          </Card>
+          <Card>
+            <Card.Img variant="top" src={imgRendimiento} height="400" />
+          </Card>
+          <Card>
+            <Card.Body>
+              <br />
+              <br />
+              <br />
+              <br />
+              <Form onSubmit={this.handleSubmit} id="FormCalculadora">
+                <Form.Group as={Col}>
+                  <Form.Label>Alto</Form.Label>
+                  <Form.Control
+                    name="alto"
+                    type="number"
+                    step="0.01"
+                    min="0.1"
+                    max="200"
+                    autocomplete="off"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Ancho</Form.Label>
+                  <Form.Control
+                    name="ancho"
+                    type="number"
+                    step="0.01"
+                    min="0.1"
+                    max="200"
+                    autocomplete="off"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Row className="justify-content-md-center">
+                  <Button variant="primary" type="submit">
+                    Calcular
+                  </Button>
+                  <br />
+                  <ModalPlaquia Datos={Resultado} />
+                </Row>
+              </Form>
+            </Card.Body>
+          </Card>
+        </CardDeck>
       </div>
     );
   }
