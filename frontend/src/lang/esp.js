@@ -15,15 +15,23 @@ import Contacto from "../components/formulario/contacto";
 import Calculadora from "../components/Calculadora/Padre";
 // Imagenes
 import Logo from "../img/esp/LogoCompleto.png";
-import imgFuncionamiento from "../img/esp/Funcionamiento.png";
+import imgFuncionamiento from "../img/esp/Funcionamiento.jpg";
 
 class RenderizarSpa extends Component {
   render() {
     return (
       <div>
-        <div id="Calculadora">
-          <h1>CALCULADORA</h1>
-          <Calculadora />
+        <div id="Distribuidores">
+          <Container>
+            <h1>DISTRIBUIDORES</h1>
+            <iframe
+              title="Mapa"
+              src="https://www.google.com/maps/d/u/0/embed?mid=1qeeBbHhgLSC6DD5eiDsElU6enZRMQa4w"
+              width="640"
+              height="480"
+            ></iframe>
+            <Distribuidores />
+          </Container>
         </div>
       </div>
     );

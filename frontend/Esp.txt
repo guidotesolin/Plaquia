@@ -1,5 +1,4 @@
-
-        <div id="logo">
+<div id="logo">
           <Container>
             <Row>
               <Col>
@@ -22,11 +21,6 @@
           <Container>
             <h1>¿CÓMO FUNCIONA?</h1>
             <Row>
-              <Col>
-                Las placas de yeso absorben la humedad que ingresa desde las
-                paredes y su estructura ultra porosa elimina por un fenómeno
-                físico de microevaporación
-              </Col>
               <Image src={imgFuncionamiento} fluid />
             </Row>
             <Ventajas Idioma="Esp" />
@@ -56,18 +50,6 @@
           <h1>RESULTADOS</h1>
           <SliderResultados />
         </div>
-        <div id="Distribuidores">
-          <Container>
-            <h1>DISTRIBUIDORES</h1>
-            <iframe
-              title="Mapa"
-              src="https://www.google.com/maps/d/u/0/embed?mid=1qeeBbHhgLSC6DD5eiDsElU6enZRMQa4w"
-              width="640"
-              height="480"
-            ></iframe>
-            <Distribuidores />
-          </Container>
-        </div>
 
 
 
@@ -75,7 +57,11 @@
 ---------------------------------------
 
 
-<div id="Contacto">
+<div id="Calculadora">
+          <h1>CALCULADORA</h1>
+          <Calculadora />
+        </div>
+        <div id="Contacto">
           <h1>CONTACTO</h1>
           <p>
             Envienos un mail a <strong>contacto@plaquia.com.ar</strong>, o
