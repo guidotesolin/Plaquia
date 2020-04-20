@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/App.css";
 import Renderizar from "./Renderizar";
 import BarraDeNavegacion from "./components/barradenavegacion";
 

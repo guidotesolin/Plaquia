@@ -1,7 +1,15 @@
-h3 {
+#nombrePlaca {
   text-align: center;
 }
-.ModalImage:hover {
+
+#fotoPlaca figure {
+  background: #1abc9c;
+}
+#fotoPlaca figure img {
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+#fotoPlaca figure:hover img {
   opacity: 0.5;
-  cursor: pointer;
 }

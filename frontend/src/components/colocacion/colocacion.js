@@ -1,5 +1,6 @@
 import React from "react";
-import "./colocacion.css";
+
+import "./Colocacion.css";
 
 import Carousel from "react-bootstrap/Carousel";
 import Container from "react-bootstrap/Container";
@@ -31,16 +32,11 @@ export default function SliderColocacion(props) {
                 <img
                   className="d-block w-100"
                   src={imgColocacion1}
-                  alt="Niveles"
+                  alt="TOMAR NIVELES"
                 />
                 <Carousel.Caption>
                   <div id="caja">
-                    <h3>TOMAR NIVELES</h3>
-                    <p>
-                      A partir del zócalo, se toman los niveles apoyando la
-                      placa en la esquina donde comenzamos la colocación, y
-                      marcamos el nivel.
-                    </p>
+                    <h4>TOMAR NIVELES</h4>
                   </div>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -48,17 +44,11 @@ export default function SliderColocacion(props) {
                 <img
                   className="d-block w-100"
                   src={imgColocacion2}
-                  alt="Third slide"
+                  alt="COLOCACIÓN"
                 />
-
                 <Carousel.Caption>
                   <div id="caja">
-                    <h3>COLOCACIÓN</h3>
-                    <p>
-                      Se aplica pegamento <strong>2 en 1 PLAQUIA</strong> en
-                      seis puntos, tres en la parte superior y tres en la parte
-                      inferior sobre la placa para adherirla a la pared.
-                    </p>
+                    <h4>COLOCACIÓN</h4>
                   </div>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -66,18 +56,11 @@ export default function SliderColocacion(props) {
                 <img
                   className="d-block w-100"
                   src={imgColocacion3}
-                  alt="Third slide"
+                  alt="SELLADO"
                 />
-
                 <Carousel.Caption>
                   <div id="caja">
-                    <h3>SELLADO</h3>
-                    <p>
-                      Tomar las juntas con pegamento{" "}
-                      <strong>2 en 1 PLAQUIA</strong> aplicándolo con una manga.
-                      Se debe quitar el sobrante y luego repasar con una esponja
-                      humeda en agua limpia.
-                    </p>
+                    <h4>SELLADO</h4>
                   </div>
                 </Carousel.Caption>
               </Carousel.Item>

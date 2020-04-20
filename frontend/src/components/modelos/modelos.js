@@ -1,7 +1,6 @@
 import React from "react";
 import ModalImage from "react-modal-image";
-
-import "./modelos.css";
+import "./Modelos.css";
 
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
@@ -30,9 +29,10 @@ export default function ModelosPlacas(props) {
           <CardGroup>
             <Card>
               <Card.Header>
-                <h3>Cuarzo</h3>
+                <h3 id="nombrePlaca">Cuarzo</h3>
               </Card.Header>
               <ModalImage
+                id="fotoPlaca"
                 small={imgCuarzo}
                 large={imgCuarzo}
                 hideDownload="true"
@@ -48,9 +48,10 @@ export default function ModelosPlacas(props) {
             </Card>
             <Card>
               <Card.Header>
-                <h3>Jade</h3>
+                <h3 id="nombrePlaca">Jade</h3>
               </Card.Header>
               <ModalImage
+                id="fotoPlaca"
                 small={imgJade}
                 large={imgJade}
                 hideDownload="true"
@@ -66,9 +67,10 @@ export default function ModelosPlacas(props) {
             </Card>
             <Card>
               <Card.Header>
-                <h3>Onice</h3>
+                <h3 id="nombrePlaca">Onice</h3>
               </Card.Header>
               <ModalImage
+                id="fotoPlaca"
                 small={imgOnice}
                 large={imgOnice}
                 hideDownload="true"

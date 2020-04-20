@@ -1,15 +1,11 @@
+/* Slider colocacion */
 #caja {
   background-color: yellowgreen;
   opacity: 0.7;
   border: 1px solid black;
   padding: 3px;
 }
-
-#caja h3 {
+#caja h4 {
   font-weight: bold;
-  color: black;
-}
-
-#caja p {
   color: black;
 }

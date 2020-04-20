@@ -1,8 +1,6 @@
 import React from "react";
 
 import Image from "react-bootstrap/Image";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
 
 import imgAcustico from "../img/ventajas/Acustico.png";
 import imgAntiHongos from "../img/ventajas/AntiHongos.png";
@@ -29,97 +27,111 @@ export default function Ventajas(props) {
       );
     default:
       return (
-        <div>
-          <Row className="justify-content-md-center">
-            <Col-1>
+        <div class="container pt-4" id="Ventajas">
+          <div class="row justify-content-center">
+            <div class="col-1">
               <Image
                 src={imgAntihumedad}
                 style={{ width: 40 }}
                 alt="ANTIHUMEDAD"
+                align="right"
               />
-            </Col-1>
-            <Col>
+            </div>
+            <div class="col-4">
               <h2>ANTI HUMEDAD</h2>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Col-1>
-              <Image src={imgAtermico} style={{ width: 40 }} alt="ATÉRMICOS" />
-            </Col-1>
-            <Col>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-1">
+              <Image
+                src={imgAtermico}
+                style={{ width: 40 }}
+                alt="ATÉRMICOS"
+                align="right"
+              />
+            </div>
+            <div class="col-4">
               <h2>ATÉRMICOS</h2>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Col-1>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-1">
               <Image
                 src={imgIncombustible}
                 style={{ width: 40 }}
                 alt="INCOMBUSTIBLES"
+                align="right"
               />
-            </Col-1>
-            <Col>
+            </div>
+            <div class="col-4">
               <h2>INCOMBUSTIBLES</h2>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Col-1>
-              <Image src={imgAcustico} style={{ width: 40 }} alt="ACÚSTICOS" />
-            </Col-1>
-            <Col>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-1">
+              <Image
+                src={imgAcustico}
+                style={{ width: 40 }}
+                alt="ACÚSTICOS"
+                align="right"
+              />
+            </div>
+            <div class="col-4">
               <h2>ACÚSTICOS</h2>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Col-1>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-1">
               <Image
                 src={imgRapidaColocacion}
                 style={{ width: 40 }}
-                alt="RÁPIDA COLOCACIÓN
-              "
+                alt="RÁPIDA COLOCACIÓN"
+                align="right"
               />
-            </Col-1>
-            <Col>
+            </div>
+            <div class="col-4">
               <h2>RÁPIDA COLOCACIÓN</h2>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Col-1>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-1">
               <Image
                 src={imgAntiHongos}
                 style={{ width: 40 }}
                 alt="ANTIHONGOS"
+                align="right"
               />
-            </Col-1>
-            <Col>
+            </div>
+            <div class="col-4">
               <h2>ANTI HONGOS</h2>
-            </Col>
-          </Row>
-
-          <Row className="justify-content-md-center">
-            <Col-1>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-1">
               <Image
                 src={imgDecorativo}
                 style={{ width: 40 }}
                 alt="DECORATIVOS"
+                align="right"
               />
-            </Col-1>
-            <Col>
+            </div>
+            <div class="col-4">
               <h2>DECORATIVOS</h2>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Col-1>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-1">
               <Image
                 src={imgFacilMantenimiento}
                 style={{ width: 40 }}
                 alt="FÁCIL MANTENIMIENTO"
+                align="right"
               />
-            </Col-1>
-            <Col>
+            </div>
+            <div class="col-4">
               <h2>FÁCIL MANTENIMIENTO</h2>
-            </Col>
-          </Row>
+            </div>
+          </div>
         </div>
       );
   }

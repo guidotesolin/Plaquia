@@ -1,8 +1,6 @@
 import React from "react";
 import axios from "axios";
 
-var Resultado = new Object();
-
 class Distribuidores extends React.Component {
   constructor(props) {
     super(props);
@@ -40,7 +38,6 @@ class Distribuidores extends React.Component {
     );
   }
   loadFillData() {
-    Resultado = this.state.listarDistribuidores;
     return this.state.listarDistribuidores.map((distribuidor) => {
       return (
         <tr>

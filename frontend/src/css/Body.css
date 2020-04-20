@@ -1,0 +1,55 @@
+/* Separar secciones y darle color de fondo */
+#Top,
+#Colocacion,
+#Resultados,
+#Calculadora {
+  background-color: #dee4a0;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+#Funcionamiento,
+#Modelos,
+#Distribuidores,
+#Contacto {
+  background-color: #a9ba82;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+/* Centrar titulos de secciones */
+#TituloSeccion {
+  text-align: center;
+  padding-top: 50px;
+  color: #646464;
+}
+#TextoSlider {
+  text-align: left;
+}
+#EpigrafeMail {
+  text-align: center;
+}
+
+#Logo {
+  margin-top: 80px;
+  display: block;
+  margin: auto;
+}
+
+#ContainerMapa {
+  display: flex;
+}
+
+#Mapa {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#DescripcionPlaquia {
+  margin-top: 30px;
+}
+
+#imgFuncionamiento {
+  display: block;
+  margin: auto;
+  padding-bottom: 20px;
+}
