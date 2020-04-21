@@ -8,7 +8,11 @@ export default function ModalPlaquia(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
+      <Button
+        id="BotonResultados"
+        variant="primary"
+        onClick={() => setModalShow(true)}
+      >
         Resultados
       </Button>
 

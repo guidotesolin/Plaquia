@@ -79,7 +79,7 @@ class Formulario extends React.Component {
           <Form.Label>Consulta</Form.Label>
           <Form.Control
             as="textarea"
-            rows="3"
+            rows="4"
             name="consulta"
             type="text"
             value={this.state.value}
@@ -87,7 +87,7 @@ class Formulario extends React.Component {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" id="BotonEnviarConsulta">
           Enviar consulta
         </Button>
       </Form>

@@ -26,7 +26,7 @@ export default function SliderResultados(props) {
       return (
         <div>
           <Container>
-            <Carousel>
+            <Carousel indicators={false}>
               <Carousel.Item>
                 <img
                   className="d-block w-100"

@@ -21,35 +21,104 @@
   padding-top: 50px;
   color: #646464;
 }
-#TextoSlider {
-  text-align: left;
-}
-#EpigrafeMail {
-  text-align: center;
-}
-
+/* SECCION TOP */
 #Logo {
   margin-top: 80px;
   display: block;
   margin: auto;
 }
+#DescripcionPlaquia {
+  margin-top: 30px;
+}
+/*SECCION COLOCACION: Tiene su propio css */
 
+/*SECCION FUNCIONAMIENTO */
+#imgFuncionamiento {
+  display: block;
+  margin: auto;
+  padding-bottom: 20px;
+}
+#TextoSlider {
+  text-align: left;
+}
+/*SECCION RESULTADOS*/
+
+/*SECCION DISTRIBUIDORES*/
 #ContainerMapa {
   display: flex;
 }
-
 #Mapa {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
 }
-
-#DescripcionPlaquia {
-  margin-top: 30px;
+/*SECCION CALCULADORA*/
+#ContenedorCalculadora {
+  background-color: #7da7bc;
+}
+Form.Control {
+  width: 100%;
+}
+#InputCalculadora {
+  width: 100%;
+}
+/*SECCION CONTACTO*/
+#EpigrafeMail {
+  text-align: center;
 }
 
-#imgFuncionamiento {
-  display: block;
-  margin: auto;
-  padding-bottom: 20px;
+/*Botones*/
+#BotonEnviarConsulta:hover {
+  box-shadow: inset 0 100px 0 0 #7da7bc;
+}
+
+#BotonCalcular,
+#BotonResultados,
+#BotonEnviarConsulta {
+  background-color: #dee4a0;
+  color: #646464;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 18px 36px;
+  display: inline-block;
+  font-family: "Arial";
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #a9ba82;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+#BotonCalcular:hover,
+#BotonResultados:hover {
+  box-shadow: inset 0 0 0 50px #a9ba82;
+}
+/*Footer*/
+#Footer {
+  background-color: #646464;
+}
+
+#Inti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#FooterContacto {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: white;
+}
+#RedesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+hr {
+  border: none;
+  border-left: 1px solid hsla(200, 10%, 50%, 100);
+  height: 125px;
+  width: 2px;
 }

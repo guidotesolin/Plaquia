@@ -1,9 +1,10 @@
 import React from "react";
-import ModalImage from "react-modal-image";
 import "./Modelos.css";
 
+import ModalImage from "react-modal-image";
+
 import Card from "react-bootstrap/Card";
-import CardGroup from "react-bootstrap/CardGroup";
+import CardDeck from "react-bootstrap/CardDeck";
 
 import imgJade from "../../img/modelos/PlacaJade.png";
 import imgCuarzo from "../../img/modelos/PlacaCuarzo.png";
@@ -26,7 +27,7 @@ export default function ModelosPlacas(props) {
     default:
       return (
         <div>
-          <CardGroup>
+          <CardDeck>
             <Card>
               <Card.Header>
                 <h3 id="nombrePlaca">Cuarzo</h3>
@@ -85,7 +86,7 @@ export default function ModelosPlacas(props) {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </CardGroup>
+          </CardDeck>
         </div>
       );
   }

@@ -11,7 +11,7 @@ class Distribuidores extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://192.168.100.4:3000/Distribuidores/list")
+      .get("http://192.168.1.136:3000/Distribuidores/list")
       .then((res) => {
         const data = res.data.data;
         this.setState({ listarDistribuidores: data });

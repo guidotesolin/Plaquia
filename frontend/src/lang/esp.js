@@ -4,6 +4,7 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Media from "react-bootstrap/Media";
 
 // Componentes creados
 import Ventajas from "../components/Ventajas";
@@ -13,9 +14,11 @@ import SliderResultados from "../components/Resultados";
 import Distribuidores from "../components/Distribuidores";
 import Contacto from "../components/Contacto";
 import Calculadora from "../components/Calculadora/Padre";
+import Footer from "../components/Footer";
 // Imagenes
 import Logo from "../img/esp/LogoCompleto.png";
 import imgFuncionamiento from "../img/esp/Funcionamiento.jpg";
+import imgHagaloUdMismo from "../img/esp/HagaloUstedMismo.png";
 // Css
 import "../css/Body.css";
 
@@ -58,33 +61,44 @@ class RenderizarSpa extends Component {
             <br />
             <SliderColocacion />
             <br />
-            <ul>
-              <li>
-                <h3 id="TextoSlider">TOMAR NIVELES</h3>
-                <p>
-                  A partir del zócalo, se toman los niveles apoyando la placa en
-                  la esquina donde comenzamos la colocación, y marcamos el
-                  nivel.
-                </p>
-              </li>
-              <li>
-                <h3 id="TextoSlider">COLOCACIÓN</h3>
-                <p>
-                  Se aplica pegamento <strong>2 en 1 PLAQUIA</strong> en seis
-                  puntos, tres en la parte superior y tres en la parte inferior
-                  sobre la placa para adherirla a la pared.
-                </p>
-              </li>
-              <li>
-                <h3 id="TextoSlider">SELLADO</h3>
-                <p>
-                  Tomar las juntas con pegamento <strong>2 en 1 PLAQUIA</strong>{" "}
-                  aplicándolo con una manga. Se debe quitar el sobrante y luego
-                  repasar con una esponja humeda en agua limpia.
-                </p>
-              </li>
-            </ul>
-            <br></br>
+            <Media>
+              <Media.Body>
+                <ul id="PasosColocacion">
+                  <li>
+                    <h3 id="TextoSlider">TOMAR NIVELES</h3>
+                    <p>
+                      A partir del zócalo, se toman los niveles apoyando la
+                      placa en la esquina donde comenzamos la colocación, y
+                      marcamos el nivel.
+                    </p>
+                  </li>
+                  <li>
+                    <h3 id="TextoSlider">COLOCACIÓN</h3>
+                    <p>
+                      Se aplica pegamento <strong>2 en 1 PLAQUIA</strong> en
+                      seis puntos, tres en la parte superior y tres en la parte
+                      inferior sobre la placa para adherirla a la pared.
+                    </p>
+                  </li>
+                  <li>
+                    <h3 id="TextoSlider">SELLADO</h3>
+                    <p>
+                      Tomar las juntas con pegamento{" "}
+                      <strong>2 en 1 PLAQUIA</strong> aplicándolo con una manga.
+                      Se debe quitar el sobrante y luego repasar con una esponja
+                      humeda en agua limpia.
+                    </p>
+                  </li>
+                </ul>
+              </Media.Body>
+              <img
+                width={150}
+                height={150}
+                src={imgHagaloUdMismo}
+                alt="Modalidad hagalo usted mismo"
+                className="align-self-center mr-3"
+              />
+            </Media>
             <h1 id="TituloSeccion">INSTALACIÓN</h1>
             <br></br>
             <div class="embed-responsive embed-responsive-16by9">
@@ -100,6 +114,7 @@ class RenderizarSpa extends Component {
           <h1 id="TituloSeccion">MODELOS DISPONIBLES</h1>
           <br />
           <ModelosPlacas />
+          <br />
         </div>
         <div id="Resultados">
           <h1 id="TituloSeccion">RESULTADOS</h1>
@@ -145,6 +160,10 @@ class RenderizarSpa extends Component {
             </p>
             <Contacto />
           </Container>
+        </div>
+        <div id="Footer">
+          <br />
+          <Footer />
         </div>
       </div>
     );

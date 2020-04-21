@@ -12,7 +12,7 @@ import ModalPlaquia from "./LanzarModal";
 import imgPresentacion from "../../img/esp/Presentacion.jpg";
 import imgRendimiento from "../../img/esp/Rendimiento.png";
 
-var Resultado = new Object();
+var Resultado = {};
 
 class Calculadora extends React.Component {
   constructor(props) {
@@ -55,7 +55,7 @@ class Calculadora extends React.Component {
           <Card>
             <Card.Img variant="top" src={imgRendimiento} height="400" />
           </Card>
-          <Card>
+          <Card id="ContenedorCalculadora">
             <Card.Body>
               <br />
               <br />
@@ -65,6 +65,7 @@ class Calculadora extends React.Component {
                 <Form.Group as={Col}>
                   <Form.Label>Alto</Form.Label>
                   <Form.Control
+                    id="InputCalculadora"
                     name="alto"
                     type="number"
                     step="0.01"
@@ -79,6 +80,7 @@ class Calculadora extends React.Component {
                 <Form.Group>
                   <Form.Label>Ancho</Form.Label>
                   <Form.Control
+                    id="InputCalculadora"
                     name="ancho"
                     type="number"
                     step="0.01"
@@ -91,7 +93,7 @@ class Calculadora extends React.Component {
                   />
                 </Form.Group>
                 <Row className="justify-content-md-center">
-                  <Button variant="primary" type="submit">
+                  <Button variant="primary" type="submit" id="BotonCalcular">
                     Calcular
                   </Button>
                   <br />
