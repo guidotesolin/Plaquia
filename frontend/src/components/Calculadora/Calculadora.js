@@ -7,7 +7,8 @@ import Card from "react-bootstrap/Card";
 import CardDeck from "react-bootstrap/CardDeck";
 import Button from "react-bootstrap/Button";
 
-import ModalPlaquia from "./LanzarModal";
+// import ModalPlaquia from "./LanzarModal";
+import MyVerticallyCenteredModal from "./Modal";
 
 import imgPresentacion from "../../img/esp/Presentacion.jpg";
 import imgRendimiento from "../../img/esp/Rendimiento.png";
@@ -20,6 +21,7 @@ class Calculadora extends React.Component {
     this.state = {
       alto: "",
       ancho: "",
+      modalShow: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,6 +44,7 @@ class Calculadora extends React.Component {
     Resultado.cantBaldes = Math.ceil(Resultado.cantCajas / 5);
     event.preventDefault();
     document.getElementById("FormCalculadora").reset();
+    this.setState({ modalShow: true });
     return Resultado;
   }
 
@@ -97,7 +100,11 @@ class Calculadora extends React.Component {
                     Calcular
                   </Button>
                   <br />
-                  <ModalPlaquia Datos={Resultado} />
+                  <MyVerticallyCenteredModal
+                    Datos={Resultado}
+                    show={this.state.modalShow}
+                    onHide={() => this.setState({ modalShow: false })}
+                  />
                 </Row>
               </Form>
             </Card.Body>
