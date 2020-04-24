@@ -133,13 +133,27 @@ export default function BarraDeNavegacion(props) {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#Funcionamiento">Funcionamiento</Nav.Link>
-              <Nav.Link href="#Colocacion">Colocación</Nav.Link>
-              <Nav.Link href="#Modelos">Modelos</Nav.Link>
-              <Nav.Link href="#Resultados">Resultados</Nav.Link>
-              <Nav.Link href="#Distribuidores">Distribuidores</Nav.Link>
-              <Nav.Link href="#Calculadora">Calculadora</Nav.Link>
-              <Nav.Link href="#Contacto">Contacto</Nav.Link>
+              <Nav.Link href="#Funcionamiento">
+                <i class="fa fa-fw fa-cogs"></i> Funcionamiento
+              </Nav.Link>
+              <Nav.Link href="#Colocacion">
+                <i class="fas fa-tools"></i> Colocación
+              </Nav.Link>
+              <Nav.Link href="#Modelos">
+                <i class="fas fa-shopping-cart"></i> Modelos
+              </Nav.Link>
+              <Nav.Link href="#Resultados">
+                <i class="fas fa-camera-retro"></i> Resultados
+              </Nav.Link>
+              <Nav.Link href="#Distribuidores">
+                <i class="fas fa-map-marked-alt"></i> Distribuidores
+              </Nav.Link>
+              <Nav.Link href="#Calculadora">
+                <i class="fas fa-calculator"></i> Calculadora
+              </Nav.Link>
+              <Nav.Link href="#Contacto">
+                <i class="fas fa-address-book"></i> Contacto
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Navbar.Brand href="#">

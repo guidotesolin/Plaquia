@@ -99,6 +99,16 @@ class RenderizarSpa extends Component {
                 className="align-self-center mr-3"
               />
             </Media>
+            <br />
+            <a
+              id="linkInstructivo"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/1gWzDd8eNv1InhDpoV_A00GuN7zxa8hOP/view?usp=sharing"
+              target="_blank"
+            >
+              <div class="BtnInstructivo">Descargar instructivo</div>
+            </a>
+
             <h1 id="TituloSeccion">INSTALACIÓN</h1>
             <br></br>
             <div class="embed-responsive embed-responsive-16by9">

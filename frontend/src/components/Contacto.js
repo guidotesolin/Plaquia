@@ -87,7 +87,7 @@ class Formulario extends React.Component {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit" id="BotonEnviarConsulta">
+        <Button variant="primary" type="submit" id="BotonEnviarConsulta" block>
           Enviar consulta
         </Button>
       </Form>

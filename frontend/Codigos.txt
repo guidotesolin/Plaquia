@@ -14,3 +14,7 @@ npm install axios
 npm i react-modal-image
 npm install formik --save
 yarn add yup
+
+
+Utiles:
+https://simbyone.com/demo/30-css-hover-effects-for-buttons/
