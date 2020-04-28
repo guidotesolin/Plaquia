@@ -1,4 +1,5 @@
 import React from "react";
+import "./Contacto.css";
 
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -112,6 +113,13 @@ function Contacto(props) {
     default:
       return (
         <div>
+          <p>
+            Envienos un mail a <strong>contacto@plaquia.com.ar</strong>, o
+            contactese mediante el siguiente formulario.
+          </p>
+          <p id="EpigrafeMail">
+            <i>Todos los campos son obligatorios</i>
+          </p>
           <Formulario />
         </div>
       );

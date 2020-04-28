@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import ModelosPlacas from "../components/Modelos/Modelos";
 
 class RenderEng extends Component {
   render() {
     return (
       <div>
-        <h1>Coming up...</h1>
+        <ModelosPlacas Idioma="Eng" />
       </div>
     );
   }

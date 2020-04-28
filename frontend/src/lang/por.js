@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
+import ModelosPlacas from "../components/Modelos/Modelos";
+
 class RenderPor extends Component {
   render() {
     return (
       <div>
-        <h1>Em breve...</h1>
+        <ModelosPlacas Idioma="Por" />
       </div>
     );
   }

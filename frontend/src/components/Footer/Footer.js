@@ -1,10 +1,12 @@
 import React from "react";
 
+import "./Footer.css";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import IntiIncombArg from "../img/Footer/FooterEsp.png";
+import Esp from "../../img/Footer/FooterEsp.png";
 
 export default function Footer(props) {
   switch (props.Idioma) {
@@ -30,7 +32,7 @@ export default function Footer(props) {
                 <img
                   width={300}
                   className="align-self-center mr-3"
-                  src={IntiIncombArg}
+                  src={Esp}
                   alt="Generic placeholder"
                 />
               </Row>
@@ -62,6 +64,16 @@ export default function Footer(props) {
                     target="_blank"
                   >
                     <i class="fab fa-facebook-square"></i>
+                  </a>
+                </Col>
+                <Col>
+                  <a
+                    class="BotonRedSocial"
+                    rel="noopener noreferrer"
+                    href="https://www.instagram.com/PlaquiaOficial"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
                   </a>
                 </Col>
                 <Col>

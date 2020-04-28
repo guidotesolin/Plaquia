@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Calculadora.css";
+
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -7,11 +9,10 @@ import Card from "react-bootstrap/Card";
 import CardDeck from "react-bootstrap/CardDeck";
 import Button from "react-bootstrap/Button";
 
-// import ModalPlaquia from "./LanzarModal";
 import MyVerticallyCenteredModal from "./Modal";
 
-import imgPresentacion from "../../img/esp/Presentacion.jpg";
-import imgRendimiento from "../../img/esp/Rendimiento.png";
+import imgPresentacion from "../../img/Esp/Presentacion.jpg";
+import imgRendimiento from "../../img/Esp/Rendimiento.png";
 
 var Resultado = {};
 
