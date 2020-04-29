@@ -29,13 +29,27 @@ export default function BarraDeNavegacion(props) {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#Operação">Operação</Nav.Link>
-              <Nav.Link href="#Colocação">Colocação</Nav.Link>
-              <Nav.Link href="#Modelos">Modelos</Nav.Link>
-              <Nav.Link href="#Resultados">Resultados</Nav.Link>
-              <Nav.Link href="#Distribuidores">Distribuidores</Nav.Link>
-              <Nav.Link href="#Calculadora">Calculadora</Nav.Link>
-              <Nav.Link href="#Contato">Contato</Nav.Link>
+              <Nav.Link href="#Operação">
+                <i class="fa fa-fw fa-cogs"></i> Operação
+              </Nav.Link>
+              <Nav.Link href="#Colocação">
+                <i class="fas fa-tools"></i> Colocação
+              </Nav.Link>
+              <Nav.Link href="#Modelos">
+                <i class="fas fa-shopping-cart"></i> Modelos
+              </Nav.Link>
+              <Nav.Link href="#Resultados">
+                <i class="fas fa-camera-retro"></i> Resultados
+              </Nav.Link>
+              <Nav.Link href="#Distribuidores">
+                <i class="fas fa-map-marked-alt"></i> Distribuidores
+              </Nav.Link>
+              <Nav.Link href="#Calculadora">
+                <i class="fas fa-calculator"></i> Calculadora
+              </Nav.Link>
+              <Nav.Link href="#Contato">
+                <i class="fas fa-address-book"></i> Contato
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Navbar.Brand href="#">
@@ -81,13 +95,27 @@ export default function BarraDeNavegacion(props) {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#Operation">Operation</Nav.Link>
-              <Nav.Link href="#Placement">Placement</Nav.Link>
-              <Nav.Link href="#Models">Models</Nav.Link>
-              <Nav.Link href="#Results">Results</Nav.Link>
-              <Nav.Link href="#Distributors">Distributors</Nav.Link>
-              <Nav.Link href="#Calculator">Calculator</Nav.Link>
-              <Nav.Link href="#Contact">Contact</Nav.Link>
+              <Nav.Link href="#Operation">
+                <i class="fa fa-fw fa-cogs"></i> Operation
+              </Nav.Link>
+              <Nav.Link href="#Placement">
+                <i class="fas fa-tools"></i> Placement
+              </Nav.Link>
+              <Nav.Link href="#Models">
+                <i class="fas fa-shopping-cart"></i> Models
+              </Nav.Link>
+              <Nav.Link href="#Results">
+                <i class="fas fa-camera-retro"></i> Results
+              </Nav.Link>
+              <Nav.Link href="#Distributors">
+                <i class="fas fa-map-marked-alt"></i> Distributors
+              </Nav.Link>
+              <Nav.Link href="#Calculator">
+                <i class="fas fa-calculator"></i> Calculator
+              </Nav.Link>
+              <Nav.Link href="#Contact">
+                <i class="fas fa-address-book"></i> Contact
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Navbar.Brand href="#">

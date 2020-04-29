@@ -25,46 +25,46 @@ class RenderizarSpa extends Component {
             <Top Idioma="Esp" />
           </Container>
         </div>
-        <div id="Funcionamiento">
+        <div id="Funcionamiento" className="Funcionamiento">
           <Container fluid>
             <h1 id="TituloSeccion">¿CÓMO FUNCIONA?</h1>
             <br />
             <Funcionamiento Idioma="Esp" />
           </Container>
         </div>
-        <div id="Colocacion">
+        <div id="Colocacion" className="Colocacion">
           <Container>
             <h1 id="TituloSeccion">COLOCACIÓN</h1>
             <br />
             <Colocacion Idioma="Esp" />
           </Container>
         </div>
-        <div id="Modelos">
+        <div id="Modelos" className="Modelos">
           <h1 id="TituloSeccion">MODELOS DISPONIBLES</h1>
           <br />
           <Modelos />
           <br />
         </div>
-        <div id="Resultados">
+        <div id="Resultados" className="Resultados">
           <h1 id="TituloSeccion">RESULTADOS</h1>
           <br />
           <SliderResultados />
           <br />
         </div>
-        <div id="Distribuidores">
+        <div id="Distribuidores" className="Distribuidores">
           <Container>
             <h1 id="TituloSeccion">DISTRIBUIDORES</h1>
             <br />
             <Distribuidores />
           </Container>
         </div>
-        <div id="Calculadora">
+        <div id="Calculadora" className="Calculadora">
           <h1 id="TituloSeccion">CALCULADORA</h1>
           <br />
           <Calculadora />
           <br />
         </div>
-        <div id="Contacto">
+        <div id="Contacto" className="Contacto">
           <h1 id="TituloSeccion">CONTACTO</h1>
           <br />
           <Container>

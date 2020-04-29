@@ -11,10 +11,21 @@ import Button from "react-bootstrap/Button";
 
 import MyVerticallyCenteredModal from "./Modal";
 
-import imgPresentacion from "../../img/Esp/Presentacion.jpg";
-import imgRendimiento from "../../img/Esp/Rendimiento.png";
+import espPresentacion from "../../img/Esp/Presentacion.jpg";
+import espRendimiento from "../../img/Esp/Rendimiento.png";
+
+import engPresentacion from "../../img/Eng/Presentacion.png";
+import engRendimiento from "../../img/Eng/Rendimiento.png";
+
+import porPresentacion from "../../img/Por/Presentacion.png";
+import porRendimiento from "../../img/Por/Rendimiento.png";
 
 var Resultado = {};
+var imgPresentacion;
+var imgRendimiento;
+var nombreAlto;
+var nombreAncho;
+var nombreBoton;
 
 class Calculadora extends React.Component {
   constructor(props) {
@@ -26,6 +37,29 @@ class Calculadora extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.asignar();
+  }
+
+  asignar() {
+    if (this.props.Idioma === "Por") {
+      imgPresentacion = porPresentacion;
+      imgRendimiento = porRendimiento;
+      nombreAlto = "Alto";
+      nombreAncho = "Largura";
+      nombreBoton = "Calcule";
+    } else if (this.props.Idioma === "Eng") {
+      imgPresentacion = engPresentacion;
+      imgRendimiento = engRendimiento;
+      nombreAlto = "High";
+      nombreAncho = "Width";
+      nombreBoton = "Calculate";
+    } else {
+      imgPresentacion = espPresentacion;
+      imgRendimiento = espRendimiento;
+      nombreAlto = "Alto";
+      nombreAncho = "Ancho";
+      nombreBoton = "Calcular";
+    }
   }
 
   handleChange(event) {
@@ -67,7 +101,7 @@ class Calculadora extends React.Component {
               <br />
               <Form onSubmit={this.handleSubmit} id="FormCalculadora">
                 <Form.Group as={Col}>
-                  <Form.Label>Alto</Form.Label>
+                  <Form.Label>{nombreAlto}</Form.Label>
                   <Form.Control
                     id="InputCalculadora"
                     name="alto"
@@ -82,7 +116,7 @@ class Calculadora extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label>Ancho</Form.Label>
+                  <Form.Label>{nombreAncho}</Form.Label>
                   <Form.Control
                     id="InputCalculadora"
                     name="ancho"
@@ -98,10 +132,11 @@ class Calculadora extends React.Component {
                 </Form.Group>
                 <Row className="justify-content-md-center">
                   <Button variant="primary" type="submit" id="BotonCalcular">
-                    Calcular
+                    {nombreBoton}
                   </Button>
                   <br />
                   <MyVerticallyCenteredModal
+                    Idioma={this.props.Idioma}
                     Datos={Resultado}
                     show={this.state.modalShow}
                     onHide={() => this.setState({ modalShow: false })}

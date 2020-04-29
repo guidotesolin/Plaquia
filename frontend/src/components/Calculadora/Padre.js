@@ -7,13 +7,13 @@ function CalculadoraPlaquia(props) {
     case "Por":
       return (
         <div>
-          <p>Calculadora en portuges</p>
+          <Calculadora Idioma="Por" />
         </div>
       );
     case "Eng":
       return (
         <div>
-          <p>Calculadora en ingles</p>
+          <Calculadora Idioma="Eng" />
         </div>
       );
     default:
