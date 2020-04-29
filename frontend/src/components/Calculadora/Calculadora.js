@@ -100,7 +100,7 @@ class Calculadora extends React.Component {
               <br />
               <br />
               <Form onSubmit={this.handleSubmit} id="FormCalculadora">
-                <Form.Group as={Col}>
+                <Form.Group>
                   <Form.Label>{nombreAlto}</Form.Label>
                   <Form.Control
                     id="InputCalculadora"

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Funcionamiento.css";
+
 import Image from "react-bootstrap/Image";
 
 import imgAcustico from "../../img/Ventajas/Acustico.png";
@@ -19,8 +21,8 @@ export default function Ventajas(props) {
           <div class="row justify-content-center">
             <div class="col-1">
               <Image
+                id="iconoVentajas"
                 src={imgAntihumedad}
-                style={{ width: 40 }}
                 alt="ANTI-HUMIDADE"
                 align="right"
               />
@@ -32,8 +34,8 @@ export default function Ventajas(props) {
           <div class="row justify-content-center">
             <div class="col-1">
               <Image
+                id="iconoVentajas"
                 src={imgAtermico}
-                style={{ width: 40 }}
                 alt="ATÉRICA"
                 align="right"
               />
@@ -45,8 +47,8 @@ export default function Ventajas(props) {
           <div class="row justify-content-center">
             <div class="col-1">
               <Image
+                id="iconoVentajas"
                 src={imgIncombustible}
-                style={{ width: 40 }}
                 alt="FUELS"
                 align="right"
               />
@@ -58,8 +60,8 @@ export default function Ventajas(props) {
           <div class="row justify-content-center">
             <div class="col-1">
               <Image
+                id="iconoVentajas"
                 src={imgAcustico}
-                style={{ width: 40 }}
                 alt="ACOUSTICS"
                 align="right"
               />
@@ -71,8 +73,8 @@ export default function Ventajas(props) {
           <div class="row justify-content-center">
             <div class="col-1">
               <Image
+                id="iconoVentajas"
                 src={imgRapidaColocacion}
-                style={{ width: 40 }}
                 alt="INSTALAÇÃO RÁPIDA"
                 align="right"
               />
@@ -85,7 +87,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgAntiHongos}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="ANTI-FUNGUS"
                 align="right"
               />
@@ -97,8 +99,8 @@ export default function Ventajas(props) {
           <div class="row justify-content-center">
             <div class="col-1">
               <Image
+                id="iconoVentajas"
                 src={imgDecorativo}
-                style={{ width: 40 }}
                 alt="DECORATIVOS"
                 align="right"
               />
@@ -110,8 +112,8 @@ export default function Ventajas(props) {
           <div class="row justify-content-center">
             <div class="col-1">
               <Image
+                id="iconoVentajas"
                 src={imgFacilMantenimiento}
-                style={{ width: 40 }}
                 alt="FÁCIL SERVICAMENTO"
                 align="right"
               />
@@ -128,8 +130,8 @@ export default function Ventajas(props) {
           <div class="row justify-content-center">
             <div class="col-1">
               <Image
+                id="iconoVentajas"
                 src={imgAntihumedad}
-                style={{ width: 40 }}
                 alt="ANTIHUMEDAD"
                 align="right"
               />
@@ -142,7 +144,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgAtermico}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="ATÉRMICOS"
                 align="right"
               />
@@ -155,7 +157,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgIncombustible}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="INCOMBUSTIBLES"
                 align="right"
               />
@@ -168,7 +170,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgAcustico}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="ACÚSTICOS"
                 align="right"
               />
@@ -181,7 +183,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgRapidaColocacion}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="RÁPIDA COLOCACIÓN"
                 align="right"
               />
@@ -194,7 +196,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgAntiHongos}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="ANTIHONGOS"
                 align="right"
               />
@@ -207,7 +209,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgDecorativo}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="DECORATIVOS"
                 align="right"
               />
@@ -220,7 +222,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgFacilMantenimiento}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="FÁCIL MANTENIMIENTO"
                 align="right"
               />
@@ -238,7 +240,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgAntihumedad}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="ANTIHUMEDAD"
                 align="right"
               />
@@ -251,7 +253,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgAtermico}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="ATÉRMICOS"
                 align="right"
               />
@@ -264,7 +266,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgIncombustible}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="INCOMBUSTIBLES"
                 align="right"
               />
@@ -277,7 +279,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgAcustico}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="ACÚSTICOS"
                 align="right"
               />
@@ -290,7 +292,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgRapidaColocacion}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="RÁPIDA COLOCACIÓN"
                 align="right"
               />
@@ -303,7 +305,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgAntiHongos}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="ANTIHONGOS"
                 align="right"
               />
@@ -316,7 +318,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgDecorativo}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="DECORATIVOS"
                 align="right"
               />
@@ -329,7 +331,7 @@ export default function Ventajas(props) {
             <div class="col-1">
               <Image
                 src={imgFacilMantenimiento}
-                style={{ width: 40 }}
+                id="iconoVentajas"
                 alt="FÁCIL MANTENIMIENTO"
                 align="right"
               />

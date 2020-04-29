@@ -100,7 +100,6 @@ export default function Footer(props) {
             <Col sm id="FooterContacto">
               <Row>
                 <i class="far fa-envelope" id="IconoContacto"></i>
-
                 <h5 id="DatosContacto">Contacto@plaquia.com.ar</h5>
               </Row>
               <Row>
@@ -170,7 +169,6 @@ export default function Footer(props) {
             <Col sm id="FooterContacto">
               <Row>
                 <i class="far fa-envelope" id="IconoContacto"></i>
-
                 <h5 id="DatosContacto">Contacto@plaquia.com.ar</h5>
               </Row>
               <Row>
