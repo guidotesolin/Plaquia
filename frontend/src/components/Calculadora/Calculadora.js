@@ -3,7 +3,6 @@ import React from "react";
 import "./Calculadora.css";
 
 import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import CardDeck from "react-bootstrap/CardDeck";

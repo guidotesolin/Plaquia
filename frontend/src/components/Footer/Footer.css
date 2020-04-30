@@ -71,7 +71,19 @@
   margin: 0;
   text-align: center;
 }
-.BotonRedSocial {
+.iconoFb {
+  color: #3b5998;
+}
+.iconoIg {
+  color: #d63876;
+}
+.iconoLd {
+  color: #0e76a8;
+}
+
+.iconoFb,
+.iconoIg,
+.iconoLd {
   display: inline-block;
   width: 60px;
   height: 60px;
@@ -79,32 +91,46 @@
   margin: 10px;
   border-radius: 30%;
   box-shadow: 0 5px 15px -5px #00000070;
-  color: #3498db;
   overflow: hidden;
   position: relative;
 }
-.BotonRedSocial i {
+.iconoFb i,
+.iconoIg i,
+.iconoLd i {
   line-height: 60px;
   font-size: 26px;
   transition: 0.2s linear;
 }
-
-.BotonRedSocial:hover i {
+.iconoFb:hover i,
+.iconoIg:hover i,
+.iconoLd:hover i {
   transform: scale(1.3);
   color: #f1f1f1;
 }
 
-.BotonRedSocial::before {
+.iconoFb::before {
+  background: #3b5998;
+}
+.iconoIg::before {
+  background: #d63876;
+}
+.iconoLd::before {
+  background: #0e76a8;
+}
+.iconoFb::before,
+.iconoIg::before,
+.iconoLd::before {
   content: "";
   position: absolute;
   width: 120%;
   height: 120%;
-  background: #3498db;
   transform: rotate(45deg);
   left: -110%;
   top: 90%;
 }
-.BotonRedSocial:hover::before {
+.iconoFb:hover::before,
+.iconoIg:hover::before,
+.iconoLd:hover::before {
   animation: aaa 0.7s 1;
   top: -10%;
   left: -10%;

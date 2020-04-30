@@ -48,7 +48,7 @@ export default function Footer(props) {
               <Row id="Redes" className="justify-content-md-center">
                 <Col>
                   <a
-                    class="BotonRedSocial"
+                    class="iconoFb"
                     rel="noopener noreferrer"
                     href="https://www.facebook.com/Plaquia"
                     target="_blank"
@@ -58,7 +58,7 @@ export default function Footer(props) {
                 </Col>
                 <Col>
                   <a
-                    class="BotonRedSocial"
+                    class="iconoIg"
                     rel="noopener noreferrer"
                     href="https://www.instagram.com/PlaquiaOficial"
                     target="_blank"
@@ -68,7 +68,7 @@ export default function Footer(props) {
                 </Col>
                 <Col>
                   <a
-                    class="BotonRedSocial"
+                    class="iconoLd"
                     rel="noopener noreferrer"
                     href="https://www.linkedin.com/company/plaquia/"
                     target="_blank"
@@ -117,7 +117,7 @@ export default function Footer(props) {
               <Row id="Redes" className="justify-content-md-center">
                 <Col>
                   <a
-                    class="BotonRedSocial"
+                    class="iconoFb"
                     rel="noopener noreferrer"
                     href="https://www.facebook.com/Plaquia"
                     target="_blank"
@@ -127,7 +127,7 @@ export default function Footer(props) {
                 </Col>
                 <Col>
                   <a
-                    class="BotonRedSocial"
+                    class="iconoIg"
                     rel="noopener noreferrer"
                     href="https://www.instagram.com/PlaquiaOficial"
                     target="_blank"
@@ -137,7 +137,7 @@ export default function Footer(props) {
                 </Col>
                 <Col>
                   <a
-                    class="BotonRedSocial"
+                    class="iconoLd"
                     rel="noopener noreferrer"
                     href="https://www.linkedin.com/company/plaquia/"
                     target="_blank"
@@ -186,7 +186,7 @@ export default function Footer(props) {
               <Row id="Redes" className="justify-content-md-center">
                 <Col>
                   <a
-                    class="BotonRedSocial"
+                    class="iconoFb"
                     rel="noopener noreferrer"
                     href="https://www.facebook.com/Plaquia"
                     target="_blank"
@@ -196,7 +196,7 @@ export default function Footer(props) {
                 </Col>
                 <Col>
                   <a
-                    class="BotonRedSocial"
+                    class="iconoIg"
                     rel="noopener noreferrer"
                     href="https://www.instagram.com/PlaquiaOficial"
                     target="_blank"
@@ -206,7 +206,7 @@ export default function Footer(props) {
                 </Col>
                 <Col>
                   <a
-                    class="BotonRedSocial"
+                    class="iconoLd"
                     rel="noopener noreferrer"
                     href="https://www.linkedin.com/company/plaquia/"
                     target="_blank"
