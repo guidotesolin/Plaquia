@@ -1,13 +1,24 @@
 import React from "react";
+import axios from "axios";
+
 import "./Contacto.css";
 
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
+var FieldNombre;
+var FieldMail;
+var FieldTelefono;
+var FieldConsulta;
+var FieldBoton;
+var Alerta;
+
 class Formulario extends React.Component {
   constructor(props) {
     super(props);
+    this.asignar();
+
     this.state = {
       nombre: "",
       email: "",
@@ -16,6 +27,30 @@ class Formulario extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  asignar() {
+    if (this.props.Idioma === "Por") {
+      FieldNombre = "Nome:";
+      FieldMail = "Correio:";
+      FieldTelefono = "Telefone:";
+      FieldConsulta = "Consulte:";
+      FieldBoton = "Envie consulta";
+      Alerta = "Consulta enviada!";
+    } else if (this.props.Idioma === "Eng") {
+      FieldNombre = "Name:";
+      FieldMail = "Mail:";
+      FieldTelefono = "Phone:";
+      FieldConsulta = "Message:";
+      FieldBoton = "Send query";
+      Alerta = "Query sent!";
+    } else {
+      FieldNombre = "Nombre";
+      FieldMail = "Mail";
+      FieldTelefono = "Telefono";
+      FieldConsulta = "Consulta:";
+      FieldBoton = "Enviar consulta";
+      Alerta = "Mensaje enviado!";
+    }
   }
 
   handleChange(event) {
@@ -37,6 +72,7 @@ class Formulario extends React.Component {
         " Consulta: " +
         this.state.consulta
     );
+    alert(Alerta);
     event.preventDefault();
     document.getElementById("FormularioDeContacto").reset();
   }
@@ -46,7 +82,7 @@ class Formulario extends React.Component {
       <Form onSubmit={this.handleSubmit} id="FormularioDeContacto">
         <Form.Row>
           <Form.Group as={Col}>
-            <Form.Label>Nombre</Form.Label>
+            <Form.Label>{FieldNombre}</Form.Label>
             <Form.Control
               name="nombre"
               type="text"
@@ -55,7 +91,7 @@ class Formulario extends React.Component {
             />
           </Form.Group>
           <Form.Group as={Col}>
-            <Form.Label>Email</Form.Label>
+            <Form.Label>{FieldMail}</Form.Label>
             <Form.Control
               name="email"
               type="email"
@@ -66,7 +102,7 @@ class Formulario extends React.Component {
           </Form.Group>
 
           <Form.Group as={Col}>
-            <Form.Label>Telefono</Form.Label>
+            <Form.Label>{FieldTelefono}</Form.Label>
             <Form.Control
               name="telefono"
               type="tel"
@@ -77,7 +113,7 @@ class Formulario extends React.Component {
           </Form.Group>
         </Form.Row>
         <Form.Group>
-          <Form.Label>Consulta</Form.Label>
+          <Form.Label>{FieldConsulta}</Form.Label>
           <Form.Control
             as="textarea"
             rows="4"
@@ -89,7 +125,7 @@ class Formulario extends React.Component {
           />
         </Form.Group>
         <Button variant="primary" type="submit" id="BotonEnviarConsulta" block>
-          Enviar consulta
+          {FieldBoton}
         </Button>
       </Form>
     );
@@ -101,13 +137,27 @@ function Contacto(props) {
     case "Por":
       return (
         <div>
-          <p>Contacto en portuges</p>
+          <p>
+            Envie-nos um e-mail para <strong>contacto@plaquia.com.ar</strong>,
+            ou entre em contato conosco através do formulário abaixo.
+          </p>
+          <p id="EpigrafeMail">
+            <i>Todos os campos são de preenchimento obrigatório</i>
+          </p>
+          <Formulario Idioma={props.Idioma} />
         </div>
       );
     case "Eng":
       return (
         <div>
-          <p>Contacto en ingles</p>
+          <p>
+            Send us an email to <strong>contacto@plaquia.com.ar</strong>, or
+            contact us using the form below.
+          </p>
+          <p id="EpigrafeMail">
+            <i>All fields are required</i>
+          </p>
+          <Formulario Idioma={props.Idioma} />
         </div>
       );
     default:
@@ -120,7 +170,7 @@ function Contacto(props) {
           <p id="EpigrafeMail">
             <i>Todos los campos son obligatorios</i>
           </p>
-          <Formulario />
+          <Formulario Idioma={props.Idioma} />
         </div>
       );
   }

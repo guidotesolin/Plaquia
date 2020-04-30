@@ -68,7 +68,7 @@ class RenderizarSpa extends Component {
           <h1 id="TituloSeccion">CONTACTO</h1>
           <br />
           <Container>
-            <Contacto />
+            <Contacto Idioma="Esp" />
           </Container>
         </div>
         <div id="Footer">
