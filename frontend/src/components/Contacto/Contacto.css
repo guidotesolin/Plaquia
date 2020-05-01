@@ -1,7 +1,3 @@
-#EpigrafeMail {
-  text-align: center;
-}
-
 #BotonEnviarConsulta:hover {
   box-shadow: inset 0 100px 0 0 #7da7bc;
 }
@@ -20,4 +16,8 @@
   -webkit-transition: ease-out 0.4s;
   -moz-transition: ease-out 0.4s;
   transition: ease-out 0.4s;
+}
+
+#MensajeEnviado {
+  transition-delay: 2s;
 }

@@ -140,10 +140,6 @@ class Formulario extends React.Component {
             onChange={this.handleChange}
             required
           />
-        </Form.Group>
-        <Button variant="primary" type="submit" id="BotonEnviarConsulta" block>
-          {LabelBoton}
-        </Button>
       </Form>
     );
   }
@@ -158,9 +154,6 @@ function Contacto(props) {
             Envie-nos um e-mail para <strong>contacto@plaquia.com.ar</strong>,
             ou entre em contato conosco através do formulário abaixo.
           </p>
-          <p id="EpigrafeMail">
-            <i>Todos os campos são de preenchimento obrigatório</i>
-          </p>
           <Formulario Idioma={props.Idioma} />
         </div>
       );
@@ -171,9 +164,6 @@ function Contacto(props) {
             Send us an email to <strong>contacto@plaquia.com.ar</strong>, or
             contact us using the form below.
           </p>
-          <p id="EpigrafeMail">
-            <i>All Labels are required</i>
-          </p>
           <Formulario Idioma={props.Idioma} />
         </div>
       );
@@ -183,9 +173,6 @@ function Contacto(props) {
           <p>
             Envienos un mail a <strong>contacto@plaquia.com.ar</strong>, o
             contactese mediante el siguiente formulario.
-          </p>
-          <p id="EpigrafeMail">
-            <i>Todos los campos son obligatorios</i>
           </p>
           <Formulario Idioma={props.Idioma} />
         </div>
