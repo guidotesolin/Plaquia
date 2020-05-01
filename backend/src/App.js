@@ -3,6 +3,7 @@ const app = express();
 
 //Importar routes de distribuidores
 const RouteDistribuidores = require("./routes/RouteDistribuidores");
+const RouteMail = require("./routes/RouteEmail");
 
 //Settings
 app.set("port", process.env.PORT || 3000);
@@ -22,6 +23,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/Distribuidores", RouteDistribuidores);
+
+app.use("/", RouteMail);
 
 app.use("/", (req, res) => {
   res.send("Hello World form NodeJS express.");

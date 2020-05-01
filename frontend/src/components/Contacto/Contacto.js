@@ -2,16 +2,17 @@ import React from "react";
 import axios from "axios";
 
 import "./Contacto.css";
+import Formulario from "./Formulario";
 
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-
-var FieldNombre;
-var FieldMail;
-var FieldTelefono;
-var FieldConsulta;
-var FieldBoton;
+/*
+var LabelNombre;
+var LabelMail;
+var LabelTelefono;
+var LabelConsulta;
+var LabelBoton;
 var Alerta;
 
 class Formulario extends React.Component {
@@ -30,25 +31,25 @@ class Formulario extends React.Component {
   }
   asignar() {
     if (this.props.Idioma === "Por") {
-      FieldNombre = "Nome:";
-      FieldMail = "Correio:";
-      FieldTelefono = "Telefone:";
-      FieldConsulta = "Consulte:";
-      FieldBoton = "Envie consulta";
+      LabelNombre = "Nome:";
+      LabelMail = "Correio:";
+      LabelTelefono = "Telefone:";
+      LabelConsulta = "Consulte:";
+      LabelBoton = "Envie consulta";
       Alerta = "Consulta enviada!";
     } else if (this.props.Idioma === "Eng") {
-      FieldNombre = "Name:";
-      FieldMail = "Mail:";
-      FieldTelefono = "Phone:";
-      FieldConsulta = "Message:";
-      FieldBoton = "Send query";
+      LabelNombre = "Name:";
+      LabelMail = "Mail:";
+      LabelTelefono = "Phone:";
+      LabelConsulta = "Message:";
+      LabelBoton = "Send query";
       Alerta = "Query sent!";
     } else {
-      FieldNombre = "Nombre";
-      FieldMail = "Mail";
-      FieldTelefono = "Telefono";
-      FieldConsulta = "Consulta:";
-      FieldBoton = "Enviar consulta";
+      LabelNombre = "Nombre";
+      LabelMail = "Mail";
+      LabelTelefono = "Telefono";
+      LabelConsulta = "Consulta:";
+      LabelBoton = "Enviar consulta";
       Alerta = "Mensaje enviado!";
     }
   }
@@ -61,28 +62,44 @@ class Formulario extends React.Component {
       [name]: value,
     });
   }
-  handleSubmit(event) {
-    alert(
-      "Name: " +
-        this.state.nombre +
-        " Email: " +
-        this.state.email +
-        " Telefono: " +
-        this.state.telefono +
-        " Consulta: " +
-        this.state.consulta
-    );
-    alert(Alerta);
-    event.preventDefault();
+  handleSubmit(e) {
+    e.preventDefault();
+    const name = this.state.nombre;
+    const email = this.state.email;
+    const phone = this.state.telefono;
+    const message = this.state.consulta;
+    axios({
+      method: "POST",
+      url: "http://localhost:3000/send",
+      data: {
+        name: name,
+        email: email,
+        phone: phone,
+        messsage: message,
+      },
+    }).then((response) => {
+      if (response.data.msg === "success") {
+        alert(Alerta);
+        this.resetForm();
+      } else if (response.data.msg === "fail") {
+        alert("Message failed to send.");
+      }
+    });
+  }
+  resetForm() {
     document.getElementById("FormularioDeContacto").reset();
   }
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit} id="FormularioDeContacto">
+      <Form
+        onSubmit={this.handleSubmit.bind(this)}
+        id="FormularioDeContacto"
+        method="POST"
+      >
         <Form.Row>
           <Form.Group as={Col}>
-            <Form.Label>{FieldNombre}</Form.Label>
+            <Form.Label>{LabelNombre}</Form.Label>
             <Form.Control
               name="nombre"
               type="text"
@@ -91,7 +108,7 @@ class Formulario extends React.Component {
             />
           </Form.Group>
           <Form.Group as={Col}>
-            <Form.Label>{FieldMail}</Form.Label>
+            <Form.Label>{LabelMail}</Form.Label>
             <Form.Control
               name="email"
               type="email"
@@ -102,7 +119,7 @@ class Formulario extends React.Component {
           </Form.Group>
 
           <Form.Group as={Col}>
-            <Form.Label>{FieldTelefono}</Form.Label>
+            <Form.Label>{LabelTelefono}</Form.Label>
             <Form.Control
               name="telefono"
               type="tel"
@@ -113,7 +130,7 @@ class Formulario extends React.Component {
           </Form.Group>
         </Form.Row>
         <Form.Group>
-          <Form.Label>{FieldConsulta}</Form.Label>
+          <Form.Label>{LabelConsulta}</Form.Label>
           <Form.Control
             as="textarea"
             rows="4"
@@ -125,13 +142,13 @@ class Formulario extends React.Component {
           />
         </Form.Group>
         <Button variant="primary" type="submit" id="BotonEnviarConsulta" block>
-          {FieldBoton}
+          {LabelBoton}
         </Button>
       </Form>
     );
   }
 }
-
+*/
 function Contacto(props) {
   switch (props.Idioma) {
     case "Por":
@@ -155,7 +172,7 @@ function Contacto(props) {
             contact us using the form below.
           </p>
           <p id="EpigrafeMail">
-            <i>All fields are required</i>
+            <i>All Labels are required</i>
           </p>
           <Formulario Idioma={props.Idioma} />
         </div>
