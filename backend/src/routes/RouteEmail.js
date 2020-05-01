@@ -25,32 +25,36 @@ transporter.verify((error, success) => {
 });
 
 router.post("/send", (req, res, next) => {
-  const { name, email, message } = req.body;
+  const { name, email, phone, message } = req.body;
+
+  var Asunto = "Nuevo contacto desde la pagina web (" + name + ")";
 
   contentHTML = `
-        <h1> Datos de contacto:</h1>
+        <h1> Nuevo contacto desde la pagina web:</h1>
         <ul>
             <li>Nombre: ${name}</li>
             <li>Mail: ${email}</li>
+            <li>Telefono: ${phone}</li>
         </ul>
-        <p>Mensaje: ${message}</p>
+        <h3>Consulta:</h3>
+        <p>${message}</p>
   `;
 
   var Correo = {
     from: "'Pagina nueva' <paginanueva@plaquia.com.ar>",
-    to: "test@plaquia.com.ar", //Change to email address that you want to receive messages on
-    subject: "Nuevo contacto desde la pagina web",
+    to: "test@plaquia.com.ar", //Cambiar cuando este listo
+    subject: Asunto,
     html: contentHTML,
   };
 
   transporter.sendMail(Correo, (err, data) => {
     if (err) {
       res.json({
-        msg: "fail",
+        msg: "Error al enviar!",
       });
     } else {
       res.json({
-        msg: "success",
+        msg: "Mensaje enviado correctamente!",
       });
     }
   });
