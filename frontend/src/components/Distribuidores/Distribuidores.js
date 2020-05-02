@@ -26,6 +26,20 @@ class Distribuidores extends React.Component {
       });
   }
 
+  loadFillData() {
+    return this.state.listarDistribuidores.map((distribuidor) => {
+      return (
+        <tr>
+          <th>{distribuidor.pais}</th>
+          <td>{distribuidor.provincia}</td>
+          <td>{distribuidor.localidad}</td>
+          <td>{distribuidor.direccion}</td>
+          <td>{distribuidor.telefono}</td>
+        </tr>
+      );
+    });
+  }
+
   render() {
     return (
       <div>
@@ -55,19 +69,6 @@ class Distribuidores extends React.Component {
         </table>
       </div>
     );
-  }
-  loadFillData() {
-    return this.state.listarDistribuidores.map((distribuidor) => {
-      return (
-        <tr>
-          <th>{distribuidor.pais}</th>
-          <td>{distribuidor.provincia}</td>
-          <td>{distribuidor.localidad}</td>
-          <td>{distribuidor.direccion}</td>
-          <td>{distribuidor.telefono}</td>
-        </tr>
-      );
-    });
   }
 }
 
