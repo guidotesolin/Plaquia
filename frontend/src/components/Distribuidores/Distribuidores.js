@@ -9,10 +9,6 @@ class Distribuidores extends React.Component {
       listarDistribuidores: [],
     };
   }
-  // Torre
-  //.get("http://192.168.1.136:3000/Distribuidores/list")
-  // Casa
-  // .get("http://192.168.100.4:3000/Distribuidores/list")
 
   componentDidMount() {
     axios
