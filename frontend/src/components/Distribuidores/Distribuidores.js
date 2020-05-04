@@ -2,17 +2,46 @@ import React from "react";
 import axios from "axios";
 import "./Distribuidores.css";
 
+var Pais;
+var Provincia;
+var Localidad;
+var Direccion;
+var Telefono;
+
 class Distribuidores extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       listarDistribuidores: [],
     };
+    this.Iniciar();
+  }
+
+  Iniciar() {
+    if (this.props.Idioma === "Por") {
+      Pais = "País";
+      Provincia = "Província";
+      Localidad = "Localização";
+      Direccion = "Direção";
+      Telefono = "Telefone";
+    } else if (this.props.Idioma === "Eng") {
+      Pais = "Country";
+      Provincia = "State";
+      Localidad = "Town";
+      Direccion = "Address";
+      Telefono = "Phone";
+    } else {
+      Pais = "Pais";
+      Provincia = "Provincia";
+      Localidad = "Localidad";
+      Direccion = "Direccion";
+      Telefono = "Telefono";
+    }
   }
 
   componentDidMount() {
     axios
-      .get("http://192.168.100.4:3000/Distribuidores/list")
+      .get("localhost:3000/Distribuidores/list")
       .then((res) => {
         const data = res.data.data;
         this.setState({ listarDistribuidores: data });
@@ -54,11 +83,11 @@ class Distribuidores extends React.Component {
         <table class="table table-hover table-striped">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">Pais</th>
-              <th scope="col">Provincia</th>
-              <th scope="col">Localidad</th>
-              <th scope="col">Direccion</th>
-              <th scope="col">Telefono</th>
+              <th scope="col">{Pais}</th>
+              <th scope="col">{Provincia}</th>
+              <th scope="col">{Localidad}</th>
+              <th scope="col">{Direccion}</th>
+              <th scope="col">{Telefono}</th>
             </tr>
           </thead>
           <tbody>{this.loadFillData()}</tbody>
