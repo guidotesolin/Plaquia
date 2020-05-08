@@ -5,6 +5,10 @@ var LabelNombre;
 var LabelMail;
 var LabelTelefono;
 var LabelConsulta;
+var LabelPais;
+var LabelProvincia;
+var LabelLocalidad;
+var LabelOtro;
 var Epigrafe;
 var LabelBoton;
 var Enviado;
@@ -17,6 +21,10 @@ class ContactForm extends Component {
       LabelMail = "Correio:";
       LabelTelefono = "Telefone:";
       LabelConsulta = "Consulte:";
+      LabelPais = "País:";
+      LabelProvincia = "Província:";
+      LabelLocalidad = "Cidade:";
+      LabelOtro = "Outros";
       Epigrafe = "Todos os campos são de preenchimento obrigatório";
       LabelBoton = "Envie consulta";
       Enviado =
@@ -27,16 +35,25 @@ class ContactForm extends Component {
       LabelNombre = "Name:";
       LabelMail = "Mail:";
       LabelTelefono = "Phone:";
+      LabelPais = "Country:";
+      LabelProvincia = "State:";
+      LabelLocalidad = "City:";
+      LabelOtro = "Another";
+
       LabelConsulta = "Message:";
       Epigrafe = "All Labels are required";
       LabelBoton = "Send query";
       Enviado = "The message has been sent. We will be contacting you shortly.";
       Error = "Error sending. Please contact contacto@plaquia.com.ar directly.";
     } else {
-      LabelNombre = "Nombre";
-      LabelMail = "Mail";
-      LabelTelefono = "Telefono";
+      LabelNombre = "Nombre:";
+      LabelMail = "Mail:";
+      LabelTelefono = "Telefono:";
+      LabelPais = "País:";
+      LabelProvincia = "Provincia:";
+      LabelLocalidad = "Ciudad:";
       LabelConsulta = "Consulta:";
+      LabelOtro = "Otro";
       Epigrafe = "Todos los campos son obligatorios";
       LabelBoton = "Enviar consulta";
       Enviado =
@@ -51,6 +68,9 @@ class ContactForm extends Component {
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
     const message = document.getElementById("message").value;
+    const country = document.getElementById("country").value;
+    const province = document.getElementById("province").value;
+    const city = document.getElementById("city").value;
     axios({
       method: "POST",
       url: "http://localhost:3000/send",
@@ -58,18 +78,19 @@ class ContactForm extends Component {
         name: name,
         email: email,
         phone: phone,
+        country: country,
+        province: province,
+        city: city,
         message: message,
       },
     }).then((response) => {
       if (response.data.msg === "success") {
-        //alert(Enviado);
-        //this.resetForm();
+        this.resetForm();
+        this.mostrarMensaje();
       } else if (response.data.msg === "fail") {
         alert(Error);
       }
     });
-    this.resetForm();
-    this.mostrarMensaje();
   }
 
   resetForm() {
@@ -126,6 +147,45 @@ class ContactForm extends Component {
               </div>
             </div>
           </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="country">{LabelPais}</label>
+                <select class="form-control" id="country">
+                  <option>Argentina</option>
+                  <option>Bolivia</option>
+                  <option>Brasil</option>
+                  <option>Paraguay</option>
+                  <option>Uruguay</option>
+                  <option>{LabelOtro}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col">
+              <div className="form-group">
+                <label for="province">{LabelProvincia}</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="province"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col">
+              <div className="form-group">
+                <label for="city">{LabelLocalidad}</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="city"
+                  required
+                />
+              </div>
+            </div>
+          </div>
           <div className="form-group">
             <label for="message">{LabelConsulta}</label>
             <textarea
@@ -155,4 +215,3 @@ class ContactForm extends Component {
 }
 
 export default ContactForm;
-//style={{ display: "none" }}

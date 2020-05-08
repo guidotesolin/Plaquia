@@ -25,7 +25,7 @@ transporter.verify((error, success) => {
 });
 
 router.post("/send", (req, res, next) => {
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, country, province, city, message } = req.body;
 
   var Asunto = "Nuevo contacto desde la pagina web (" + name + ")";
 
@@ -35,6 +35,7 @@ router.post("/send", (req, res, next) => {
             <li>Nombre: ${name}</li>
             <li>Mail: ${email}</li>
             <li>Telefono: ${phone}</li>
+            <li>Ubicacion: ${country} / ${province} / ${city}</li>
         </ul>
         <h3>Consulta:</h3>
         <p>${message}</p>
@@ -50,11 +51,11 @@ router.post("/send", (req, res, next) => {
   transporter.sendMail(Correo, (err, data) => {
     if (err) {
       res.json({
-        msg: "Error al enviar!",
+        msg: "fail",
       });
     } else {
       res.json({
-        msg: "Mensaje enviado correctamente!",
+        msg: "success",
       });
     }
   });
