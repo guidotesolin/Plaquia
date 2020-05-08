@@ -73,7 +73,7 @@ class Calculadora extends React.Component {
   handleSubmit(event) {
     const a = parseFloat(this.state.alto);
     const b = parseFloat(this.state.ancho);
-    Resultado.superficie = a * b;
+    Resultado.superficie = Math.round(a * b * 100) / 100;
     Resultado.cantCajas = Math.ceil(Resultado.superficie / 1.44);
     Resultado.cantBaldes = Math.ceil(Resultado.cantCajas / 5);
     event.preventDefault();
