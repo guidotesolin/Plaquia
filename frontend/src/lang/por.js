@@ -32,6 +32,12 @@ class RenderPor extends Component {
             <Funcionamiento Idioma="Por" />
           </Container>
         </div>
+        <div id="Calculadora" className="Calculadora">
+          <h1 id="TituloSeccion">Calculadora</h1>
+          <br />
+          <Calculadora Idioma="Por" />
+          <br />
+        </div>
         <div id="Colocação" className="Colocacion">
           <Container>
             <h1 id="TituloSeccion">Colocação</h1>
@@ -57,12 +63,6 @@ class RenderPor extends Component {
             <br />
             <Distribuidores Idioma="Por" />
           </Container>
-        </div>
-        <div id="Calculadora" className="Calculadora">
-          <h1 id="TituloSeccion">Calculadora</h1>
-          <br />
-          <Calculadora Idioma="Por" />
-          <br />
         </div>
         <div id="Contato" className="Contacto">
           <h1 id="TituloSeccion">Contato</h1>

@@ -32,6 +32,12 @@ class RenderizarSpa extends Component {
             <Funcionamiento Idioma="Esp" />
           </Container>
         </div>
+        <div id="Calculadora" className="Calculadora">
+          <h1 id="TituloSeccion">CALCULADORA</h1>
+          <br />
+          <Calculadora />
+          <br />
+        </div>
         <div id="Colocacion" className="Colocacion">
           <Container>
             <h1 id="TituloSeccion">COLOCACIÓN</h1>
@@ -57,12 +63,6 @@ class RenderizarSpa extends Component {
             <br />
             <Distribuidores />
           </Container>
-        </div>
-        <div id="Calculadora" className="Calculadora">
-          <h1 id="TituloSeccion">CALCULADORA</h1>
-          <br />
-          <Calculadora />
-          <br />
         </div>
         <div id="Contacto" className="Contacto">
           <h1 id="TituloSeccion">CONTACTO</h1>

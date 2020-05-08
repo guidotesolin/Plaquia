@@ -1,15 +1,15 @@
 /* Separar secciones y darle color de fondo */
 #Top,
-.Colocacion,
-.Resultados,
-.Calculadora {
+.Calculadora,
+.Modelos,
+.Distribuidores {
   background-color: #dee4a0;
   padding-bottom: 20px;
   padding-top: 10px;
 }
 .Funcionamiento,
-.Modelos,
-.Distribuidores,
+.Colocacion,
+.Resultados,
 .Contacto {
   background-color: #a9ba82;
   padding-bottom: 20px;

@@ -41,7 +41,7 @@ class Distribuidores extends React.Component {
 
   componentDidMount() {
     axios
-      .get("localhost:3000/Distribuidores/list")
+      .get("http://localhost:3000/Distribuidores/list")
       .then((res) => {
         const data = res.data.data;
         this.setState({ listarDistribuidores: data });
