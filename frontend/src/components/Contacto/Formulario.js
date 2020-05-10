@@ -11,6 +11,7 @@ var LabelLocalidad;
 var LabelOtro;
 var Epigrafe;
 var LabelBoton;
+var LabelSelect;
 var Enviado;
 var Error;
 
@@ -24,6 +25,7 @@ class ContactForm extends Component {
       LabelPais = "País:";
       LabelProvincia = "Província:";
       LabelLocalidad = "Cidade:";
+      LabelSelect = "Selecione seu país";
       LabelOtro = "Outros";
       Epigrafe = "Todos os campos são de preenchimento obrigatório";
       LabelBoton = "Envie consulta";
@@ -38,8 +40,8 @@ class ContactForm extends Component {
       LabelPais = "Country:";
       LabelProvincia = "State:";
       LabelLocalidad = "City:";
+      LabelSelect = "Select your country";
       LabelOtro = "Another";
-
       LabelConsulta = "Message:";
       Epigrafe = "All Labels are required";
       LabelBoton = "Send query";
@@ -48,12 +50,13 @@ class ContactForm extends Component {
     } else {
       LabelNombre = "Nombre:";
       LabelMail = "Mail:";
-      LabelTelefono = "Telefono:";
+      LabelTelefono = "Teléfono:";
       LabelPais = "País:";
       LabelProvincia = "Provincia:";
       LabelLocalidad = "Ciudad:";
       LabelConsulta = "Consulta:";
       LabelOtro = "Otro";
+      LabelSelect = "Seleccione su país";
       Epigrafe = "Todos los campos son obligatorios";
       LabelBoton = "Enviar consulta";
       Enviado =
@@ -151,7 +154,10 @@ class ContactForm extends Component {
             <div class="col">
               <div class="form-group">
                 <label for="country">{LabelPais}</label>
-                <select class="form-control" id="country">
+                <select class="form-control" id="country" required>
+                  <option value="" disabled selected hidden>
+                    {LabelSelect}
+                  </option>
                   <option>Argentina</option>
                   <option>Bolivia</option>
                   <option>Brasil</option>
