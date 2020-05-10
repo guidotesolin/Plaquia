@@ -2,6 +2,7 @@ import React from "react";
 
 import "./Funcionamiento.css";
 
+import Media from "react-bootstrap/Media";
 import Image from "react-bootstrap/Image";
 
 import imgAcustico from "../../img/Ventajas/Acustico.png";
@@ -13,334 +14,151 @@ import imgFacilMantenimiento from "../../img/Ventajas/FacilMantenimiento.png";
 import imgIncombustible from "../../img/Ventajas/Incombustible.png";
 import imgRapidaColocacion from "../../img/Ventajas/RapidaColocacion.png";
 
+var LabelANTIHUMEDAD;
+var LabelATERMICOS;
+var LabelINCOMBUSTIBLES;
+var LabelACUSTICOS;
+var LabelRAPIDACOLOCACION;
+var LabelANTIHONGOS;
+var LabelDECORATIVOS;
+var LabelFACILMANTENIMIENTO;
+
 export default function Ventajas(props) {
-  switch (props.Idioma) {
-    case "Por":
-      return (
-        <div class="container pt-4" id="Ventajas">
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                id="iconoVentajas"
-                src={imgAntihumedad}
-                alt="ANTI-HUMIDADE"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ANTI-HUMIDADE</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                id="iconoVentajas"
-                src={imgAtermico}
-                alt="ATÉRICA"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ATÉRICA</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                id="iconoVentajas"
-                src={imgIncombustible}
-                alt="FUELS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>FUELS</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                id="iconoVentajas"
-                src={imgAcustico}
-                alt="ACOUSTICS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ACOUSTICS</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                id="iconoVentajas"
-                src={imgRapidaColocacion}
-                alt="INSTALAÇÃO RÁPIDA"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>INSTALAÇÃO RÁPIDA</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgAntiHongos}
-                id="iconoVentajas"
-                alt="ANTI-FUNGUS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ANTI-FUNGUS</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                id="iconoVentajas"
-                src={imgDecorativo}
-                alt="DECORATIVOS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>DECORATIVOS</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                id="iconoVentajas"
-                src={imgFacilMantenimiento}
-                alt="FÁCIL SERVICAMENTO"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>FÁCIL SERVICAMENTO</h2>
-            </div>
-          </div>
-        </div>
-      );
-    case "Eng":
-      return (
-        <div class="container pt-4" id="Ventajas">
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                id="iconoVentajas"
-                src={imgAntihumedad}
-                alt="ANTIHUMEDAD"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ANTI-HUMIDITY</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgAtermico}
-                id="iconoVentajas"
-                alt="ATÉRMICOS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>NON-THERMAL</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgIncombustible}
-                id="iconoVentajas"
-                alt="INCOMBUSTIBLES"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>FIRE-RESISTANT</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgAcustico}
-                id="iconoVentajas"
-                alt="ACÚSTICOS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ACOUSTIC</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgRapidaColocacion}
-                id="iconoVentajas"
-                alt="RÁPIDA COLOCACIÓN"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>QUICK INSTALLATION</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgAntiHongos}
-                id="iconoVentajas"
-                alt="ANTIHONGOS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ANTI FUNGUS</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgDecorativo}
-                id="iconoVentajas"
-                alt="DECORATIVOS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>DECORATIVES</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgFacilMantenimiento}
-                id="iconoVentajas"
-                alt="FÁCIL MANTENIMIENTO"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>EASY MAINTENANCE</h2>
-            </div>
-          </div>
-        </div>
-      );
-    default:
-      return (
-        <div class="container pt-4" id="Ventajas">
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgAntihumedad}
-                id="iconoVentajas"
-                alt="ANTIHUMEDAD"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ANTI HUMEDAD</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgAtermico}
-                id="iconoVentajas"
-                alt="ATÉRMICOS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ATÉRMICOS</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgIncombustible}
-                id="iconoVentajas"
-                alt="INCOMBUSTIBLES"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>INCOMBUSTIBLES</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgAcustico}
-                id="iconoVentajas"
-                alt="ACÚSTICOS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ACÚSTICOS</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgRapidaColocacion}
-                id="iconoVentajas"
-                alt="RÁPIDA COLOCACIÓN"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>RÁPIDA COLOCACIÓN</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgAntiHongos}
-                id="iconoVentajas"
-                alt="ANTIHONGOS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>ANTI HONGOS</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgDecorativo}
-                id="iconoVentajas"
-                alt="DECORATIVOS"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>DECORATIVOS</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-1">
-              <Image
-                src={imgFacilMantenimiento}
-                id="iconoVentajas"
-                alt="FÁCIL MANTENIMIENTO"
-                align="right"
-              />
-            </div>
-            <div class="col-4">
-              <h2>FÁCIL MANTENIMIENTO</h2>
-            </div>
-          </div>
-        </div>
-      );
+  if (props.Idioma === "Por") {
+    LabelANTIHUMEDAD = "ANTI-HUMIDADE";
+    LabelATERMICOS = "ATÉRIC";
+    LabelINCOMBUSTIBLES = "RESISTÊNCIA AO FOGO";
+    LabelACUSTICOS = "ACOUSTICS";
+    LabelRAPIDACOLOCACION = "INSTALAÇÃO RÁPIDA";
+    LabelANTIHONGOS = "ANTI FUNGUS";
+    LabelDECORATIVOS = "DECORATIVOS";
+    LabelFACILMANTENIMIENTO = "FÁCIL SERVICAMENTO";
+  } else if (props.Idioma === "Eng") {
+    LabelANTIHUMEDAD = "ANTI-HUMIDITY";
+    LabelATERMICOS = "NON-THERMAL";
+    LabelINCOMBUSTIBLES = "FIREPROOF";
+    LabelACUSTICOS = "ACOUSTICS";
+    LabelRAPIDACOLOCACION = "QUICK INSTALLATION";
+    LabelANTIHONGOS = "ANTI FUNGUS";
+    LabelDECORATIVOS = "DECORATIVES";
+    LabelFACILMANTENIMIENTO = "EASY MAINTENANCE";
+  } else {
+    LabelANTIHUMEDAD = "ANTI HUMEDAD";
+    LabelATERMICOS = "ATÉRMICOS";
+    LabelINCOMBUSTIBLES = "INCOMBUSTIBLES";
+    LabelACUSTICOS = "ACÚSTICOS";
+    LabelRAPIDACOLOCACION = "RÁPIDA COLOCACIÓN";
+    LabelANTIHONGOS = "ANTI HONGOS";
+    LabelDECORATIVOS = "DECORATIVOS";
+    LabelFACILMANTENIMIENTO = "FÁCIL MANTENIMIENTO";
   }
+
+  return (
+    <div class="container">
+      <div id="Ventajas">
+        <Media>
+          <img
+            src={imgAntihumedad}
+            id="iconoVentajas"
+            alt={LabelANTIHUMEDAD}
+            align="right"
+          />
+          <Media.Body>
+            <h2 id="textoVentajas">{LabelANTIHUMEDAD}</h2>
+          </Media.Body>
+        </Media>
+      </div>
+      <div id="Ventajas">
+        <Media>
+          <img
+            src={imgAtermico}
+            id="iconoVentajas"
+            alt={LabelATERMICOS}
+            align="right"
+          />
+          <Media.Body>
+            <h2 id="textoVentajas">{LabelATERMICOS}</h2>
+          </Media.Body>
+        </Media>
+      </div>
+      <div id="Ventajas">
+        <Media>
+          <img
+            src={imgIncombustible}
+            id="iconoVentajas"
+            alt={LabelINCOMBUSTIBLES}
+            align="right"
+          />
+          <Media.Body>
+            <h2 id="textoVentajas">{LabelINCOMBUSTIBLES}</h2>
+          </Media.Body>
+        </Media>
+      </div>
+      <div id="Ventajas">
+        <Media>
+          <img
+            src={imgAcustico}
+            id="iconoVentajas"
+            alt={LabelACUSTICOS}
+            align="right"
+          />
+          <Media.Body>
+            <h2 id="textoVentajas">{LabelACUSTICOS}</h2>
+          </Media.Body>
+        </Media>
+      </div>
+      <div id="Ventajas">
+        <Media>
+          <img
+            src={imgRapidaColocacion}
+            id="iconoVentajas"
+            alt={LabelRAPIDACOLOCACION}
+            align="right"
+          />
+          <Media.Body>
+            <h2 id="textoVentajas">{LabelRAPIDACOLOCACION}</h2>
+          </Media.Body>
+        </Media>
+      </div>
+      <div id="Ventajas">
+        <Media>
+          <img
+            src={imgAntiHongos}
+            id="iconoVentajas"
+            alt={LabelANTIHONGOS}
+            align="right"
+          />
+          <Media.Body>
+            <h2 id="textoVentajas">{LabelANTIHONGOS}</h2>
+          </Media.Body>
+        </Media>
+      </div>
+      <div id="Ventajas">
+        <Media>
+          <img
+            src={imgDecorativo}
+            id="iconoVentajas"
+            alt={LabelDECORATIVOS}
+            align="right"
+          />
+          <Media.Body>
+            <h2 id="textoVentajas">{LabelDECORATIVOS}</h2>
+          </Media.Body>
+        </Media>
+      </div>
+      <div id="Ventajas">
+        <Media>
+          <img
+            src={imgFacilMantenimiento}
+            id="iconoVentajas"
+            alt={LabelFACILMANTENIMIENTO}
+            align="right"
+          />
+          <Media.Body>
+            <h2 id="textoVentajas">{LabelFACILMANTENIMIENTO}</h2>
+          </Media.Body>
+        </Media>
+      </div>
+    </div>
+  );
 }

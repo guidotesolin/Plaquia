@@ -6,7 +6,29 @@
 #TextoSlider {
   text-align: left;
 }
+
+#Ventajas {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-bottom: 6px;
+}
 #iconoVentajas {
   width: 40px;
   border-radius: 30%;
+}
+#textoVentajas {
+  margin-left: 12px;
+}
+
+#iconoVentajas:hover {
+  -webkit-transform: rotate(15deg) scale(1.4);
+  transform: rotate(15deg) scale(1.4);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+#iconoVentajas {
+  -webkit-transform: rotate(0) scale(1);
+  transform: rotate(0) scale(1);
 }
