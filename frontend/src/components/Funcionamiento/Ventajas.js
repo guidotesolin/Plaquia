@@ -3,7 +3,8 @@ import React from "react";
 import "./Funcionamiento.css";
 
 import Media from "react-bootstrap/Media";
-import Image from "react-bootstrap/Image";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 import imgAcustico from "../../img/Ventajas/Acustico.png";
 import imgAntiHongos from "../../img/Ventajas/AntiHongos.png";
@@ -55,110 +56,134 @@ export default function Ventajas(props) {
 
   return (
     <div class="container">
-      <div id="Ventajas">
-        <Media>
-          <img
-            src={imgAntihumedad}
-            id="iconoVentajas"
-            alt={LabelANTIHUMEDAD}
-            align="right"
-          />
-          <Media.Body>
-            <h2 id="textoVentajas">{LabelANTIHUMEDAD}</h2>
-          </Media.Body>
-        </Media>
-      </div>
-      <div id="Ventajas">
-        <Media>
-          <img
-            src={imgAtermico}
-            id="iconoVentajas"
-            alt={LabelATERMICOS}
-            align="right"
-          />
-          <Media.Body>
-            <h2 id="textoVentajas">{LabelATERMICOS}</h2>
-          </Media.Body>
-        </Media>
-      </div>
-      <div id="Ventajas">
-        <Media>
-          <img
-            src={imgIncombustible}
-            id="iconoVentajas"
-            alt={LabelINCOMBUSTIBLES}
-            align="right"
-          />
-          <Media.Body>
-            <h2 id="textoVentajas">{LabelINCOMBUSTIBLES}</h2>
-          </Media.Body>
-        </Media>
-      </div>
-      <div id="Ventajas">
-        <Media>
-          <img
-            src={imgAcustico}
-            id="iconoVentajas"
-            alt={LabelACUSTICOS}
-            align="right"
-          />
-          <Media.Body>
-            <h2 id="textoVentajas">{LabelACUSTICOS}</h2>
-          </Media.Body>
-        </Media>
-      </div>
-      <div id="Ventajas">
-        <Media>
-          <img
-            src={imgRapidaColocacion}
-            id="iconoVentajas"
-            alt={LabelRAPIDACOLOCACION}
-            align="right"
-          />
-          <Media.Body>
-            <h2 id="textoVentajas">{LabelRAPIDACOLOCACION}</h2>
-          </Media.Body>
-        </Media>
-      </div>
-      <div id="Ventajas">
-        <Media>
-          <img
-            src={imgAntiHongos}
-            id="iconoVentajas"
-            alt={LabelANTIHONGOS}
-            align="right"
-          />
-          <Media.Body>
-            <h2 id="textoVentajas">{LabelANTIHONGOS}</h2>
-          </Media.Body>
-        </Media>
-      </div>
-      <div id="Ventajas">
-        <Media>
-          <img
-            src={imgDecorativo}
-            id="iconoVentajas"
-            alt={LabelDECORATIVOS}
-            align="right"
-          />
-          <Media.Body>
-            <h2 id="textoVentajas">{LabelDECORATIVOS}</h2>
-          </Media.Body>
-        </Media>
-      </div>
-      <div id="Ventajas">
-        <Media>
-          <img
-            src={imgFacilMantenimiento}
-            id="iconoVentajas"
-            alt={LabelFACILMANTENIMIENTO}
-            align="right"
-          />
-          <Media.Body>
-            <h2 id="textoVentajas">{LabelFACILMANTENIMIENTO}</h2>
-          </Media.Body>
-        </Media>
-      </div>
+      <Row>
+        <Col>
+          <div id="Ventajas">
+            <Media>
+              <img
+                src={imgAntihumedad}
+                id="iconoVentajas"
+                alt={LabelANTIHUMEDAD}
+                align="right"
+              />
+              <Media.Body>
+                <h2 id="textoVentajas">{LabelANTIHUMEDAD}</h2>
+              </Media.Body>
+            </Media>
+          </div>
+        </Col>
+        <Col>
+          <div id="Ventajas">
+            <Media>
+              <img
+                src={imgRapidaColocacion}
+                id="iconoVentajas"
+                alt={LabelRAPIDACOLOCACION}
+                align="right"
+              />
+              <Media.Body>
+                <h2 id="textoVentajas">{LabelRAPIDACOLOCACION}</h2>
+              </Media.Body>
+            </Media>
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <div id="Ventajas">
+            <Media>
+              <img
+                src={imgAtermico}
+                id="iconoVentajas"
+                alt={LabelATERMICOS}
+                align="right"
+              />
+              <Media.Body>
+                <h2 id="textoVentajas">{LabelATERMICOS}</h2>
+              </Media.Body>
+            </Media>
+          </div>
+        </Col>
+        <Col>
+          <div id="Ventajas">
+            <Media>
+              <img
+                src={imgAntiHongos}
+                id="iconoVentajas"
+                alt={LabelANTIHONGOS}
+                align="right"
+              />
+              <Media.Body>
+                <h2 id="textoVentajas">{LabelANTIHONGOS}</h2>
+              </Media.Body>
+            </Media>
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <div id="Ventajas">
+            <Media>
+              <img
+                src={imgIncombustible}
+                id="iconoVentajas"
+                alt={LabelINCOMBUSTIBLES}
+                align="right"
+              />
+              <Media.Body>
+                <h2 id="textoVentajas">{LabelINCOMBUSTIBLES}</h2>
+              </Media.Body>
+            </Media>
+          </div>
+        </Col>
+        <Col>
+          <div id="Ventajas">
+            <Media>
+              <img
+                src={imgDecorativo}
+                id="iconoVentajas"
+                alt={LabelDECORATIVOS}
+                align="right"
+              />
+              <Media.Body>
+                <h2 id="textoVentajas">{LabelDECORATIVOS}</h2>
+              </Media.Body>
+            </Media>
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <div id="Ventajas">
+            <Media>
+              <img
+                src={imgAcustico}
+                id="iconoVentajas"
+                alt={LabelACUSTICOS}
+                align="right"
+              />
+              <Media.Body>
+                <h2 id="textoVentajas">{LabelACUSTICOS}</h2>
+              </Media.Body>
+            </Media>
+          </div>
+        </Col>
+        <Col>
+          <div id="Ventajas">
+            <Media>
+              <img
+                src={imgFacilMantenimiento}
+                id="iconoVentajas"
+                alt={LabelFACILMANTENIMIENTO}
+                align="right"
+              />
+              <Media.Body>
+                <h2 id="textoVentajas">{LabelFACILMANTENIMIENTO}</h2>
+              </Media.Body>
+            </Media>
+          </div>
+        </Col>
+      </Row>
     </div>
   );
 }
