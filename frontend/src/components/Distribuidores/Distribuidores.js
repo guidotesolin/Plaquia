@@ -20,7 +20,6 @@ class Distribuidores extends React.Component {
 
   Iniciar() {
     GetData = false;
-
     if (this.props.Idioma === "Por") {
       Pais = "País";
       Provincia = "Província";
@@ -48,7 +47,6 @@ class Distribuidores extends React.Component {
       .then((res) => {
         const data = res.data.data;
         GetData = true;
-
         this.setState({ listarDistribuidores: data });
       })
       .catch((error) => {
