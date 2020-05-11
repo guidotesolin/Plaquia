@@ -5,6 +5,7 @@ import "./Footer.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Media from "react-bootstrap/Media";
 
 import Esp from "../../img/Esp/Footer.png";
 import Eng from "../../img/Eng/Footer.png";
@@ -40,28 +41,40 @@ export default function Footer(props) {
         </Col>
         <Col sm id="FooterContacto">
           <Row>
-            <a href="mailto:contacto@plaquia.com.ar">
-              <i class="far fa-envelope" id="IconoContacto"></i>
-            </a>
-            <h5 id="DatosContacto">contacto@plaquia.com.ar</h5>
+            <Media id="DivContacto">
+              <a href="mailto:contacto@plaquia.com.ar">
+                <i class="far fa-envelope" id="IconoContacto"></i>
+              </a>
+              <Media.Body>
+                <h5 id="DatosContacto">Contacto@plaquia.com.ar</h5>
+              </Media.Body>
+            </Media>
           </Row>
           <Row>
-            <a href="tel:08104443216">
-              <i class="fas fa-phone-alt" id="IconoContacto"></i>
-            </a>
-            <h5 id="DatosContacto">0810 444 3216</h5>
+            <Media id="DivContacto">
+              <a href="tel:08104443216">
+                <i class="fas fa-phone-alt" id="IconoContacto"></i>
+              </a>
+              <Media.Body>
+                <h5 id="DatosContacto">0810 444 3216</h5>
+              </Media.Body>
+            </Media>
           </Row>
           <Row>
-            <a
-              rel="noopener noreferrer"
-              href="https://g.page/SeccomatCentro?share"
-              target="_blank"
-            >
-              <i class="fas fa-map-marker-alt" id="IconoContacto"></i>
-            </a>
-            <h5 id="DatosContacto">
-              25 de mayo y Cándido Pujato - Santa Fe - Argentina
-            </h5>
+            <Media id="DivContacto">
+              <a
+                rel="noopener noreferrer"
+                href="https://g.page/SeccomatCentro?share"
+                target="_blank"
+              >
+                <i class="fas fa-map-marker-alt" id="IconoContacto"></i>
+              </a>
+              <Media.Body>
+                <h5 id="DatosContacto">
+                  25 de mayo y Cándido Pujato - Santa Fe - Argentina
+                </h5>
+              </Media.Body>
+            </Media>
           </Row>
         </Col>
         <Col sm id="RedesSociales">
