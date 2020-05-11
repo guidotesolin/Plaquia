@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import Logo from "../img/Logo.png";
-import flagEsp from "../img/Flags/arg.png";
+import flagEsp from "../img/Flags/esp.png";
 import flagPor from "../img/Flags/por.png";
 import flagEng from "../img/Flags/eng.png";
 
