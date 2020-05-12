@@ -9,6 +9,12 @@ var Localidad;
 var Direccion;
 var Telefono;
 
+var ArrayPaises;
+var ArrayProvincias;
+
+var IndicePais;
+var IndiceProvincia;
+
 class Distribuidores extends React.Component {
   constructor(props) {
     super(props);
@@ -20,6 +26,8 @@ class Distribuidores extends React.Component {
 
   Iniciar() {
     GetData = false;
+    ArrayPaises = [];
+    ArrayProvincias = [];
     if (this.props.Idioma === "Por") {
       Pais = "País";
       Provincia = "Província";
@@ -54,22 +62,83 @@ class Distribuidores extends React.Component {
       });
   }
 
-  loadFillData() {
+  // Logica de corrimiento
+  Test() {
+    const CantPaises = ArrayPaises.length;
+    const CantProvincias = ArrayProvincias.length;
+    for (var x = 0; x < CantPaises; x++) {
+      return <p>{ArrayPaises[x]}</p>;
+    }
+  }
+  LlenarListas() {
+    this.state.listarDistribuidores.map((distribuidor) => {
+      ArrayPaises.push(distribuidor.pais);
+      ArrayProvincias.push(distribuidor.provincia);
+    });
+    ArrayPaises = [...new Set(ArrayPaises)];
+    ArrayProvincias = [...new Set(ArrayProvincias)];
+  }
+  ShowDistribuidores(IndicePais, IndiceProvincia) {
+    IndicePais = 0;
+    IndiceProvincia = 0;
+    return (
+      <div>
+        {this.ShowPaises(IndicePais)}
+        {this.ShowProvincias(IndiceProvincia)}
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">{Localidad}</th>
+                <th scope="col">{Direccion}</th>
+                <th scope="col">{Telefono}</th>
+              </tr>
+            </thead>
+            <tbody>{this.InfoDistribuidor(IndicePais, IndiceProvincia)}</tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
+
+  ShowPaises(IndicePais) {
+    return (
+      <div>
+        <hr />
+        <h1>{ArrayPaises[IndicePais]}</h1>
+        <br />
+      </div>
+    );
+  }
+  ShowProvincias(IndiceProvincia) {
+    return (
+      <div>
+        <li>
+          <h3>{ArrayProvincias[IndiceProvincia]}</h3>
+        </li>
+      </div>
+    );
+  }
+
+  InfoDistribuidor(IndicePais, IndiceProvincia) {
     return this.state.listarDistribuidores.map((distribuidor) => {
-      return (
-        <tr>
-          <th>{distribuidor.pais}</th>
-          <td>{distribuidor.provincia}</td>
-          <td>{distribuidor.localidad}</td>
-          <td>{distribuidor.direccion}</td>
-          <td>{distribuidor.telefono}</td>
-        </tr>
-      );
+      if (distribuidor.pais === ArrayPaises[IndicePais]) {
+        if (distribuidor.provincia === ArrayProvincias[IndiceProvincia]) {
+          return (
+            <tr>
+              <td>{distribuidor.localidad}</td>
+              <td>{distribuidor.direccion}</td>
+              <td>{distribuidor.telefono}</td>
+            </tr>
+          );
+        }
+      }
     });
   }
 
   render() {
     if (GetData) {
+      this.LlenarListas();
       return (
         <div>
           <div class="container-fluid">
@@ -83,19 +152,9 @@ class Distribuidores extends React.Component {
               ></iframe>
             </div>
             <br />
+            {this.Test()}
+            {this.ShowDistribuidores()}
           </div>
-          <table class="table table-hover table-striped">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">{Pais}</th>
-                <th scope="col">{Provincia}</th>
-                <th scope="col">{Localidad}</th>
-                <th scope="col">{Direccion}</th>
-                <th scope="col">{Telefono}</th>
-              </tr>
-            </thead>
-            <tbody>{this.loadFillData()}</tbody>
-          </table>
         </div>
       );
     } else {

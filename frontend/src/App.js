@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Renderizar from "./Renderizar";
-import BarraDeNavegacion from "./components/Barradenavegacion";
+import BarraDeNavegacion from "./components/barradenavegacion";
 
 function App() {
   const [idioma, setIdioma] = useState("Esp");
