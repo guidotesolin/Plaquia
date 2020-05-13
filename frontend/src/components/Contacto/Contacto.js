@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./Contacto.css";
-import Formulario from "./Formulario";
+import Formulario from "./FormularioSinBack";
 
 function Contacto(props) {
   switch (props.Idioma) {

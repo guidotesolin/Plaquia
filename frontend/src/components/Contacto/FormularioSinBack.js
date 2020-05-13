@@ -1,0 +1,214 @@
+import React, { Component } from "react";
+
+var LabelNombre;
+var LabelMail;
+var LabelTelefono;
+var LabelConsulta;
+var LabelPais;
+var LabelProvincia;
+var LabelLocalidad;
+var LabelOtro;
+var Epigrafe;
+var LabelBoton;
+var LabelSelect;
+var Enviado;
+var Error;
+
+const ServiceID = "default_service";
+const TemplateID = "template_pfpTHCB3";
+
+class ContactoSinBack extends Component {
+  Iniciar() {
+    if (this.props.Idioma === "Por") {
+      LabelNombre = "Nome:";
+      LabelMail = "Correio:";
+      LabelTelefono = "Telefone:";
+      LabelConsulta = "Consulte:";
+      LabelPais = "País:";
+      LabelProvincia = "Província:";
+      LabelLocalidad = "Cidade:";
+      LabelSelect = "Selecione seu país";
+      LabelOtro = "Outros";
+      Epigrafe = "Todos os campos são de preenchimento obrigatório";
+      LabelBoton = "Envie consulta";
+      Enviado =
+        "A mensagem foi enviada. Em breve estaremos entrando em contato com você.";
+      Error =
+        "Envio de erro. Por favor, entre em contato diretamente com contacto@plaquia.com.ar.";
+    } else if (this.props.Idioma === "Eng") {
+      LabelNombre = "Name:";
+      LabelMail = "Mail:";
+      LabelTelefono = "Phone:";
+      LabelPais = "Country:";
+      LabelProvincia = "State:";
+      LabelLocalidad = "City:";
+      LabelSelect = "Select your country";
+      LabelOtro = "Another";
+      LabelConsulta = "Message:";
+      Epigrafe = "All Labels are required";
+      LabelBoton = "Send query";
+      Enviado = "The message has been sent. We will be contacting you shortly.";
+      Error = "Error sending. Please contact contacto@plaquia.com.ar directly.";
+    } else {
+      LabelNombre = "Nombre:";
+      LabelMail = "Mail:";
+      LabelTelefono = "Teléfono:";
+      LabelPais = "País:";
+      LabelProvincia = "Provincia:";
+      LabelLocalidad = "Ciudad:";
+      LabelConsulta = "Consulta:";
+      LabelOtro = "Otro";
+      LabelSelect = "Seleccione su país";
+      Epigrafe = "Todos los campos son obligatorios";
+      LabelBoton = "Enviar consulta";
+      Enviado =
+        "Su mensaje ha sido enviado. A la brevedad nos estaremos poniendo en contacto.";
+      Error =
+        "Error al enviar. Comuniquese directamente a contacto@plaquia.com.ar";
+    }
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    var DatosFormulario = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      message: document.getElementById("message").value,
+      country: document.getElementById("country").value,
+      province: document.getElementById("province").value,
+      city: document.getElementById("city").value,
+    };
+    window.emailjs
+      .send(ServiceID, TemplateID, DatosFormulario)
+      .then((res) => {
+        this.resetForm();
+        this.mostrarMensaje();
+      })
+      .catch((err) => alert(Error));
+  }
+
+  resetForm() {
+    document.getElementById("FormularioContacto").reset();
+  }
+
+  mostrarMensaje() {
+    document.getElementById("MensajeEnviado").style.display = "block";
+  }
+
+  render() {
+    this.Iniciar();
+    return (
+      <div>
+        <form
+          id="FormularioContacto"
+          onSubmit={this.handleSubmit.bind(this)}
+          method="POST"
+        >
+          <div class="form-row">
+            <div class="col">
+              <div className="form-group">
+                <label for="name">{LabelNombre}</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col">
+              <div className="form-group">
+                <label for="email">{LabelMail}</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col">
+              <div className="form-group">
+                <label for="phone">{LabelTelefono}</label>
+                <input
+                  type="tel"
+                  className="form-control"
+                  id="phone"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="country">{LabelPais}</label>
+                <select class="form-control" id="country" required>
+                  <option value="" disabled selected hidden>
+                    {LabelSelect}
+                  </option>
+                  <option>Argentina</option>
+                  <option>Bolivia</option>
+                  <option>Brasil</option>
+                  <option>Paraguay</option>
+                  <option>Uruguay</option>
+                  <option>{LabelOtro}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col">
+              <div className="form-group">
+                <label for="province">{LabelProvincia}</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="province"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col">
+              <div className="form-group">
+                <label for="city">{LabelLocalidad}</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="city"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div className="form-group">
+            <label for="message">{LabelConsulta}</label>
+            <textarea
+              className="form-control"
+              rows="5"
+              id="message"
+              required
+            ></textarea>
+          </div>
+          <small class="form-text text-muted">{Epigrafe}</small>
+          <button
+            id="BotonEnviarConsulta"
+            type="submit"
+            className="btn btn-primary btn-block"
+          >
+            {LabelBoton}
+          </button>
+        </form>
+        <div id="MensajeEnviado" style={{ display: "none" }}>
+          <br />
+          <h5>{Enviado}</h5>
+          <br />
+        </div>
+      </div>
+    );
+  }
+}
+
+export default ContactoSinBack;
