@@ -71,7 +71,7 @@ export default function Footer(props) {
               </a>
               <Media.Body>
                 <h5 id="DatosContacto">
-                  25 de mayo y Cándido Pujato - Santa Fe - Argentina
+                  25 de mayo 3006 - Santa Fe - Argentina
                 </h5>
               </Media.Body>
             </Media>

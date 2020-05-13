@@ -6,9 +6,13 @@ import ModalImage from "react-modal-image";
 import Card from "react-bootstrap/Card";
 import CardDeck from "react-bootstrap/CardDeck";
 
-import imgJade from "../../img/Modelos/PlacaJade.png";
-import imgCuarzo from "../../img/Modelos/PlacaCuarzo.png";
-import imgOnice from "../../img/Modelos/PlacaOnice.png";
+import smallJade from "../../img/Modelos/smallJade.jpg";
+import smallCuarzo from "../../img/Modelos/smallCuarzo.jpg";
+import smallOnice from "../../img/Modelos/smallOnice.jpg";
+
+import imgJade from "../../img/Modelos/PlacaJade.jpg";
+import imgCuarzo from "../../img/Modelos/PlacaCuarzo.jpg";
+import imgOnice from "../../img/Modelos/PlacaOnice.jpg";
 
 export default function ModelosPlacas(props) {
   switch (props.Idioma) {
@@ -22,7 +26,7 @@ export default function ModelosPlacas(props) {
               </Card.Header>
               <ModalImage
                 id="fotoPlaca"
-                small={imgCuarzo}
+                small={smallCuarzo}
                 large={imgCuarzo}
                 hideDownload="true"
                 hideZoom="false"
@@ -41,7 +45,7 @@ export default function ModelosPlacas(props) {
               </Card.Header>
               <ModalImage
                 id="fotoPlaca"
-                small={imgJade}
+                small={smallJade}
                 large={imgJade}
                 hideDownload="true"
                 hideZoom="false"
@@ -60,7 +64,7 @@ export default function ModelosPlacas(props) {
               </Card.Header>
               <ModalImage
                 id="fotoPlaca"
-                small={imgOnice}
+                small={smallOnice}
                 large={imgOnice}
                 hideDownload="true"
                 hideZoom="false"
@@ -87,7 +91,7 @@ export default function ModelosPlacas(props) {
               </Card.Header>
               <ModalImage
                 id="fotoPlaca"
-                small={imgCuarzo}
+                small={smallCuarzo}
                 large={imgCuarzo}
                 hideDownload="true"
                 hideZoom="false"
@@ -106,7 +110,7 @@ export default function ModelosPlacas(props) {
               </Card.Header>
               <ModalImage
                 id="fotoPlaca"
-                small={imgJade}
+                small={smallJade}
                 large={imgJade}
                 hideDownload="true"
                 hideZoom="false"
@@ -125,7 +129,7 @@ export default function ModelosPlacas(props) {
               </Card.Header>
               <ModalImage
                 id="fotoPlaca"
-                small={imgOnice}
+                small={smallOnice}
                 large={imgOnice}
                 hideDownload="true"
                 hideZoom="false"
@@ -152,7 +156,7 @@ export default function ModelosPlacas(props) {
               </Card.Header>
               <ModalImage
                 id="fotoPlaca"
-                small={imgCuarzo}
+                small={smallCuarzo}
                 large={imgCuarzo}
                 hideDownload="true"
                 hideZoom="false"
@@ -171,7 +175,7 @@ export default function ModelosPlacas(props) {
               </Card.Header>
               <ModalImage
                 id="fotoPlaca"
-                small={imgJade}
+                small={smallJade}
                 large={imgJade}
                 hideDownload="true"
                 hideZoom="false"
@@ -190,7 +194,7 @@ export default function ModelosPlacas(props) {
               </Card.Header>
               <ModalImage
                 id="fotoPlaca"
-                small={imgOnice}
+                small={smallOnice}
                 large={imgOnice}
                 hideDownload="true"
                 hideZoom="false"

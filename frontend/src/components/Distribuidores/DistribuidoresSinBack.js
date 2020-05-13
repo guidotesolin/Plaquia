@@ -19,8 +19,8 @@ class Distribuidores extends React.Component {
       Telefono = "Phone";
     } else {
       Localidad = "Localidad";
-      Direccion = "Direccion";
-      Telefono = "Telefono";
+      Direccion = "Dirección";
+      Telefono = "Teléfono";
     }
   }
 
@@ -105,7 +105,7 @@ class Distribuidores extends React.Component {
             </tbody>
           </Table>
           <h4>
-            <li>Cordoba</li>
+            <li>Córdoba</li>
           </h4>
           <Table>
             <thead>
@@ -124,7 +124,7 @@ class Distribuidores extends React.Component {
             </tbody>
           </Table>
           <h4>
-            <li>Entre Rios</li>
+            <li>Entre Ríos</li>
           </h4>
           <Table>
             <thead>
@@ -136,7 +136,7 @@ class Distribuidores extends React.Component {
             </thead>
             <tbody>
               <tr>
-                <td>Parana</td>
+                <td>Paraná</td>
                 <td>Av. Francisco Ramirez 4848</td>
                 <td>343 435 2212</td>
               </tr>
@@ -212,7 +212,7 @@ class Distribuidores extends React.Component {
             </thead>
             <tbody>
               <tr>
-                <td>Calchaqui </td>
+                <td>Calchaquí</td>
                 <td>25 de Mayo 445</td>
                 <td>03483 470663</td>
               </tr>

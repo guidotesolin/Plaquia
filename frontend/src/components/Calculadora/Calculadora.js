@@ -11,13 +11,13 @@ import Button from "react-bootstrap/Button";
 import MyVerticallyCenteredModal from "./Modal";
 
 import espPresentacion from "../../img/Esp/Presentacion.jpg";
-import espRendimiento from "../../img/Esp/Rendimiento.png";
+import espRendimiento from "../../img/Esp/Rendimiento.jpg";
 
-import engPresentacion from "../../img/Eng/Presentacion.png";
-import engRendimiento from "../../img/Eng/Rendimiento.png";
+import engPresentacion from "../../img/Eng/Presentacion.jpg";
+import engRendimiento from "../../img/Eng/Rendimiento.jpg";
 
-import porPresentacion from "../../img/Por/Presentacion.png";
-import porRendimiento from "../../img/Por/Rendimiento.png";
+import porPresentacion from "../../img/Por/Presentacion.jpg";
+import porRendimiento from "../../img/Por/Rendimiento.jpg";
 
 var Resultado = {};
 var imgPresentacion;

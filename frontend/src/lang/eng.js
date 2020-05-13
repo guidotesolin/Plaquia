@@ -27,7 +27,7 @@ class RenderEng extends Component {
         </div>
         <div id="Operation" className="Funcionamiento">
           <Container fluid>
-            <h1 id="TituloSeccion">OPERATION</h1>
+            <h1 id="TituloSeccion">HOW IT WORKS?</h1>
             <br />
             <Funcionamiento Idioma="Eng" />
           </Container>

@@ -17,7 +17,7 @@ export default function SliderResultados(props) {
     "Somos a primeira fábrica de placas anti-humidade a desenvolver um produto adaptado para a venda em massa, com uma embalagem revolucionária que facilita a sua arrumação e comercialização. Pensado com a modalidade, Faça-o você mesmo!";
 
   const DescripcionEng =
-    "We are the first factory of anti-humidity plates to develop a product that is adapted for mass sale, with a revolutionary packaging that facilitates its stowage and marketing. Thought with the modality, Do it yourself!";
+    "We are the first factory of anti-humidity boards to develop a product that is adapted for mass sale, with a revolutionary packaging that facilitates its storage and commercialization. Thought with the modality: Do it yourself!";
   switch (props.Idioma) {
     case "Por":
       return (

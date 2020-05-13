@@ -3,20 +3,20 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Container from "react-bootstrap/Container";
 
-import Resultado1 from "../img/antesydespues/esp/Antesydespues1.png";
-import Resultado2 from "../img/antesydespues/esp/Antesydespues2.png";
-import Resultado3 from "../img/antesydespues/esp/Antesydespues3.png";
-import Resultado4 from "../img/antesydespues/esp/Antesydespues4.png";
+import Resultado1 from "../img/antesydespues/esp/Antesydespues1.jpg";
+import Resultado2 from "../img/antesydespues/esp/Antesydespues2.jpg";
+import Resultado3 from "../img/antesydespues/esp/Antesydespues3.jpg";
+import Resultado4 from "../img/antesydespues/esp/Antesydespues4.jpg";
 
-import Eng1 from "../img/antesydespues/eng/Antesydespues1.png";
-import Eng2 from "../img/antesydespues/eng/Antesydespues2.png";
-import Eng3 from "../img/antesydespues/eng/Antesydespues3.png";
-import Eng4 from "../img/antesydespues/eng/Antesydespues4.png";
+import Eng1 from "../img/antesydespues/eng/Antesydespues1.jpg";
+import Eng2 from "../img/antesydespues/eng/Antesydespues2.jpg";
+import Eng3 from "../img/antesydespues/eng/Antesydespues3.jpg";
+import Eng4 from "../img/antesydespues/eng/Antesydespues4.jpg";
 
-import Por1 from "../img/antesydespues/por/AntesyDespues1.png";
-import Por2 from "../img/antesydespues/por/AntesyDespues2.png";
-import Por3 from "../img/antesydespues/por/AntesyDespues3.png";
-import Por4 from "../img/antesydespues/por/AntesyDespues4.png";
+import Por1 from "../img/antesydespues/por/AntesyDespues1.jpg";
+import Por2 from "../img/antesydespues/por/AntesyDespues2.jpg";
+import Por3 from "../img/antesydespues/por/AntesyDespues3.jpg";
+import Por4 from "../img/antesydespues/por/AntesyDespues4.jpg";
 
 export default function SliderResultados(props) {
   switch (props.Idioma) {

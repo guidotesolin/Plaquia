@@ -6,14 +6,14 @@ import Media from "react-bootstrap/Media";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import imgAcustico from "../../img/Ventajas/Acustico.png";
-import imgAntiHongos from "../../img/Ventajas/AntiHongos.png";
-import imgAntihumedad from "../../img/Ventajas/Antihumedad.png";
-import imgAtermico from "../../img/Ventajas/Atermico.png";
-import imgDecorativo from "../../img/Ventajas/Decorativo.png";
-import imgFacilMantenimiento from "../../img/Ventajas/FacilMantenimiento.png";
-import imgIncombustible from "../../img/Ventajas/Incombustible.png";
-import imgRapidaColocacion from "../../img/Ventajas/RapidaColocacion.png";
+import imgAcustico from "../../img/Ventajas/Acustico.jpg";
+import imgAntiHongos from "../../img/Ventajas/AntiHongos.jpg";
+import imgAntihumedad from "../../img/Ventajas/Antihumedad.jpg";
+import imgAtermico from "../../img/Ventajas/Atermico.jpg";
+import imgDecorativo from "../../img/Ventajas/Decorativo.jpg";
+import imgFacilMantenimiento from "../../img/Ventajas/FacilMantenimiento.jpg";
+import imgIncombustible from "../../img/Ventajas/Incombustible.jpg";
+import imgRapidaColocacion from "../../img/Ventajas/RapidaColocacion.jpg";
 
 var LabelANTIHUMEDAD;
 var LabelATERMICOS;

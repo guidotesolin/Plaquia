@@ -8,8 +8,8 @@ import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 
 import FuncionamientoEsp from "../../img/Esp/Funcionamiento.jpg";
-import FuncionamientoEng from "../../img/Eng/Funcionamiento.png";
-import FuncionamientoPor from "../../img/Por/Funcionamiento.png";
+import FuncionamientoEng from "../../img/Eng/Funcionamiento.jpg";
+import FuncionamientoPor from "../../img/Por/Funcionamiento.jpg";
 
 export default function SliderResultados(props) {
   switch (props.Idioma) {

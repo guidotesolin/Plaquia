@@ -3,9 +3,9 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Container from "react-bootstrap/Container";
 
-import imgColocacion1 from "../../img/Colocacion/Colocacion1.png";
-import imgColocacion2 from "../../img/Colocacion/Colocacion2.png";
-import imgColocacion3 from "../../img/Colocacion/Colocacion3.png";
+import imgColocacion1 from "../../img/Colocacion/Colocacion1.jpg";
+import imgColocacion2 from "../../img/Colocacion/Colocacion2.jpg";
+import imgColocacion3 from "../../img/Colocacion/Colocacion3.jpg";
 
 export default function SliderColocacion() {
   return (
