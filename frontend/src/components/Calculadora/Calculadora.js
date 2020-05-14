@@ -84,79 +84,79 @@ class Calculadora extends React.Component {
 
   render() {
     return (
-      <div>
-        <CardDeck>
-          <Card>
-            <Card.Img
-              variant="top"
-              src={imgPresentacion}
-              height="400"
-              width="400"
-              id="ImagenCalculadora"
-            />
-          </Card>
-          <Card>
-            <Card.Img
-              variant="top"
-              src={imgRendimiento}
-              height="400"
-              width="400"
-              id="ImagenCalculadora"
-            />
-          </Card>
-          <Card id="ContenedorCalculadora">
-            <Card.Body>
-              <br />
-              <br />
-              <br />
-              <br />
-              <Form onSubmit={this.handleSubmit} id="FormCalculadora">
-                <Form.Group>
-                  <Form.Label>{nombreAlto}</Form.Label>
-                  <Form.Control
-                    id="InputCalculadora"
-                    name="alto"
-                    type="number"
-                    step="0.01"
-                    min="0.1"
-                    max="200"
-                    autocomplete="off"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    required
-                  />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>{nombreAncho}</Form.Label>
-                  <Form.Control
-                    id="InputCalculadora"
-                    name="ancho"
-                    type="number"
-                    step="0.01"
-                    min="0.1"
-                    max="200"
-                    autocomplete="off"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    required
-                  />
-                </Form.Group>
-                <Row className="justify-content-md-center">
-                  <Button variant="primary" type="submit" id="BotonCalcular">
-                    {nombreBoton}
-                  </Button>
-                  <br />
-                  <MyVerticallyCenteredModal
-                    Idioma={this.props.Idioma}
-                    Datos={Resultado}
-                    show={this.state.modalShow}
-                    onHide={() => this.setState({ modalShow: false })}
-                  />
-                </Row>
-              </Form>
-            </Card.Body>
-          </Card>
-        </CardDeck>
+      <div class="flex-container">
+        <div class="row">
+          <CardDeck>
+            <Card id="CardsCalculadora">
+              <div class="col align-self-center">
+                <img
+                  src={imgPresentacion}
+                  class="img-fluid"
+                  alt="..."
+                  id="ImagenesCalculadora"
+                ></img>
+              </div>
+            </Card>
+            <Card id="CardsCalculadora">
+              <div class="col align-self-center">
+                <img
+                  src={imgRendimiento}
+                  class="img-fluid"
+                  alt="..."
+                  id="ImagenesCalculadora"
+                ></img>
+              </div>
+            </Card>
+            <div class="col align-self-center" id="DivCaluladora">
+              <Card id="CardsCalculadora">
+                <Form onSubmit={this.handleSubmit} id="FormCalculadora">
+                  <Form.Group>
+                    <Form.Label>{nombreAlto}</Form.Label>
+                    <Form.Control
+                      id="InputCalculadora"
+                      name="alto"
+                      type="number"
+                      step="0.01"
+                      min="0.1"
+                      max="200"
+                      autocomplete="off"
+                      value={this.state.value}
+                      onChange={this.handleChange}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>{nombreAncho}</Form.Label>
+                    <Form.Control
+                      id="InputCalculadora"
+                      name="ancho"
+                      type="number"
+                      step="0.01"
+                      min="0.1"
+                      max="200"
+                      autocomplete="off"
+                      value={this.state.value}
+                      onChange={this.handleChange}
+                      required
+                    />
+                  </Form.Group>
+                  <Row className="justify-content-md-center">
+                    <Button variant="primary" type="submit" id="BotonCalcular">
+                      {nombreBoton}
+                    </Button>
+                    <br />
+                    <MyVerticallyCenteredModal
+                      Idioma={this.props.Idioma}
+                      Datos={Resultado}
+                      show={this.state.modalShow}
+                      onHide={() => this.setState({ modalShow: false })}
+                    />
+                  </Row>
+                </Form>
+              </Card>
+            </div>
+          </CardDeck>
+        </div>
       </div>
     );
   }
