@@ -1,3 +1,7 @@
+#Body {
+  overflow-x: hidden;
+}
+
 /* Separar secciones y darle color de fondo */
 #Top,
 .Calculadora,

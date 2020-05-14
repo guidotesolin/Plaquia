@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import "./Funcionamiento.css";
 
@@ -11,34 +11,29 @@ import FuncionamientoEsp from "../../img/Esp/Funcionamiento.jpg";
 import FuncionamientoEng from "../../img/Eng/Funcionamiento.jpg";
 import FuncionamientoPor from "../../img/Por/Funcionamiento.jpg";
 
-export default function SliderResultados(props) {
-  switch (props.Idioma) {
-    case "Por":
-      return (
-        <div>
-          <Row>
-            <Image src={FuncionamientoPor} fluid id="imgFuncionamiento" />
-          </Row>
-          <Ventajas Idioma="Por" />
-        </div>
-      );
-    case "Eng":
-      return (
-        <div>
-          <Row>
-            <Image src={FuncionamientoEng} fluid id="imgFuncionamiento" />
-          </Row>
-          <Ventajas Idioma="Eng" />
-        </div>
-      );
-    default:
-      return (
-        <div>
-          <Row>
-            <Image src={FuncionamientoEsp} fluid id="imgFuncionamiento" />
-          </Row>
-          <Ventajas Idioma="Esp" />
-        </div>
-      );
+var Imagen;
+
+class Funcionamiento extends Component {
+  Iniciar() {
+    if (this.props.Idioma === "Por") {
+      Imagen = FuncionamientoPor;
+    } else if (this.props.Idioma === "Eng") {
+      Imagen = FuncionamientoEng;
+    } else {
+      Imagen = FuncionamientoEsp;
+    }
+  }
+  render() {
+    this.Iniciar();
+    return (
+      <div>
+        <Row>
+          <Image src={Imagen} fluid id="imgFuncionamiento" />
+        </Row>
+        <Ventajas Idioma={this.props.Idioma} />
+      </div>
+    );
   }
 }
+
+export default Funcionamiento;

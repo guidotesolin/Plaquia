@@ -87,10 +87,22 @@ class Calculadora extends React.Component {
       <div>
         <CardDeck>
           <Card>
-            <Card.Img variant="top" src={imgPresentacion} height="400" />
+            <Card.Img
+              variant="top"
+              src={imgPresentacion}
+              height="400"
+              width="400"
+              id="ImagenCalculadora"
+            />
           </Card>
           <Card>
-            <Card.Img variant="top" src={imgRendimiento} height="400" />
+            <Card.Img
+              variant="top"
+              src={imgRendimiento}
+              height="400"
+              width="400"
+              id="ImagenCalculadora"
+            />
           </Card>
           <Card id="ContenedorCalculadora">
             <Card.Body>

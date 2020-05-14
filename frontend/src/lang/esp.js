@@ -19,7 +19,7 @@ import "../css/Body.css";
 class RenderizarSpa extends Component {
   render() {
     return (
-      <div>
+      <div id="Body">
         <div id="Top">
           <Container>
             <Top Idioma="Esp" />
