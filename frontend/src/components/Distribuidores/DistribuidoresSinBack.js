@@ -10,7 +10,7 @@ var Telefono;
 class Distribuidores extends React.Component {
   Iniciar() {
     if (this.props.Idioma === "Por") {
-      Localidad = "Localização";
+      Localidad = "Cidade";
       Direccion = "Direção";
       Telefono = "Telefone";
     } else if (this.props.Idioma === "Eng") {
@@ -18,7 +18,7 @@ class Distribuidores extends React.Component {
       Direccion = "Address";
       Telefono = "Phone";
     } else {
-      Localidad = "Localidad";
+      Localidad = "Ciudad";
       Direccion = "Dirección";
       Telefono = "Teléfono";
     }

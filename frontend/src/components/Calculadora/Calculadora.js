@@ -108,6 +108,8 @@ class Calculadora extends React.Component {
               </div>
             </Card>
             <div class="col align-self-center" id="DivCaluladora">
+              <br />
+              <br />
               <Card id="CardsCalculadora">
                 <Form onSubmit={this.handleSubmit} id="FormCalculadora">
                   <Form.Group>
@@ -141,7 +143,12 @@ class Calculadora extends React.Component {
                     />
                   </Form.Group>
                   <Row className="justify-content-md-center">
-                    <Button variant="primary" type="submit" id="BotonCalcular">
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      size="lg"
+                      id="BotonCalcular"
+                    >
                       {nombreBoton}
                     </Button>
                     <br />
@@ -154,6 +161,8 @@ class Calculadora extends React.Component {
                   </Row>
                 </Form>
               </Card>
+              <br />
+              <br />
             </div>
           </CardDeck>
         </div>

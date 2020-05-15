@@ -15,14 +15,11 @@
   border: none;
 }
 
-#DivCaluladora {
-  border-radius: 3%;
-}
 Form.Control {
-  width: 90%;
+  width: 95%;
 }
 #InputCalculadora {
-  width: 90%;
+  width: 95%;
 }
 #BotonCalcular {
   background-color: #dee4a0;

@@ -43,7 +43,7 @@ export default function Footer(props) {
           <Row>
             <Media id="DivContacto">
               <a href="mailto:contacto@plaquia.com.ar">
-                <i class="far fa-envelope" id="IconoContacto"></i>
+                <i class="fas fa-envelope" id="IconoContacto"></i>
               </a>
               <Media.Body>
                 <h5 id="DatosContacto">Contacto@plaquia.com.ar</h5>
@@ -57,6 +57,20 @@ export default function Footer(props) {
               </a>
               <Media.Body>
                 <h5 id="DatosContacto">0810 444 3216</h5>
+              </Media.Body>
+            </Media>
+          </Row>
+          <Row>
+            <Media id="DivContacto">
+              <a
+                rel="noopener noreferrer"
+                href="https://wa.me/5493434715085"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp" id="IconoContacto"></i>
+              </a>
+              <Media.Body>
+                <h5 id="DatosContacto">343 471 5085</h5>
               </Media.Body>
             </Media>
           </Row>
