@@ -181,9 +181,9 @@ class ContactoSinBack extends Component {
       email: document.getElementById("email").value,
       phone: document.getElementById("phone").value,
       message: document.getElementById("message").value,
-      country: document.getElementById("country").value,
-      province: document.getElementById("province").value,
-      city: document.getElementById("city").value,
+      country: document.getElementById("SelectPais").value,
+      province: document.getElementById("SelectProvincia").value,
+      city: document.getElementById("SelectCiudad").value,
     };
     window.emailjs
       .send(ServiceID, TemplateID, DatosFormulario)
@@ -248,43 +248,39 @@ class ContactoSinBack extends Component {
               </div>
             </div>
           </div>
+          <p>Ubicacion</p>
           <div class="form-row">
             <div class="col">
               <div class="form-group">
-                <label for="country">{LabelPais}</label>
-                <select class="form-control" id="country" required>
+                <select class="form-control" id="SelectPais" required>
                   <option value="" disabled selected hidden>
                     {LabelSelect}
                   </option>
-                  <option>Argentina</option>
-                  <option>Bolivia</option>
-                  <option>Brasil</option>
-                  <option>Paraguay</option>
-                  <option>Uruguay</option>
-                  <option>{LabelOtro}</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Bolivia">Bolivia</option>
+                  <option value="Brasil">Brasil</option>
+                  <option value="Paraguay">Paraguay</option>
+                  <option value="Uruguay">Uruguay</option>
+                  <option value="Otro">{LabelOtro}</option>
                 </select>
               </div>
             </div>
 
             <div class="col">
               <div className="form-group">
-                <label for="province">{LabelProvincia}</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="province"
-                  required
-                />
+                <select class="form-control" id="SelectProvincia" disabled>
+                  <option selected>Provincia</option>
+                </select>
               </div>
             </div>
 
             <div class="col">
               <div className="form-group">
-                <label for="city">{LabelLocalidad}</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="city"
+                  id="SelectCiudad"
+                  placeholder="Ciudad"
                   required
                 />
               </div>
