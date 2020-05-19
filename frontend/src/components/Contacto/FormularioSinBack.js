@@ -11,6 +11,7 @@ var LabelOtro;
 var Epigrafe;
 var LabelBoton;
 var LabelSelect;
+var LabelOtroPais;
 var Enviado;
 var Error;
 
@@ -124,6 +125,8 @@ const DepartamentosParaguay = [
 const ServiceID = "default_service";
 const TemplateID = "template_pfpTHCB3";
 
+var PrimeraOpcion;
+
 class ContactoSinBack extends Component {
   Iniciar() {
     if (this.props.Idioma === "Por") {
@@ -135,13 +138,14 @@ class ContactoSinBack extends Component {
       LabelProvincia = "Província";
       LabelLocalidad = "Cidade";
       LabelSelect = "Selecione seu país";
-      LabelOtro = "Outros";
+      LabelOtro = "Outro país";
       Epigrafe = "Todos os campos são de preenchimento obrigatório";
       LabelBoton = "Envie consulta";
       Enviado =
         "A mensagem foi enviada. Em breve estaremos entrando em contato com você.";
       Error =
         "Envio de erro. Por favor, entre em contato diretamente com contacto@plaquia.com.ar.";
+      LabelOtroPais = "Indique a sua localização no campo de mensagens";
     } else if (this.props.Idioma === "Eng") {
       LabelNombre = "Name:";
       LabelMail = "Mail:";
@@ -150,12 +154,13 @@ class ContactoSinBack extends Component {
       LabelProvincia = "State";
       LabelLocalidad = "City";
       LabelSelect = "Select your country";
-      LabelOtro = "Another";
+      LabelOtro = "Another country";
       LabelConsulta = "Message:";
       Epigrafe = "All Labels are required";
       LabelBoton = "Send query";
       Enviado = "The message has been sent. We will be contacting you shortly.";
       Error = "Error sending. Please contact contacto@plaquia.com.ar directly.";
+      LabelOtroPais = "Indicate your location in the message field";
     } else {
       LabelNombre = "Nombre:";
       LabelMail = "Mail:";
@@ -164,7 +169,7 @@ class ContactoSinBack extends Component {
       LabelProvincia = "Provincia";
       LabelLocalidad = "Ciudad";
       LabelConsulta = "Consulta:";
-      LabelOtro = "Otro";
+      LabelOtro = "Otro país";
       LabelSelect = "Seleccione su país";
       Epigrafe = "Todos los campos son obligatorios";
       LabelBoton = "Enviar consulta";
@@ -172,6 +177,7 @@ class ContactoSinBack extends Component {
         "Su mensaje ha sido enviado. A la brevedad nos estaremos poniendo en contacto.";
       Error =
         "Error al enviar. Comuniquese directamente a contacto@plaquia.com.ar";
+      LabelOtroPais = "Indique su localización en el campo de mensaje";
     }
   }
   handleSubmit(e) {
@@ -204,7 +210,24 @@ class ContactoSinBack extends Component {
 
   HabilitarCiudad() {
     const SelectCiudad = document.getElementById("SelectCiudad");
+    SelectCiudad.value = "";
+    SelectCiudad.placeholder = LabelLocalidad;
     SelectCiudad.disabled = false;
+  }
+
+  OtroPais() {
+    alert(LabelOtroPais);
+    const SelectProvincia = document.getElementById("SelectProvincia");
+    const SelectCiudad = document.getElementById("SelectCiudad");
+    SelectProvincia.disabled = true;
+    SelectCiudad.disabled = true;
+    SelectProvincia.innerHTML = "";
+    var OtroPaisProvincia = document.createElement("option");
+    OtroPaisProvincia.value = "Otro pais";
+    OtroPaisProvincia.text = LabelOtro;
+    SelectProvincia.appendChild(OtroPaisProvincia);
+    SelectCiudad.value = LabelOtro;
+    SelectCiudad.placeholder = LabelOtro;
   }
 
   MostrarProvincias() {
@@ -213,7 +236,7 @@ class ContactoSinBack extends Component {
     const SelectProvincia = document.getElementById("SelectProvincia");
     SelectProvincia.disabled = false;
     SelectProvincia.innerHTML = "";
-    var PrimeraOpcion = document.createElement("option");
+    PrimeraOpcion = document.createElement("option");
     PrimeraOpcion.value = "";
     PrimeraOpcion.hidden = true;
     if (this.props.Idioma === "Por") {
@@ -241,7 +264,6 @@ class ContactoSinBack extends Component {
         PrimeraOpcion.text = "Seleccione departamento";
       }
     }
-
     SelectProvincia.appendChild(PrimeraOpcion);
     switch (Pais) {
       case "Argentina":
@@ -284,8 +306,9 @@ class ContactoSinBack extends Component {
           return SelectProvincia.appendChild(provincia);
         });
         break;
-      default:
-        console.log("Ningun pais seleccionado");
+    }
+    if (Pais === "Otro") {
+      this.OtroPais();
     }
   }
 
