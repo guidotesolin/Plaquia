@@ -266,14 +266,6 @@ class ContactoSinBack extends Component {
     }
     SelectProvincia.appendChild(PrimeraOpcion);
     switch (Pais) {
-      case "Argentina":
-        ProvinciasArgentina.map((x) => {
-          var provincia = document.createElement("option");
-          provincia.value = x;
-          provincia.text = x;
-          return SelectProvincia.appendChild(provincia);
-        });
-        break;
       case "Brasil":
         EstadosDeBrasil.map((x) => {
           var provincia = document.createElement("option");
@@ -300,6 +292,14 @@ class ContactoSinBack extends Component {
         break;
       case "Paraguay":
         DepartamentosParaguay.map((x) => {
+          var provincia = document.createElement("option");
+          provincia.value = x;
+          provincia.text = x;
+          return SelectProvincia.appendChild(provincia);
+        });
+        break;
+      default:
+        ProvinciasArgentina.map((x) => {
           var provincia = document.createElement("option");
           provincia.value = x;
           provincia.text = x;
