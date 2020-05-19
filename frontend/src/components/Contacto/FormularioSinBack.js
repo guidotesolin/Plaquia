@@ -4,7 +4,7 @@ var LabelNombre;
 var LabelMail;
 var LabelTelefono;
 var LabelConsulta;
-var LabelPais;
+var LabelUbicacion;
 var LabelProvincia;
 var LabelLocalidad;
 var LabelOtro;
@@ -131,9 +131,9 @@ class ContactoSinBack extends Component {
       LabelMail = "Correio:";
       LabelTelefono = "Telefone:";
       LabelConsulta = "Consulte:";
-      LabelPais = "País:";
-      LabelProvincia = "Província:";
-      LabelLocalidad = "Cidade:";
+      LabelUbicacion = "Localização:";
+      LabelProvincia = "Província";
+      LabelLocalidad = "Cidade";
       LabelSelect = "Selecione seu país";
       LabelOtro = "Outros";
       Epigrafe = "Todos os campos são de preenchimento obrigatório";
@@ -146,9 +146,9 @@ class ContactoSinBack extends Component {
       LabelNombre = "Name:";
       LabelMail = "Mail:";
       LabelTelefono = "Phone:";
-      LabelPais = "Country:";
-      LabelProvincia = "State:";
-      LabelLocalidad = "City:";
+      LabelUbicacion = "Location:";
+      LabelProvincia = "State";
+      LabelLocalidad = "City";
       LabelSelect = "Select your country";
       LabelOtro = "Another";
       LabelConsulta = "Message:";
@@ -160,9 +160,9 @@ class ContactoSinBack extends Component {
       LabelNombre = "Nombre:";
       LabelMail = "Mail:";
       LabelTelefono = "Teléfono:";
-      LabelPais = "País:";
-      LabelProvincia = "Provincia:";
-      LabelLocalidad = "Ciudad:";
+      LabelUbicacion = "Ubicación:";
+      LabelProvincia = "Provincia";
+      LabelLocalidad = "Ciudad";
       LabelConsulta = "Consulta:";
       LabelOtro = "Otro";
       LabelSelect = "Seleccione su país";
@@ -200,6 +200,93 @@ class ContactoSinBack extends Component {
 
   mostrarMensaje() {
     document.getElementById("MensajeEnviado").style.display = "block";
+  }
+
+  HabilitarCiudad() {
+    const SelectCiudad = document.getElementById("SelectCiudad");
+    SelectCiudad.disabled = false;
+  }
+
+  MostrarProvincias() {
+    const SelectPais = document.getElementById("SelectPais");
+    var Pais = SelectPais.value;
+    const SelectProvincia = document.getElementById("SelectProvincia");
+    SelectProvincia.disabled = false;
+    SelectProvincia.innerHTML = "";
+    var PrimeraOpcion = document.createElement("option");
+    PrimeraOpcion.value = "";
+    PrimeraOpcion.hidden = true;
+    if (this.props.Idioma === "Por") {
+      if (Pais === "Argentina") {
+        PrimeraOpcion.text = "Selecione a província";
+      } else if (Pais === "Brasil") {
+        PrimeraOpcion.text = "Selecione o estado";
+      } else {
+        PrimeraOpcion.text = "Selecione o departamento";
+      }
+    } else if (this.props.Idioma === "Eng") {
+      if (Pais === "Argentina") {
+        PrimeraOpcion.text = "Select province";
+      } else if (Pais === "Brasil") {
+        PrimeraOpcion.text = "Select state";
+      } else {
+        PrimeraOpcion.text = "Select department";
+      }
+    } else {
+      if (Pais === "Argentina") {
+        PrimeraOpcion.text = "Seleccione provincia";
+      } else if (Pais === "Brasil") {
+        PrimeraOpcion.text = "Seleccione estado";
+      } else {
+        PrimeraOpcion.text = "Seleccione departamento";
+      }
+    }
+
+    SelectProvincia.appendChild(PrimeraOpcion);
+    switch (Pais) {
+      case "Argentina":
+        ProvinciasArgentina.map((x) => {
+          var provincia = document.createElement("option");
+          provincia.value = x;
+          provincia.text = x;
+          return SelectProvincia.appendChild(provincia);
+        });
+        break;
+      case "Brasil":
+        EstadosDeBrasil.map((x) => {
+          var provincia = document.createElement("option");
+          provincia.value = x;
+          provincia.text = x;
+          return SelectProvincia.appendChild(provincia);
+        });
+        break;
+      case "Bolivia":
+        DepartamentosBolivia.map((x) => {
+          var provincia = document.createElement("option");
+          provincia.value = x;
+          provincia.text = x;
+          return SelectProvincia.appendChild(provincia);
+        });
+        break;
+      case "Uruguay":
+        DepartamentosUruguay.map((x) => {
+          var provincia = document.createElement("option");
+          provincia.value = x;
+          provincia.text = x;
+          return SelectProvincia.appendChild(provincia);
+        });
+        break;
+      case "Paraguay":
+        DepartamentosParaguay.map((x) => {
+          var provincia = document.createElement("option");
+          provincia.value = x;
+          provincia.text = x;
+          return SelectProvincia.appendChild(provincia);
+        });
+        break;
+      default:
+        console.log("Ningun pais seleccionado");
+    }
   }
 
   render() {
@@ -248,11 +335,16 @@ class ContactoSinBack extends Component {
               </div>
             </div>
           </div>
-          <p>Ubicacion</p>
+          <p>{LabelUbicacion}</p>
           <div class="form-row">
             <div class="col">
               <div class="form-group">
-                <select class="form-control" id="SelectPais" required>
+                <select
+                  class="form-control"
+                  id="SelectPais"
+                  required
+                  onChange={this.MostrarProvincias.bind(this)}
+                >
                   <option value="" disabled selected hidden>
                     {LabelSelect}
                   </option>
@@ -268,8 +360,13 @@ class ContactoSinBack extends Component {
 
             <div class="col">
               <div className="form-group">
-                <select class="form-control" id="SelectProvincia" disabled>
-                  <option selected>Provincia</option>
+                <select
+                  class="form-control"
+                  id="SelectProvincia"
+                  disabled
+                  onChange={this.HabilitarCiudad.bind(this)}
+                >
+                  <option selected>{LabelProvincia}</option>
                 </select>
               </div>
             </div>
@@ -280,8 +377,9 @@ class ContactoSinBack extends Component {
                   type="text"
                   className="form-control"
                   id="SelectCiudad"
-                  placeholder="Ciudad"
+                  placeholder={LabelLocalidad}
                   required
+                  disabled
                 />
               </div>
             </div>
