@@ -54,6 +54,11 @@ class Distribuidores extends React.Component {
             </thead>
             <tbody>
               <tr>
+                <td>Algarrobo</td>
+                <td>Av. 25 de Mayo 214</td>
+                <td>02927-491289</td>
+              </tr>
+              <tr>
                 <td>Benavidez</td>
                 <td>Av. Benavidez 3614</td>
                 <td>011 5052-6365</td>
@@ -69,6 +74,11 @@ class Distribuidores extends React.Component {
                 <td>011 4488-7733</td>
               </tr>
               <tr>
+                <td>Hilario Ascasubi</td>
+                <td>Ing. Urgoiti 475</td>
+                <td>02928 491133</td>
+              </tr>
+              <tr>
                 <td>Ituzaingo</td>
                 <td>Av. Presidente Perón 7042</td>
                 <td>011 6462-4582</td>
@@ -77,6 +87,11 @@ class Distribuidores extends React.Component {
                 <td>Médanos</td>
                 <td>Anchorena 123</td>
                 <td>291 5087-317</td>
+              </tr>
+              <tr>
+                <td>Patagones</td>
+                <td>Ntra. Sra. Del Carmen 218</td>
+                <td>02928-492425</td>
               </tr>
             </tbody>
           </Table>
@@ -93,14 +108,14 @@ class Distribuidores extends React.Component {
             </thead>
             <tbody>
               <tr>
-                <td>R. Saenz Peña</td>
-                <td>San Martin 38</td>
-                <td>0364 442-7345</td>
-              </tr>
-              <tr>
                 <td>Resistencia</td>
                 <td>Gob. Mansilla 77</td>
                 <td>0362 446-2582</td>
+              </tr>
+              <tr>
+                <td>Roque Saenz Peña</td>
+                <td>San Martin 38</td>
+                <td>0364 442-7345</td>
               </tr>
             </tbody>
           </Table>
@@ -159,6 +174,11 @@ class Distribuidores extends React.Component {
                 <td>Viscardi 345 - Parque Industrial</td>
                 <td>02302 430191</td>
               </tr>
+              <tr>
+                <td>La Adela</td>
+                <td>Ruta 22 Km 856</td>
+                <td> </td>
+              </tr>
             </tbody>
           </Table>
           <h4>
@@ -177,6 +197,25 @@ class Distribuidores extends React.Component {
                 <td>San Vicente</td>
                 <td>Ruta Nacional 14 Km 974</td>
                 <td>03755 460550</td>
+              </tr>
+            </tbody>
+          </Table>
+          <h4>
+            <li>Río Negro</li>
+          </h4>
+          <Table>
+            <thead>
+              <tr>
+                <th style={{ width: "30%" }}>{Localidad}</th>
+                <th style={{ width: "50%" }}>{Direccion}</th>
+                <th style={{ width: "20%" }}>{Telefono}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Río Colorado</td>
+                <td>Urquiza 571</td>
+                <td>02931 432822</td>
               </tr>
             </tbody>
           </Table>

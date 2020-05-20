@@ -5,3 +5,13 @@
 #fotoPlaca {
   background-color: black;
 }
+
+#TarjetaModelos {
+  border-radius: 2%;
+  box-shadow: slategray;
+}
+
+#DivModelos {
+  margin-right: 10px;
+  margin-left: 10px;
+}

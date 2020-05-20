@@ -6,6 +6,10 @@ import ModalImage from "react-modal-image";
 import Card from "react-bootstrap/Card";
 import CardDeck from "react-bootstrap/CardDeck";
 
+import smallJade from "../../img/Modelos/smallJade.jpg";
+import smallCuarzo from "../../img/Modelos/smallCuarzo.jpg";
+import smallOnice from "../../img/Modelos/smallOnice.jpg";
+
 import imgJade from "../../img/Modelos/PlacaJade.jpg";
 import imgCuarzo from "../../img/Modelos/PlacaCuarzo.jpg";
 import imgOnice from "../../img/Modelos/PlacaOnice.jpg";
@@ -42,15 +46,15 @@ class ModelosPlacas extends Component {
   render() {
     this.Iniciar();
     return (
-      <div>
+      <div id="DivModelos">
         <CardDeck>
-          <Card>
+          <Card id="TarjetaModelos">
             <Card.Header>
               <h3 id="nombrePlaca">Cuarzo</h3>
             </Card.Header>
             <ModalImage
               id="fotoPlaca"
-              small={imgCuarzo}
+              small={smallCuarzo}
               large={imgCuarzo}
               hideDownload="true"
               hideZoom="false"
@@ -60,13 +64,13 @@ class ModelosPlacas extends Component {
               <Card.Text>{TextoCuarzo}</Card.Text>
             </Card.Body>
           </Card>
-          <Card>
+          <Card id="TarjetaModelos">
             <Card.Header>
               <h3 id="nombrePlaca">Jade</h3>
             </Card.Header>
             <ModalImage
               id="fotoPlaca"
-              small={imgJade}
+              small={smallJade}
               large={imgJade}
               hideDownload="true"
               hideZoom="false"
@@ -76,13 +80,13 @@ class ModelosPlacas extends Component {
               <Card.Text>{TextoJade}</Card.Text>
             </Card.Body>
           </Card>
-          <Card>
+          <Card id="TarjetaModelos">
             <Card.Header>
               <h3 id="nombrePlaca">Onice</h3>
             </Card.Header>
             <ModalImage
               id="fotoPlaca"
-              small={imgOnice}
+              small={smallOnice}
               large={imgOnice}
               hideDownload="true"
               hideZoom="false"

@@ -3,18 +3,18 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Container from "react-bootstrap/Container";
 
-import Resultado1 from "../img/antesydespues/esp/Antesydespues1.jpg";
-import Resultado2 from "../img/antesydespues/esp/Antesydespues2.jpg";
+import Resultado1 from "../img/antesydespues/esp/Antesydespues5.jpg";
+import Resultado2 from "../img/antesydespues/esp/Antesydespues8.jpg";
 import Resultado3 from "../img/antesydespues/esp/Antesydespues3.jpg";
 import Resultado4 from "../img/antesydespues/esp/Antesydespues4.jpg";
 
-import Eng1 from "../img/antesydespues/eng/Antesydespues1.jpg";
-import Eng2 from "../img/antesydespues/eng/Antesydespues2.jpg";
+import Eng1 from "../img/antesydespues/eng/Antesydespues5.jpg";
+import Eng2 from "../img/antesydespues/eng/Antesydespues8.jpg";
 import Eng3 from "../img/antesydespues/eng/Antesydespues3.jpg";
 import Eng4 from "../img/antesydespues/eng/Antesydespues4.jpg";
 
-import Por1 from "../img/antesydespues/por/AntesyDespues1.jpg";
-import Por2 from "../img/antesydespues/por/AntesyDespues2.jpg";
+import Por1 from "../img/antesydespues/por/AntesyDespues5.jpg";
+import Por2 from "../img/antesydespues/por/AntesyDespues8.jpg";
 import Por3 from "../img/antesydespues/por/AntesyDespues3.jpg";
 import Por4 from "../img/antesydespues/por/AntesyDespues4.jpg";
 
