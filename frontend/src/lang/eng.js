@@ -20,10 +20,8 @@ class RenderEng extends Component {
   render() {
     return (
       <div id="Body">
-        <div id="Top">
-          <Container>
-            <Top Idioma="Eng" />
-          </Container>
+        <div>
+          <Top Idioma="Eng" />
         </div>
         <div id="Operation" className="Funcionamiento">
           <Container fluid>

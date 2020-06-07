@@ -10,6 +10,8 @@
   background-color: #dee4a0;
   padding-bottom: 20px;
   padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .Funcionamiento,
 .Colocacion,
@@ -18,6 +20,11 @@
   background-color: #a9ba82;
   padding-bottom: 20px;
   padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#CarouselTop {
+  background-color: #a9ba82;
 }
 /* Centrar titulos de secciones */
 #TituloSeccion {

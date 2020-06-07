@@ -20,10 +20,8 @@ class RenderizarSpa extends Component {
   render() {
     return (
       <div id="Body">
-        <div id="Top">
-          <Container>
-            <Top Idioma="Esp" />
-          </Container>
+        <div>
+          <Top Idioma="Esp" />
         </div>
         <div id="Funcionamiento" className="Funcionamiento">
           <Container fluid>

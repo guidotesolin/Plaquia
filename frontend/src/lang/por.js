@@ -20,10 +20,8 @@ class RenderPor extends Component {
   render() {
     return (
       <div id="Body">
-        <div id="Top">
-          <Container>
-            <Top Idioma="Por" />
-          </Container>
+        <div>
+          <Top Idioma="Por" />
         </div>
         <div id="Operação" className="Funcionamiento">
           <Container fluid>
