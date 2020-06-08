@@ -16,6 +16,7 @@ class Cotizador extends React.Component {
       superficie: "",
       cantCajas: "",
       cantBaldes: "",
+      modelo: "",
       moneda: "",
       mostrarResultado: false,
     };
@@ -48,6 +49,7 @@ class Cotizador extends React.Component {
     const a = parseFloat(this.state.alto);
     const b = parseFloat(this.state.ancho);
     const Moneda = document.getElementById("CotizadorMoneda").value;
+    const Modelo = document.getElementById("CotizadorModelo").value;
     Resultado.superficie = Math.round(a * b * 100) / 100;
     Resultado.cantCajas = Math.ceil(Resultado.superficie / 1.44);
     Resultado.cantBaldes = Math.ceil(Resultado.cantCajas / 5);
@@ -55,6 +57,7 @@ class Cotizador extends React.Component {
     this.setState({ cantCajas: Resultado.cantCajas });
     this.setState({ cantBaldes: Resultado.cantBaldes });
     this.setState({ moneda: Moneda });
+    this.setState({ modelo: Modelo });
     document.getElementById("DivResultadosCotizador").style.display = "block";
   }
 
@@ -106,12 +109,27 @@ class Cotizador extends React.Component {
                   />
                 </Form.Group>
               </Col>
+            </Form.Row>
+            <Form.Row>
+              <Col>
+                <Form.Group>
+                  <Form.Label>Modelo</Form.Label>
+                  <Form.Control as="select" required id="CotizadorModelo">
+                    <option value="" disabled selected hidden>
+                      Seleccionar
+                    </option>
+                    <option value="Onice">Onice</option>
+                    <option value="Cuarzo">Cuarzo</option>
+                    <option value="Jade">Jade</option>
+                  </Form.Control>
+                </Form.Group>
+              </Col>
               <Col>
                 <Form.Group>
                   <Form.Label>Moneda</Form.Label>
                   <Form.Control as="select" required id="CotizadorMoneda">
                     <option value="" disabled selected hidden>
-                      Seleccione moneda
+                      Seleccionar
                     </option>
                     <option value="ARG">Peso argentino</option>
                     <option value="BOL">Boliviano</option>
@@ -132,6 +150,7 @@ class Cotizador extends React.Component {
               Cajas={this.state.cantCajas}
               Baldes={this.state.cantBaldes}
               Moneda={this.state.moneda}
+              Modelo={this.state.modelo}
             />
           </div>
         </Modal.Body>
