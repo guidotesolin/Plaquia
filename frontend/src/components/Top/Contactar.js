@@ -52,14 +52,35 @@ const DistribuidoresAsuncion = ["Asunción"];
 const DistribuidoresCanelones = ["Canelones"];
 const DistribuidoresMontevideo = ["Montevideo"];
 
+var LabelPais;
+var LabelProvincia;
+var LabelCiudad;
+var LabelNombre;
+var LabelTelefono;
+var LabelBoton;
 class ContactarDistribuidor extends React.Component {
   Iniciar() {
     if (this.props.Idioma === "Por") {
-      //
+      LabelPais = "País";
+      LabelProvincia = "Província";
+      LabelCiudad = "Cidade";
+      LabelNombre = "Nome";
+      LabelTelefono = "Telefone";
+      LabelBoton = "Contato";
     } else if (this.props.Idioma === "Eng") {
-      //
+      LabelPais = "Country";
+      LabelProvincia = "Province";
+      LabelCiudad = "City";
+      LabelNombre = "Name";
+      LabelTelefono = "Phone";
+      LabelBoton = "Contact";
     } else {
-      //
+      LabelPais = "País";
+      LabelProvincia = "Provincia";
+      LabelCiudad = "Ciudad";
+      LabelNombre = "Nombre";
+      LabelTelefono = "Teléfono";
+      LabelBoton = "Contactar";
     }
   }
   EnviarCotizacion(event) {
@@ -308,6 +329,7 @@ class ContactarDistribuidor extends React.Component {
   }
 
   render() {
+    this.Iniciar();
     return (
       <Form onSubmit={this.EnviarCotizacion}>
         <Form.Row>
@@ -320,7 +342,7 @@ class ContactarDistribuidor extends React.Component {
                 onChange={this.ShowProvincias.bind(this)}
               >
                 <option value="" disabled selected hidden>
-                  Pais
+                  {LabelPais}
                 </option>
                 <option value="ARG">Argentina</option>
                 <option value="BOL">Bolivia</option>
@@ -340,7 +362,7 @@ class ContactarDistribuidor extends React.Component {
                 onChange={this.SelecionarDistribuidor.bind(this)}
               >
                 <option value="" disabled selected hidden>
-                  Provincia
+                  {LabelProvincia}
                 </option>
               </Form.Control>
             </Form.Group>
@@ -349,7 +371,7 @@ class ContactarDistribuidor extends React.Component {
             <Form.Group>
               <Form.Control as="select" required id="Distribuidor" disabled>
                 <option value="" disabled selected hidden>
-                  Ciudad
+                  {LabelCiudad}
                 </option>
               </Form.Control>
             </Form.Group>
@@ -358,7 +380,7 @@ class ContactarDistribuidor extends React.Component {
         <Form.Row>
           <Col>
             <Form.Group>
-              <Form.Label>Nombre</Form.Label>
+              <Form.Label>{LabelNombre}</Form.Label>
               <Form.Control
                 id="CotizadorNombre"
                 type="text"
@@ -369,7 +391,7 @@ class ContactarDistribuidor extends React.Component {
           </Col>
           <Col>
             <Form.Group>
-              <Form.Label>Telefono</Form.Label>
+              <Form.Label>{LabelTelefono}</Form.Label>
               <Form.Control
                 id="CotizadorTelefono"
                 type="text"
@@ -380,7 +402,7 @@ class ContactarDistribuidor extends React.Component {
           </Col>
         </Form.Row>
 
-        <Button type="submit">Enviar</Button>
+        <Button type="submit">{LabelBoton}</Button>
       </Form>
     );
   }

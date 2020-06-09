@@ -14,14 +14,47 @@ var SubtotalCajas;
 var SubtotalPegamento;
 var Total;
 
+var TextResultados;
+var TextSuperficie;
+var TextCajas;
+var TextBaldes;
+var TextCostoPlaquia;
+var TextCostoPegamento;
+var TextTotal;
+var TextContactar;
+var TextDist;
 class ResultadosCotizador extends React.Component {
   Iniciar() {
     if (this.props.Idioma === "Por") {
-      //
+      TextResultados = "Resultados";
+      TextSuperficie = "Superfície a ser coberta:";
+      TextCajas = "São necessárias caixas de Plaquia:";
+      TextBaldes = "Baldes de cola:";
+      TextCostoPlaquia = "Custo da Plaquia:";
+      TextCostoPegamento = "Cola de Custo:";
+      TextTotal = "Total:";
+      TextContactar = "Entre em contato com o distribuidor";
+      TextDist = "Distribuidor mais próximo:";
     } else if (this.props.Idioma === "Eng") {
-      //
+      TextResultados = "Results";
+      TextSuperficie = "Surface to be covered:";
+      TextCajas = "Plaquia boxes needed:";
+      TextBaldes = "Buckets of glue:";
+      TextCostoPlaquia = "Cost Plaquia:";
+      TextCostoPegamento = "Cost Glue:";
+      TextTotal = "Total:";
+      TextContactar = "Contact the distributor";
+      TextDist = "Nearest distributor:";
     } else {
-      //
+      TextResultados = "Resultados";
+      TextSuperficie = "Superficie a cubrir:";
+      TextCajas = "Cajas de Plaquia necesarias:";
+      TextBaldes = "Baldes de pegamento:";
+      TextCostoPlaquia = "Costo Plaquia:";
+      TextCostoPegamento = "Costo pegamento:";
+      TextTotal = "Total:";
+      TextContactar = "Contactar al distribuidor";
+      TextDist = "Distribuidor mas cercano:";
     }
     switch (this.props.Moneda) {
       case "URU":
@@ -69,35 +102,42 @@ class ResultadosCotizador extends React.Component {
     return (
       <div>
         <br />
-        <h4>Resultados</h4>
+        <h4>{TextResultados}</h4>
         <br />
         <Row>
           <Col>
-            <p>Superficie a cubrir: {this.props.Sup} m²</p>
-            <p>Cajas de Plaquia necesarias: {this.props.Cajas}</p>
-            <p>Baldes de pegamento: {this.props.Baldes}</p>
+            <p>
+              {TextSuperficie} {this.props.Sup} m²
+            </p>
+            <p>
+              {TextCajas} {this.props.Cajas}
+            </p>
+            <p>
+              {TextBaldes} {this.props.Baldes}
+            </p>
           </Col>
           <Col>
             <p>
-              Costo Plaquia: {SubtotalCajas} {SimboloMoneda}
+              {TextCostoPlaquia} {SubtotalCajas} {SimboloMoneda}
             </p>
             <p>
-              Costo Pegamento: {SubtotalPegamento} {SimboloMoneda}
+              {TextCostoPegamento} {SubtotalPegamento} {SimboloMoneda}
             </p>
             <p>
               <strong>
-                Total: {Total} {SimboloMoneda}
+                {TextTotal} {Total} {SimboloMoneda}
               </strong>
             </p>
           </Col>
         </Row>
         <Button onClick={this.MostrarContactarDistribuidor}>
-          Contactar al distribuidor
+          {TextContactar}
         </Button>
         <div id="DivContactaDistribuidor" style={{ display: "none" }}>
           <br />
-          <p>Distribuidor mas cercano:</p>
+          <p>{TextDist}</p>
           <ContactarDistribuidor
+            Idioma={this.props.Idioma}
             Modelo={this.props.Modelo}
             CantCajas={this.props.Cajas}
             CantBaldes={this.props.Baldes}

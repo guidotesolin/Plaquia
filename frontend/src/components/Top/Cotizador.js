@@ -7,6 +7,15 @@ import Col from "react-bootstrap/Col";
 
 import Resultados from "./ResultadosCotizador";
 
+var TituloCotizador;
+var LabelAlto;
+var LabelAncho;
+var LabelModelo;
+var LabelMoneda;
+var LabelSeleccionar;
+var LabelCalcular;
+var LabelVolver;
+
 class Cotizador extends React.Component {
   constructor(props) {
     super(props);
@@ -26,11 +35,32 @@ class Cotizador extends React.Component {
   }
   Iniciar() {
     if (this.props.Idioma === "Por") {
-      //
+      TituloCotizador = "Cotação Online para Plaquia";
+      LabelAlto = "Alto";
+      LabelAncho = "Largura";
+      LabelModelo = "Modelo";
+      LabelMoneda = "Moeda";
+      LabelSeleccionar = "Selecione";
+      LabelCalcular = "Calcule";
+      LabelVolver = "Voltar";
     } else if (this.props.Idioma === "Eng") {
-      //
+      TituloCotizador = "Plaquia's online  calculator";
+      LabelAlto = "High";
+      LabelAncho = "Width";
+      LabelModelo = "Model";
+      LabelMoneda = "Money";
+      LabelSeleccionar = "Select";
+      LabelCalcular = "Calculate";
+      LabelVolver = "Back";
     } else {
-      //
+      TituloCotizador = "Cotizador online de Plaquia";
+      LabelAlto = "Alto";
+      LabelAncho = "Ancho";
+      LabelModelo = "Modelo";
+      LabelMoneda = "Moneda";
+      LabelSeleccionar = "Seleccionar";
+      LabelCalcular = "Calcular";
+      LabelVolver = "Volver";
     }
   }
 
@@ -71,7 +101,7 @@ class Cotizador extends React.Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Cotizador online de Plaquia
+            {TituloCotizador}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -79,7 +109,7 @@ class Cotizador extends React.Component {
             <Form.Row>
               <Col>
                 <Form.Group>
-                  <Form.Label>Alto</Form.Label>
+                  <Form.Label>{LabelAlto}</Form.Label>
                   <Form.Control
                     name="alto"
                     type="number"
@@ -95,7 +125,7 @@ class Cotizador extends React.Component {
               </Col>
               <Col>
                 <Form.Group>
-                  <Form.Label>Ancho</Form.Label>
+                  <Form.Label>{LabelAncho}</Form.Label>
                   <Form.Control
                     name="ancho"
                     type="number"
@@ -113,10 +143,10 @@ class Cotizador extends React.Component {
             <Form.Row>
               <Col>
                 <Form.Group>
-                  <Form.Label>Modelo</Form.Label>
+                  <Form.Label>{LabelModelo}</Form.Label>
                   <Form.Control as="select" required id="CotizadorModelo">
                     <option value="" disabled selected hidden>
-                      Seleccionar
+                      {LabelSeleccionar}
                     </option>
                     <option value="Onice">Onice</option>
                     <option value="Cuarzo">Cuarzo</option>
@@ -126,10 +156,10 @@ class Cotizador extends React.Component {
               </Col>
               <Col>
                 <Form.Group>
-                  <Form.Label>Moneda</Form.Label>
+                  <Form.Label>{LabelMoneda}</Form.Label>
                   <Form.Control as="select" required id="CotizadorMoneda">
                     <option value="" disabled selected hidden>
-                      Seleccionar
+                      {LabelSeleccionar}
                     </option>
                     <option value="ARG">Peso argentino</option>
                     <option value="BOL">Boliviano</option>
@@ -141,7 +171,7 @@ class Cotizador extends React.Component {
                 </Form.Group>
               </Col>
             </Form.Row>
-            <Button type="submit">Calcular</Button>
+            <Button type="submit">{LabelCalcular}</Button>
           </Form>
           <div id="DivResultadosCotizador" style={{ display: "none" }}>
             <Resultados
@@ -155,7 +185,7 @@ class Cotizador extends React.Component {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={this.props.onHide}>Volver</Button>
+          <Button onClick={this.props.onHide}>{LabelVolver}</Button>
         </Modal.Footer>
       </Modal>
     );
