@@ -4,8 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 
-var PrimeraOpcion;
-
+// Provincias con distribuidores
 const ProvinciasArgentina = [
   "Buenos Aires",
   "Chaco",
@@ -21,39 +20,70 @@ const DepartamentosUruguay = ["Canelones", "Montevideo"];
 const DepartamentosBolivia = ["Santa Cruz"];
 const EstadosDeBrasil = ["Río Grande del Sur", "São Paulo"];
 const DepartamentosParaguay = ["Asunción"];
-
+// Distribuidores separados por provincias
 const DistribuidoresBuenosAires = [
-  "Algarrobo",
-  "Benavidez",
-  "Capital Federal",
-  "Caseros",
-  "Ciudadela",
-  "Hilario",
-  "Ituzaingo",
-  "Médanos",
-  "Patagones",
-  "Rauch",
-  "Tandil",
+  { Localidad: "Algarrobo", Mail: "algarrobo@rangocomercial.com.ar" },
+  { Localidad: "Benavidez", Mail: "a.cuello@outlook.com" },
+  { Localidad: "Capital Federal", Mail: "distribmani@gmail.com" },
+  { Localidad: "Caseros", Mail: "rmartinez@galvylam.com" },
+  { Localidad: "Ciudadela", Mail: "asciudadela@almacenseco.com.ar" },
+  { Localidad: "Hilario", Mail: "ascasubi@rangocomercial.com.ar" },
+  { Localidad: "Ituzaingo", Mail: "asituzaingo@almacenseco.com.ar" },
+  { Localidad: "Médanos", Mail: "algarrobo@rangocomercial.com.ar" },
+  { Localidad: "Patagones", Mail: "villalonga@rangocomercial.com.ar" },
+  { Localidad: "Rauch", Mail: "fmateo56@yahoo.com" },
+  { Localidad: "Tandil", Mail: "fmateo56@yahoo.com " },
 ];
-const DistribuidoresChaco = ["Resistencia", "Roque Saenz Peña"];
-const DistribuidoresCordoba = ["Rio Cuarto"];
-const DistribuidoresEntreRios = ["Paraná"];
-const DistribuidoresLaPampa = ["General Pico", "La Adela"];
-const DistribuidoresMisiones = ["San Vicente"];
-const DistribuidoresRioNegro = ["Río Colorado"];
-const DistribuidoresSalta = ["Salta"];
+const DistribuidoresChaco = [
+  { Localidad: "Resistencia", Mail: "ltortul@fsceramicos.com" },
+  { Localidad: "Roque Saenz Peña", Mail: "mirtazaj@hotmail.com" },
+];
+const DistribuidoresCordoba = [
+  { Localidad: "Rio Cuarto", Mail: "ltortul@fsceramicos.com" },
+];
+const DistribuidoresEntreRios = [
+  { Localidad: "Paraná", Mail: "administracionparana@seccoplac.com.ar" },
+];
+const DistribuidoresLaPampa = [
+  { Localidad: "General Pico", Mail: "generalpico@aisplac.com.ar" },
+  { Localidad: "La Adela", Mail: "medanos@rangocomercial.com.ar" },
+];
+const DistribuidoresMisiones = [
+  { Localidad: "San Vicente", Mail: "maderasyplacas@hotmail.com" },
+];
+const DistribuidoresRioNegro = [
+  { Localidad: "Río Colorado", Mail: "riocolorado@rangocomercial.com.ar" },
+];
+const DistribuidoresSalta = [
+  { Localidad: "Salta", Mail: "seccoplacsalta@gmail.com" },
+];
 const DistribuidoresSantaFe = [
-  "Calchaquí",
-  "Reconquista",
-  "San Jorge",
-  "Santa Fe",
+  { Localidad: "Calchaquí", Mail: "contacto@maconfer.com.ar" },
+  { Localidad: "Reconquista", Mail: "reconquista@seccomat.com.ar" },
+  { Localidad: "San Jorge", Mail: "mauriciolsapino@gmail.com" },
+  { Localidad: "Santa Fe", Mail: "santafe@seccoplac.com.ar" },
 ];
-const DistribuidoresSantaCruz = ["Santa Cruz de la Sierra"];
-const DistribuidoresRioGrandedelSur = ["Porto Alegre"];
-const DistribuidoresSaoPaulo = ["Sao Paulo"];
-const DistribuidoresAsuncion = ["Asunción"];
-const DistribuidoresCanelones = ["Canelones"];
-const DistribuidoresMontevideo = ["Montevideo"];
+const DistribuidoresSantaCruz = [
+  {
+    Localidad: "Santa Cruz de la Sierra",
+    Mail: "seccoplacbolivia@seccoplac.com.ar",
+  },
+];
+const DistribuidoresRioGrandedelSur = [
+  { Localidad: "Porto Alegre", Mail: "info@plaquia.com.ar" },
+];
+const DistribuidoresSaoPaulo = [
+  { Localidad: "São Paulo", Mail: "info@plaquia.com.ar" },
+];
+const DistribuidoresAsuncion = [
+  { Localidad: "Asunción", Mail: "nico@januca.com.py" },
+];
+const DistribuidoresCanelones = [
+  { Localidad: "Canelones", Mail: "fbesino@castro.com.uy" },
+];
+const DistribuidoresMontevideo = [
+  { Localidad: "Montevideo", Mail: "info@qualicer.com" },
+];
 
 var LabelPais;
 var LabelProvincia;
@@ -61,6 +91,8 @@ var LabelCiudad;
 var LabelNombre;
 var LabelTelefono;
 var LabelBoton;
+var MensajeEnviado;
+var PrimeraOpcion;
 
 var Superficie;
 var Modelo;
@@ -84,6 +116,8 @@ class ContactarDistribuidor extends React.Component {
       LabelNombre = "Nome";
       LabelTelefono = "Telefone";
       LabelBoton = "Contato";
+      MensajeEnviado =
+        "A mensagem foi enviada para o distribuidor. Você será contatado em breve!";
     } else if (this.props.Idioma === "Eng") {
       LabelPais = "Country";
       LabelProvincia = "Province";
@@ -91,6 +125,8 @@ class ContactarDistribuidor extends React.Component {
       LabelNombre = "Name";
       LabelTelefono = "Phone";
       LabelBoton = "Contact";
+      MensajeEnviado =
+        "The message has been sent to the distributor. You will be contacted shortly!";
     } else {
       LabelPais = "País";
       LabelProvincia = "Provincia";
@@ -98,21 +134,23 @@ class ContactarDistribuidor extends React.Component {
       LabelNombre = "Nombre";
       LabelTelefono = "Teléfono";
       LabelBoton = "Contactar";
+      MensajeEnviado =
+        "El mensaje ha sido enviado al distribuidor. A la brevedad se estará contactando con usted!";
     }
   }
+
   EnviarCotizacion(event) {
     event.preventDefault();
     const service_id = "default_service";
     const template_id = "cotizadorplaquia";
     const nombre = document.getElementById("CotizadorNombre").value;
     const telefono = document.getElementById("CotizadorTelefono").value;
-    const distribuidor = document.getElementById("Distribuidor").value;
+    const mail = document.getElementById("Distribuidor").value;
 
     var template_params = {
-      EnviarA: "contacto@seccomat.com.ar",
+      EnviarA: mail,
       nombre: nombre,
       telefono: telefono,
-      distribuidor: distribuidor,
       superficie: Superficie,
       modelo: Modelo,
       precio: Precio,
@@ -120,10 +158,33 @@ class ContactarDistribuidor extends React.Component {
       cajas: Cajas,
       baldes: Baldes,
     };
+    // Quitar alerta al terminar
+    /*
+    alert(
+      " EnviarA: " +
+        template_params.EnviarA +
+        " nombre: " +
+        template_params.nombre +
+        " telefono: " +
+        template_params.telefono +
+        " superficie: " +
+        template_params.superficie +
+        " modelo: " +
+        template_params.modelo +
+        " precio: " +
+        template_params.precio +
+        " moneda: " +
+        template_params.moneda +
+        " cajas: " +
+        template_params.cajas +
+        " baldes: " +
+        template_params.baldes
+    );
+    */
     window.emailjs
       .send(service_id, template_id, template_params)
       .then((res) => {
-        alert("Mensaje enviado");
+        alert(MensajeEnviado);
       })
       .catch((err) => alert(Error));
   }
@@ -147,96 +208,96 @@ class ContactarDistribuidor extends React.Component {
       case "Buenos Aires":
         DistribuidoresBuenosAires.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "Chaco":
         DistribuidoresChaco.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "Córdoba":
         DistribuidoresCordoba.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "Entre Ríos":
         DistribuidoresEntreRios.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "La Pampa":
         DistribuidoresLaPampa.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "Misiones":
         DistribuidoresMisiones.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "Río Negro":
         DistribuidoresRioNegro.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "Salta":
         DistribuidoresSalta.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "Santa Fe":
         DistribuidoresSantaFe.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "Canelones":
         DistribuidoresCanelones.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "Montevideo":
         DistribuidoresMontevideo.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "Santa Cruz":
         DistribuidoresSantaCruz.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
@@ -244,24 +305,24 @@ class ContactarDistribuidor extends React.Component {
       case "Río Grande del Sur":
         DistribuidoresRioGrandedelSur.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       case "São Paulo":
         DistribuidoresSaoPaulo.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
       default:
         DistribuidoresAsuncion.map((x) => {
           var dist = document.createElement("option");
-          dist.value = x;
-          dist.text = x;
+          dist.value = x.Mail;
+          dist.text = x.Localidad;
           return SelectDistribuidor.appendChild(dist);
         });
         break;
@@ -418,7 +479,9 @@ class ContactarDistribuidor extends React.Component {
             </Form.Group>
           </Col>
         </Form.Row>
-        <Button type="submit">{LabelBoton}</Button>
+        <Button variant="success" type="submit">
+          {LabelBoton}
+        </Button>
       </Form>
     );
   }

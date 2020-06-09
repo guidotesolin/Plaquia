@@ -25,6 +25,7 @@ var TextContactar;
 var TextDist;
 class ResultadosCotizador extends React.Component {
   Iniciar() {
+    // Textos dependiendo el idioma
     if (this.props.Idioma === "Por") {
       TextResultados = "Resultados";
       TextSuperficie = "Superfície a ser coberta:";
@@ -56,6 +57,7 @@ class ResultadosCotizador extends React.Component {
       TextContactar = "Contactar al distribuidor";
       TextDist = "Distribuidor mas cercano:";
     }
+    // Cotizacion por moneda
     switch (this.props.Moneda) {
       case "URU":
         SimboloMoneda = "UYU";

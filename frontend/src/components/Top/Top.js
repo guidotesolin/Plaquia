@@ -101,6 +101,7 @@ class Top extends React.Component {
           <div id="DivBotonCotizador">
             <Button
               id="BotonCotizar"
+              size="lg"
               onClick={() => this.setState({ modalShow: true })}
             >
               {TextoBoton}

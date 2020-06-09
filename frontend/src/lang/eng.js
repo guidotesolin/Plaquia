@@ -9,7 +9,6 @@ import Colocacion from "../components/Colocacion/Colocacion";
 import Modelos from "../components/Modelos/Modelos";
 import SliderResultados from "../components/Resultados";
 import Distribuidores from "../components/Distribuidores/DistribuidoresSinBack";
-import Calculadora from "../components/Calculadora/Calculadora";
 import Contacto from "../components/Contacto/Contacto";
 import Footer from "../components/Footer/Footer";
 
