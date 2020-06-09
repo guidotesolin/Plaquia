@@ -32,9 +32,6 @@ export default function BarraDeNavegacion(props) {
               <Nav.Link href="#Operação">
                 <i class="fa fa-fw fa-cogs"></i> Operação
               </Nav.Link>
-              <Nav.Link href="#Calculadora">
-                <i class="fas fa-calculator"></i> Calculadora
-              </Nav.Link>
               <Nav.Link href="#Colocação">
                 <i class="fas fa-tools"></i> Colocação
               </Nav.Link>
@@ -99,9 +96,6 @@ export default function BarraDeNavegacion(props) {
               <Nav.Link href="#Operation">
                 <i class="fa fa-fw fa-cogs"></i> Operation
               </Nav.Link>
-              <Nav.Link href="#Calculator">
-                <i class="fas fa-calculator"></i> Calculator
-              </Nav.Link>
               <Nav.Link href="#Placement">
                 <i class="fas fa-tools"></i> Placement
               </Nav.Link>
@@ -165,9 +159,6 @@ export default function BarraDeNavegacion(props) {
             <Nav className="mr-auto">
               <Nav.Link href="#Funcionamiento">
                 <i class="fa fa-fw fa-cogs"></i> Funcionamiento
-              </Nav.Link>
-              <Nav.Link href="#Calculadora">
-                <i class="fas fa-calculator"></i> Calculadora
               </Nav.Link>
               <Nav.Link href="#Colocacion">
                 <i class="fas fa-tools"></i> Colocación

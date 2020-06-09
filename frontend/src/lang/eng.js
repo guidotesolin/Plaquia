@@ -30,12 +30,6 @@ class RenderEng extends Component {
             <Funcionamiento Idioma="Eng" />
           </Container>
         </div>
-        <div id="Calculator" className="Calculadora">
-          <h1 id="TituloSeccion">CALCULATOR</h1>
-          <br />
-          <Calculadora Idioma="Eng" />
-          <br />
-        </div>
         <div id="Placement" className="Colocacion">
           <Container>
             <h1 id="TituloSeccion">PLACEMENT</h1>

@@ -4,9 +4,9 @@
 
 /* Separar secciones y darle color de fondo */
 #Top,
-.Calculadora,
-.Modelos,
-.Distribuidores {
+.Colocacion,
+.Resultados,
+.Contacto {
   background-color: #dee4a0;
   padding-bottom: 20px;
   padding-top: 10px;
@@ -14,9 +14,8 @@
   padding-right: 15px;
 }
 .Funcionamiento,
-.Colocacion,
-.Resultados,
-.Contacto {
+.Modelos,
+.Distribuidores {
   background-color: #a9ba82;
   padding-bottom: 20px;
   padding-top: 10px;
