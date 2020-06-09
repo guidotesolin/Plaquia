@@ -64,6 +64,11 @@ class Distribuidores extends React.Component {
                 <td>011 5052-6365</td>
               </tr>
               <tr>
+                <td>Capital Federal</td>
+                <td>Mitre 2304</td>
+                <td>011 58416394</td>
+              </tr>
+              <tr>
                 <td>Caseros</td>
                 <td>Lisandro de la Torre 4272</td>
                 <td>011 5630-1915</td>
@@ -92,6 +97,16 @@ class Distribuidores extends React.Component {
                 <td>Patagones</td>
                 <td>Ntra. Sra. Del Carmen 218</td>
                 <td>02928-492425</td>
+              </tr>
+              <tr>
+                <td>Rauch</td>
+                <td>Juan Silva 156</td>
+                <td>0249 427-8990</td>
+              </tr>
+              <tr>
+                <td>Tandil</td>
+                <td>Gral. Rodríguez 1179</td>
+                <td>249 427-8990</td>
               </tr>
             </tbody>
           </Table>

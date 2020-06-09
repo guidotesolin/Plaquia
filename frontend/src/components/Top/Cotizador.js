@@ -174,6 +174,7 @@ class Cotizador extends React.Component {
             <Button type="submit">{LabelCalcular}</Button>
           </Form>
           <div id="DivResultadosCotizador" style={{ display: "none" }}>
+            <hr />
             <Resultados
               Idioma={this.props.Idioma}
               Sup={this.state.superficie}

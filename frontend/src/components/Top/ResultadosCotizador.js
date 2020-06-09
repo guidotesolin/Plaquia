@@ -101,7 +101,6 @@ class ResultadosCotizador extends React.Component {
     this.Iniciar();
     return (
       <div>
-        <br />
         <h4>{TextResultados}</h4>
         <br />
         <Row>
@@ -134,11 +133,14 @@ class ResultadosCotizador extends React.Component {
           {TextContactar}
         </Button>
         <div id="DivContactaDistribuidor" style={{ display: "none" }}>
-          <br />
+          <hr />
           <p>{TextDist}</p>
           <ContactarDistribuidor
             Idioma={this.props.Idioma}
+            Superficie={this.props.Sup}
             Modelo={this.props.Modelo}
+            PrecioCotizado={Total}
+            Moneda={SimboloMoneda}
             CantCajas={this.props.Cajas}
             CantBaldes={this.props.Baldes}
           />

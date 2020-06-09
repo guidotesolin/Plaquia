@@ -25,12 +25,15 @@ const DepartamentosParaguay = ["Asunción"];
 const DistribuidoresBuenosAires = [
   "Algarrobo",
   "Benavidez",
+  "Capital Federal",
   "Caseros",
   "Ciudadela",
   "Hilario",
   "Ituzaingo",
   "Médanos",
   "Patagones",
+  "Rauch",
+  "Tandil",
 ];
 const DistribuidoresChaco = ["Resistencia", "Roque Saenz Peña"];
 const DistribuidoresCordoba = ["Rio Cuarto"];
@@ -47,7 +50,7 @@ const DistribuidoresSantaFe = [
 ];
 const DistribuidoresSantaCruz = ["Santa Cruz de la Sierra"];
 const DistribuidoresRioGrandedelSur = ["Porto Alegre"];
-const DistribuidoresSaoPaulo = ["Santa Cruz de la Sierra"];
+const DistribuidoresSaoPaulo = ["Sao Paulo"];
 const DistribuidoresAsuncion = ["Asunción"];
 const DistribuidoresCanelones = ["Canelones"];
 const DistribuidoresMontevideo = ["Montevideo"];
@@ -58,8 +61,22 @@ var LabelCiudad;
 var LabelNombre;
 var LabelTelefono;
 var LabelBoton;
+
+var Superficie;
+var Modelo;
+var Precio;
+var Moneda;
+var Cajas;
+var Baldes;
+
 class ContactarDistribuidor extends React.Component {
   Iniciar() {
+    Superficie = this.props.Superficie;
+    Modelo = this.props.Modelo;
+    Precio = this.props.PrecioCotizado;
+    Moneda = this.props.Moneda;
+    Cajas = this.props.CantCajas;
+    Baldes = this.props.CantBaldes;
     if (this.props.Idioma === "Por") {
       LabelPais = "País";
       LabelProvincia = "Província";
@@ -85,34 +102,34 @@ class ContactarDistribuidor extends React.Component {
   }
   EnviarCotizacion(event) {
     event.preventDefault();
+    const service_id = "default_service";
+    const template_id = "cotizadorplaquia";
     const nombre = document.getElementById("CotizadorNombre").value;
     const telefono = document.getElementById("CotizadorTelefono").value;
     const distribuidor = document.getElementById("Distribuidor").value;
-    alert(nombre + telefono + distribuidor);
-    /*
-    const modelo = this.props.Modelo;
-    const cajas = this.props.CantCajas;
-    const pegamento = this.props.CantBaldes;
-    var Mensaje =
-      "El cliente " +
-      nombre +
-      " telefono " +
-      telefono +
-      " solicita cotizacion a " +
-      distribuidor +
-      " por " +
-      cajas +
-      " cajas de " +
-      modelo +
-      " y " +
-      pegamento +
-      " baldes de pegamento.";
-      */
+
+    var template_params = {
+      EnviarA: "contacto@seccomat.com.ar",
+      nombre: nombre,
+      telefono: telefono,
+      distribuidor: distribuidor,
+      superficie: Superficie,
+      modelo: Modelo,
+      precio: Precio,
+      moneda: Moneda,
+      cajas: Cajas,
+      baldes: Baldes,
+    };
+    window.emailjs
+      .send(service_id, template_id, template_params)
+      .then((res) => {
+        alert("Mensaje enviado");
+      })
+      .catch((err) => alert(Error));
   }
   SelecionarDistribuidor() {
     var Provincia = document.getElementById("DistribuidorProvincia").value;
     const SelectDistribuidor = document.getElementById("Distribuidor");
-
     SelectDistribuidor.disabled = false;
     SelectDistribuidor.innerHTML = "";
     PrimeraOpcion = document.createElement("option");
@@ -401,7 +418,6 @@ class ContactarDistribuidor extends React.Component {
             </Form.Group>
           </Col>
         </Form.Row>
-
         <Button type="submit">{LabelBoton}</Button>
       </Form>
     );
