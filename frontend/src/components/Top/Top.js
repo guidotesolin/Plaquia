@@ -47,7 +47,7 @@ class Top extends React.Component {
       SliderAntesyDespues = AntesYDespuesPor;
       SliderColocacion = ColocacionPor;
       SliderModelos = ModelosPor;
-      TextoBoton = "Cotação online";
+      TextoBoton = "COTAÇÃO ONLINE";
       Logo = LogoPor;
       Descripcion =
         "Somos a primeira fábrica de placas anti-humidade a desenvolver um produto adaptado para a venda em massa, com uma embalagem revolucionária que facilita a sua arrumação e comercialização. Pensado com a modalidade, Faça-o você mesmo!";
@@ -55,7 +55,7 @@ class Top extends React.Component {
       SliderAntesyDespues = AntesYDespuesEng;
       SliderColocacion = ColocacionEng;
       SliderModelos = ModelosEng;
-      TextoBoton = "Calculate online";
+      TextoBoton = "CALCULATE ONLINE";
       Logo = LogoEng;
       Descripcion =
         "We are the first factory of anti-humidity boards to develop a product that is adapted for mass sale, with a revolutionary packaging that facilitates its storage and commercialization. Thought with the modality: Do it yourself!";
@@ -66,7 +66,7 @@ class Top extends React.Component {
       SliderAntesyDespues = AntesYDespuesEsp;
       SliderColocacion = ColocacionEsp;
       SliderModelos = ModelosEsp;
-      TextoBoton = "Cotizar online";
+      TextoBoton = "COTIZAR ONLINE";
     }
   }
 
@@ -104,7 +104,7 @@ class Top extends React.Component {
               size="lg"
               onClick={() => this.setState({ modalShow: true })}
             >
-              {TextoBoton}
+              <i class="fas fa-pencil-alt"> {TextoBoton}</i>
             </Button>
           </div>
           <Cotizador
@@ -114,7 +114,6 @@ class Top extends React.Component {
           />
           <br />
         </div>
-
         <div id="Top">
           <Container>
             <Row>

@@ -479,7 +479,7 @@ class ContactarDistribuidor extends React.Component {
             </Form.Group>
           </Col>
         </Form.Row>
-        <Button variant="success" type="submit">
+        <Button variant="outline-success" type="submit">
           {LabelBoton}
         </Button>
       </Form>

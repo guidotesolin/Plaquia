@@ -162,16 +162,13 @@ class Cotizador extends React.Component {
                       {LabelSeleccionar}
                     </option>
                     <option value="ARG">Peso argentino</option>
-                    <option value="BOL">Boliviano</option>
-                    <option value="BRA">Real</option>
-                    <option value="USD">Dólar</option>
-                    <option value="PAR">Guaraní</option>
-                    <option value="URU">Peso uruguayo</option>
                   </Form.Control>
                 </Form.Group>
               </Col>
             </Form.Row>
-            <Button type="submit">{LabelCalcular}</Button>
+            <Button variant="outline-primary" type="submit">
+              {LabelCalcular}
+            </Button>
           </Form>
           <div id="DivResultadosCotizador" style={{ display: "none" }}>
             <hr />
@@ -186,7 +183,9 @@ class Cotizador extends React.Component {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={this.props.onHide}>{LabelVolver}</Button>
+          <Button variant="outline-danger" onClick={this.props.onHide}>
+            {LabelVolver}
+          </Button>
         </Modal.Footer>
       </Modal>
     );
@@ -194,3 +193,12 @@ class Cotizador extends React.Component {
 }
 
 export default Cotizador;
+
+/*
+Agregar en linea 165
+<option value="BOL">Boliviano</option>
+<option value="BRA">Real</option>
+<option value="USD">Dólar</option>
+<option value="PAR">Guaraní</option>
+<option value="URU">Peso uruguayo</option>
+*/

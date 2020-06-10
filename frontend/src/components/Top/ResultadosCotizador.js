@@ -131,7 +131,10 @@ class ResultadosCotizador extends React.Component {
             </p>
           </Col>
         </Row>
-        <Button onClick={this.MostrarContactarDistribuidor}>
+        <Button
+          variant="outline-primary"
+          onClick={this.MostrarContactarDistribuidor}
+        >
           {TextContactar}
         </Button>
         <div id="DivContactaDistribuidor" style={{ display: "none" }}>
