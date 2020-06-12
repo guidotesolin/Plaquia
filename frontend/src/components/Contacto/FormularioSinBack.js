@@ -312,6 +312,10 @@ class ContactoSinBack extends Component {
     }
   }
 
+  callback() {
+    console.log("Done!!!!");
+  }
+
   render() {
     this.Iniciar();
     return (

@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 
-//Importar routes de distribuidores
+//Importar routes
 const RouteDistribuidores = require("./routes/RouteDistribuidores");
 const RouteMail = require("./routes/RouteEmail");
+const RouteProvincias = require("./routes/RouteProvincias");
+const RoutePaises = require("./routes/RoutePaises");
 
 //Settings
 app.set("port", process.env.PORT || 3000);
@@ -23,13 +25,15 @@ app.use((req, res, next) => {
 });
 
 app.use("/Distribuidores", RouteDistribuidores);
+app.use("/Paises", RoutePaises);
+app.use("/Provincias", RouteProvincias);
 
 app.use("/", RouteMail);
 
 app.use("/", (req, res) => {
-  res.send("Hello World form NodeJS express.");
+  res.send("Modulo de Backend para Plaquia revestimientos");
 });
 
 app.listen(app.get("port"), () => {
-  console.log("Start server on port " + app.get("port"));
+  console.log("Servidor iniciado en el puerto " + app.get("port"));
 });

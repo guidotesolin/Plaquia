@@ -1,1 +1,3 @@
-module.exports = { user: "paginanueva@plaquia.com.ar", pass: ";Oww+Wa;?=3o" };
+// Configuracion de los datos del mail
+
+module.exports = { user: "paginanueva@plaquia.com.ar", pass: "(dq}J~Y({;ZX" };

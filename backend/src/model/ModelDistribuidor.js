@@ -2,18 +2,18 @@ var Sequelize = require("sequelize");
 var sequelize = require("./Database");
 
 var Distribuidor = sequelize.define(
-  "distribuidor",
+  "distribuidores",
   {
-    id: {
+    idDistribuidor: {
       type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    pais: Sequelize.STRING,
-    provincia: Sequelize.STRING,
-    localidad: Sequelize.STRING,
-    direccion: Sequelize.STRING,
-    telefono: Sequelize.BIGINT,
+    idProvincia: Sequelize.INTEGER,
+    Localidad: Sequelize.STRING,
+    Direccion: Sequelize.STRING,
+    Telefono: Sequelize.STRING,
+    Mail: Sequelize.STRING,
   },
   {
     timestamps: false,
