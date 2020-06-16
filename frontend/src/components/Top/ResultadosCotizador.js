@@ -4,11 +4,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-import ContactarDistribuidor from "./Contactar";
-
-var SimboloMoneda;
-var CostoCajaPlaquia;
-var CostoBaldePlaquia;
+import ContactarDistribuidor from "./ContactarConBack";
 
 var SubtotalCajas;
 var SubtotalPegamento;
@@ -57,46 +53,18 @@ class ResultadosCotizador extends React.Component {
       TextContactar = "Contactar al distribuidor";
       TextDist = "Distribuidor mas cercano:";
     }
-    // Cotizacion por moneda
-    switch (this.props.Moneda) {
-      case "URU":
-        SimboloMoneda = "UYU";
-        CostoCajaPlaquia = 3;
-        CostoBaldePlaquia = 2;
-        break;
-      case "BOL":
-        SimboloMoneda = "BOV";
-        CostoCajaPlaquia = 3;
-        CostoBaldePlaquia = 2;
-        break;
-      case "BRA":
-        SimboloMoneda = "BRL";
-        CostoCajaPlaquia = 3;
-        CostoBaldePlaquia = 2;
-        break;
-      case "USD":
-        SimboloMoneda = "USD";
-        CostoCajaPlaquia = 3;
-        CostoBaldePlaquia = 2;
-        break;
-      case "PAR":
-        SimboloMoneda = "PYG";
-        CostoCajaPlaquia = 3;
-        CostoBaldePlaquia = 2;
-        break;
-      default:
-        //Peso argentino
-        SimboloMoneda = "ARS";
-        CostoCajaPlaquia = 3;
-        CostoBaldePlaquia = 2;
-    }
-    SubtotalCajas = this.props.Cajas * CostoCajaPlaquia;
-    SubtotalPegamento = this.props.Baldes * CostoBaldePlaquia;
-    Total = SubtotalPegamento + SubtotalCajas;
   }
 
   MostrarContactarDistribuidor() {
     document.getElementById("DivContactaDistribuidor").style.display = "block";
+  }
+
+  Calcular() {
+    SubtotalCajas =
+      Math.round(this.props.Cajas * this.props.PrecioCaja * 100) / 100;
+    SubtotalPegamento =
+      Math.round(this.props.Baldes * this.props.PrecioBalde * 100) / 100;
+    Total = Math.round(((SubtotalPegamento + SubtotalCajas) * 100) / 100);
   }
 
   render() {
@@ -105,6 +73,7 @@ class ResultadosCotizador extends React.Component {
       <div>
         <h4>{TextResultados}</h4>
         <br />
+        {this.Calcular()}
         <Row>
           <Col>
             <p>
@@ -119,14 +88,14 @@ class ResultadosCotizador extends React.Component {
           </Col>
           <Col>
             <p>
-              {TextCostoPlaquia} {SubtotalCajas} {SimboloMoneda}
+              {TextCostoPlaquia} {SubtotalCajas} {this.props.Moneda}
             </p>
             <p>
-              {TextCostoPegamento} {SubtotalPegamento} {SimboloMoneda}
+              {TextCostoPegamento} {SubtotalPegamento} {this.props.Moneda}
             </p>
             <p>
               <strong>
-                {TextTotal} {Total} {SimboloMoneda}
+                {TextTotal} {Total} {this.props.Moneda}
               </strong>
             </p>
           </Col>
@@ -145,7 +114,7 @@ class ResultadosCotizador extends React.Component {
             Superficie={this.props.Sup}
             Modelo={this.props.Modelo}
             PrecioCotizado={Total}
-            Moneda={SimboloMoneda}
+            Moneda={this.props.Moneda}
             CantCajas={this.props.Cajas}
             CantBaldes={this.props.Baldes}
           />

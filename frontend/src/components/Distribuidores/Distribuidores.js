@@ -1,144 +1,144 @@
 import React from "react";
 import axios from "axios";
+
+import Table from "react-bootstrap/Table";
+
 import "./Distribuidores.css";
 
 var GetData;
-var Pais;
-var Provincia;
 var Localidad;
 var Direccion;
 var Telefono;
-
-var ArrayPaises;
-var ArrayProvincias;
-
-var IndicePais;
-var IndiceProvincia;
 
 class Distribuidores extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listarDistribuidores: [],
+      Distribuidores: [],
+      Provincias: [],
+      Paises: [],
     };
     this.Iniciar();
   }
 
   Iniciar() {
     GetData = false;
-    ArrayPaises = [];
-    ArrayProvincias = [];
     if (this.props.Idioma === "Por") {
-      Pais = "País";
-      Provincia = "Província";
-      Localidad = "Localização";
+      Localidad = "Cidade";
       Direccion = "Direção";
       Telefono = "Telefone";
     } else if (this.props.Idioma === "Eng") {
-      Pais = "Country";
-      Provincia = "State";
-      Localidad = "Town";
+      Localidad = "City";
       Direccion = "Address";
       Telefono = "Phone";
     } else {
-      Pais = "Pais";
-      Provincia = "Provincia";
-      Localidad = "Localidad";
-      Direccion = "Direccion";
-      Telefono = "Telefono";
+      Localidad = "Ciudad";
+      Direccion = "Dirección";
+      Telefono = "Teléfono";
     }
   }
-
-  componentDidMount() {
+  //https://plaquia.herokuapp.com/paises/list
+  getPaises() {
     axios
-      .get("http://localhost:3000/Distribuidores/list")
+      .get("http://localhost:3000/paises/list")
       .then((res) => {
         const data = res.data.data;
-        GetData = true;
-        this.setState({ listarDistribuidores: data });
+        this.setState({ Paises: data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  //https://plaquia.herokuapp.com/provincias/list
+  getProvincias() {
+    axios
+      .get("http://localhost:3000/provincias/list")
+      .then((res) => {
+        const data = res.data.data;
+        this.setState({ Provincias: data });
       })
       .catch((error) => {
         console.log(error);
       });
   }
 
-  // Logica de corrimiento
-  Test() {
-    const CantPaises = ArrayPaises.length;
-    const CantProvincias = ArrayProvincias.length;
-    for (var x = 0; x < CantPaises; x++) {
-      return <p>{ArrayPaises[x]}</p>;
-    }
-  }
-  LlenarListas() {
-    this.state.listarDistribuidores.map((distribuidor) => {
-      ArrayPaises.push(distribuidor.pais);
-      ArrayProvincias.push(distribuidor.provincia);
-    });
-    ArrayPaises = [...new Set(ArrayPaises)];
-    ArrayProvincias = [...new Set(ArrayProvincias)];
-  }
-  ShowDistribuidores(IndicePais, IndiceProvincia) {
-    IndicePais = 0;
-    IndiceProvincia = 0;
-    return (
-      <div>
-        {this.ShowPaises(IndicePais)}
-        {this.ShowProvincias(IndiceProvincia)}
-        <div class="table-responsive">
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">{Localidad}</th>
-                <th scope="col">{Direccion}</th>
-                <th scope="col">{Telefono}</th>
-              </tr>
-            </thead>
-            <tbody>{this.InfoDistribuidor(IndicePais, IndiceProvincia)}</tbody>
-          </table>
-        </div>
-      </div>
-    );
+  //https://plaquia.herokuapp.com/distribuidores/list
+  getDistribuidores() {
+    axios
+      .get("http://localhost:3000/distribuidores/list")
+      .then((res) => {
+        const data = res.data.data;
+        this.setState({ Distribuidores: data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  ShowPaises(IndicePais) {
-    return (
+  componentDidMount() {
+    this.getPaises();
+    this.getProvincias();
+    this.getDistribuidores();
+    GetData = true;
+  }
+
+  MostrarDistribuidores() {
+    const ListaPaises = this.state.Paises;
+    return ListaPaises.map((pais) => (
       <div>
-        <hr />
-        <h1>{ArrayPaises[IndicePais]}</h1>
         <br />
+        <h1>{pais.Pais}</h1>
+        <br />
+        {this.ListarProvincias(pais.idPais)}
+        <hr id="SeparadorPaises" />
       </div>
-    );
-  }
-  ShowProvincias(IndiceProvincia) {
-    return (
-      <div>
-        <li>
-          <h3>{ArrayProvincias[IndiceProvincia]}</h3>
-        </li>
-      </div>
-    );
+    ));
   }
 
-  InfoDistribuidor(IndicePais, IndiceProvincia) {
-    return this.state.listarDistribuidores.map((distribuidor) => {
-      if (distribuidor.pais === ArrayPaises[IndicePais]) {
-        if (distribuidor.provincia === ArrayProvincias[IndiceProvincia]) {
+  ListarProvincias(idPais) {
+    const ListaProvincias = this.state.Provincias;
+    return ListaProvincias.map((prov) => {
+      if (prov.TieneDistribuidores === 1) {
+        if (prov.idPais === idPais) {
           return (
-            <tr>
-              <td>{distribuidor.localidad}</td>
-              <td>{distribuidor.direccion}</td>
-              <td>{distribuidor.telefono}</td>
-            </tr>
+            <div>
+              <li>
+                <h4>{prov.Provincia}</h4>
+              </li>
+              <Table>
+                <thead>
+                  <tr>
+                    <th style={{ width: "30%" }}>{Localidad}</th>
+                    <th style={{ width: "50%" }}>{Direccion}</th>
+                    <th style={{ width: "20%" }}>{Telefono}</th>
+                  </tr>
+                </thead>
+                <tbody>{this.ListarDistribuidores(prov.idProvincia)}</tbody>
+              </Table>
+            </div>
           );
         }
       }
     });
   }
 
+  ListarDistribuidores(idProv) {
+    const ListaDistribuidores = this.state.Distribuidores;
+    return ListaDistribuidores.map((dist) => {
+      if (dist.idProvincia == idProv) {
+        return (
+          <tr>
+            <td>{dist.Localidad}</td>
+            <td>{dist.Direccion}</td>
+            <td>{dist.Telefono}</td>
+          </tr>
+        );
+      }
+    });
+  }
+
   render() {
     if (GetData) {
-      this.LlenarListas();
       return (
         <div>
           <div class="container-fluid">
@@ -152,8 +152,7 @@ class Distribuidores extends React.Component {
               ></iframe>
             </div>
             <br />
-            {this.Test()}
-            {this.ShowDistribuidores()}
+            {this.MostrarDistribuidores()}
           </div>
         </div>
       );

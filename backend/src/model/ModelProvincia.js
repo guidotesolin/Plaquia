@@ -9,6 +9,7 @@ var Provincia = sequelize.define(
       primaryKey: true,
     },
     idPais: Sequelize.INTEGER,
+    TieneDistribuidores: Sequelize.INTEGER,
     Provincia: Sequelize.STRING,
   },
   {

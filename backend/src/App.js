@@ -4,8 +4,10 @@ const app = express();
 //Importar routes
 const RouteDistribuidores = require("./routes/RouteDistribuidores");
 const RouteMail = require("./routes/RouteEmail");
+const RouteCotizar = require("./routes/RouteCotizador");
 const RouteProvincias = require("./routes/RouteProvincias");
 const RoutePaises = require("./routes/RoutePaises");
+const RouteMonedas = require("./routes/RouteMonedas");
 
 //Settings
 app.set("port", process.env.PORT || 3000);
@@ -27,8 +29,10 @@ app.use((req, res, next) => {
 app.use("/Distribuidores", RouteDistribuidores);
 app.use("/Paises", RoutePaises);
 app.use("/Provincias", RouteProvincias);
+app.use("/Monedas", RouteMonedas);
 
 app.use("/", RouteMail);
+app.use("/", RouteCotizar);
 
 app.use("/", (req, res) => {
   res.send("Modulo de Backend para Plaquia revestimientos");

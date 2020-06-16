@@ -1,7 +1,7 @@
 import React from "react";
 import "./Top.css";
 
-import Cotizador from "./Cotizador";
+import Cotizador from "./CotizadorConBack";
 
 import Container from "react-bootstrap/Container";
 import Carousel from "react-bootstrap/Carousel";

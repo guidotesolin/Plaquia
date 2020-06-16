@@ -20,30 +20,45 @@ transporter.verify((error, success) => {
   if (error) {
     console.log(error);
   } else {
-    console.log("El servidor se encuentra listo para recibir mensajes");
+    console.log(
+      "El servidor se encuentra listo para recibir pedidos de cotizacion"
+    );
   }
 });
 
-router.post("/send", (req, res, next) => {
-  const { name, email, phone, country, province, city, message } = req.body;
+router.post("/cotizar", (req, res, next) => {
+  const {
+    EnviarA,
+    nombre,
+    telefono,
+    superficie,
+    modelo,
+    precio,
+    moneda,
+    cajas,
+    baldes,
+  } = req.body;
 
-  var Asunto = "Nuevo contacto desde la pagina web (" + name + ")";
+  var Asunto = "Nuevo pedido de cotización: (" + nombre + ")";
 
   contentHTML = `
-        <h1> Nuevo contacto desde la pagina web:</h1>
+        <h1> Nuevo pedido de cotización en Plaquia.com.ar:</h1>
         <ul>
-            <li>Nombre: ${name}</li>
-            <li>Mail: ${email}</li>
-            <li>Telefono: ${phone}</li>
-            <li>Ubicacion: ${country} / ${province} / ${city}</li>
+            <li>Nombre: ${nombre}</li>
+            <li>Telefono: ${telefono}</li>
+            <li>Cotización pedida a: ${EnviarA}</li>
         </ul>
-        <h3>Consulta:</h3>
-        <p>${message}</p>
+        <h3>Pedido cotizado:</h3>
+        <ul>${superficie} m2 de placas modelo ${modelo}</ul>
+        <ul>Por un precio de ${precio} ${moneda}</ul>
+        <ul>Cajas de Plaquia: ${cajas}</ul> 
+        <ul>Baldes de pegamento: ${baldes}</ul>
   `;
 
   var Correo = {
     from: "'Pagina nueva' <paginanueva@plaquia.com.ar>",
-    to: "test@plaquia.com.ar", //Cambiar cuando este listo
+    to: EnviarA,
+    bcc: "contacto@plaquia.com.ar",
     subject: Asunto,
     html: contentHTML,
   };

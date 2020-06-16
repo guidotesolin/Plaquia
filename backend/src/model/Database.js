@@ -1,9 +1,10 @@
 var Sequelize = require("sequelize");
+const creds = require("../config/ConfigDB");
 
 const sequelize = new Sequelize(
   "plaquia_distribuidores",
-  "plaquia_admin",
-  "BsdlFV+SAw1@",
+  creds.user,
+  creds.pass,
   {
     dialect: "mariadb",
     host: "173.231.221.64",
