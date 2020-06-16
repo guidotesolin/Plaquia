@@ -28,10 +28,10 @@ class Formulario extends Component {
     this.Iniciar();
     this.getProvincias();
   }
-  //https://plaquia.herokuapp.com/provincias/list
+  //.get("http://localhost:3000/provincias/list")
   getProvincias() {
     axios
-      .get("http://localhost:3000/provincias/list")
+      .get("https://plaquia.herokuapp.com/provincias/list")
       .then((res) => {
         const data = res.data.data;
         this.setState({ Provincias: data });
@@ -107,7 +107,8 @@ class Formulario extends Component {
     const city = document.getElementById("SelectCiudad").value;
     axios({
       method: "POST",
-      url: "http://localhost:3000/send",
+      //url: "http://localhost:3000/send",
+      url: "https://plaquia.herokuapp.com/send",
       data: {
         name: name,
         email: email,

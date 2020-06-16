@@ -37,10 +37,11 @@ class Distribuidores extends React.Component {
       Telefono = "Teléfono";
     }
   }
-  //https://plaquia.herokuapp.com/paises/list
+  // .get("http://localhost:3000/paises/list")
   getPaises() {
     axios
-      .get("http://localhost:3000/paises/list")
+
+      .get("https://plaquia.herokuapp.com/paises/list")
       .then((res) => {
         const data = res.data.data;
         this.setState({ Paises: data });
@@ -49,10 +50,11 @@ class Distribuidores extends React.Component {
         console.log(error);
       });
   }
-  //https://plaquia.herokuapp.com/provincias/list
+  //.get("http://localhost:3000/provincias/list")
   getProvincias() {
     axios
-      .get("http://localhost:3000/provincias/list")
+
+      .get("https://plaquia.herokuapp.com/provincias/list")
       .then((res) => {
         const data = res.data.data;
         this.setState({ Provincias: data });
@@ -62,10 +64,10 @@ class Distribuidores extends React.Component {
       });
   }
 
-  //https://plaquia.herokuapp.com/distribuidores/list
+  // .get("http://localhost:3000/distribuidores/list")
   getDistribuidores() {
     axios
-      .get("http://localhost:3000/distribuidores/list")
+      .get("https://plaquia.herokuapp.com/distribuidores/list")
       .then((res) => {
         const data = res.data.data;
         this.setState({ Distribuidores: data });
@@ -86,11 +88,11 @@ class Distribuidores extends React.Component {
     const ListaPaises = this.state.Paises;
     return ListaPaises.map((pais) => (
       <div>
+        <hr id="SeparadorPaises" />
         <br />
         <h1>{pais.Pais}</h1>
         <br />
         {this.ListarProvincias(pais.idPais)}
-        <hr id="SeparadorPaises" />
       </div>
     ));
   }

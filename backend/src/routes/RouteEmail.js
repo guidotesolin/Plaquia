@@ -43,7 +43,7 @@ router.post("/send", (req, res, next) => {
 
   var Correo = {
     from: "'Pagina nueva' <paginanueva@plaquia.com.ar>",
-    to: "test@plaquia.com.ar", //Cambiar cuando este listo
+    to: "contacto@plaquia.com.ar",
     subject: Asunto,
     html: contentHTML,
   };
