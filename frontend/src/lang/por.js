@@ -22,46 +22,46 @@ class RenderPor extends Component {
         <div>
           <Top Idioma="Por" />
         </div>
-        <div id="Operação" className="Funcionamiento">
+        <Container fluid id="Operação" className="Funcionamiento">
           <Container fluid>
             <h1 id="TituloSeccion">Operação</h1>
             <br />
             <Funcionamiento Idioma="Por" />
           </Container>
-        </div>
-        <div id="Colocação" className="Colocacion">
+        </Container>
+        <Container fluid id="Colocação" className="Colocacion">
           <Container>
             <h1 id="TituloSeccion">Colocação</h1>
             <br />
             <Colocacion Idioma="Por" />
           </Container>
-        </div>
-        <div id="Modelos" className="Modelos">
+        </Container>
+        <Container fluid id="Modelos" className="Modelos">
           <h1 id="TituloSeccion">Modelos</h1>
           <br />
           <Modelos Idioma="Por" />
           <br />
-        </div>
-        <div id="Resultados" className="Resultados">
+        </Container>
+        <Container fluid id="Resultados" className="Resultados">
           <h1 id="TituloSeccion">Resultados</h1>
           <br />
           <SliderResultados Idioma="Por" />
           <br />
-        </div>
-        <div id="Distribuidores" className="Distribuidores">
+        </Container>
+        <Container fluid id="Distribuidores" className="Distribuidores">
           <Container>
             <h1 id="TituloSeccion">Distribuidores</h1>
             <br />
             <Distribuidores Idioma="Por" />
           </Container>
-        </div>
-        <div id="Contato" className="Contacto">
+        </Container>
+        <Container fluid id="Contato" className="Contacto">
           <h1 id="TituloSeccion">Contato</h1>
           <br />
           <Container>
             <Contacto Idioma="Por" />
           </Container>
-        </div>
+        </Container>
         <div id="Footer">
           <br />
           <Footer Idioma="Por" />

@@ -21,6 +21,10 @@ var Precio;
 var Moneda;
 var Cajas;
 var Baldes;
+var PrecioPorM2;
+var CotizacionCajas;
+var CotizacionPegamento;
+var OcultarModal;
 
 class ContactarDistribuidor extends React.Component {
   constructor(props) {
@@ -37,9 +41,13 @@ class ContactarDistribuidor extends React.Component {
     Superficie = this.props.Superficie;
     Modelo = this.props.Modelo;
     Precio = this.props.PrecioCotizado;
+    PrecioPorM2 = this.props.PrecioPorM2;
+    CotizacionCajas = this.props.CotizacionCajas;
+    CotizacionPegamento = this.props.CotizacionPegamento;
     Moneda = this.props.Moneda;
     Cajas = this.props.CantCajas;
     Baldes = this.props.CantBaldes;
+    OcultarModal = this.props.Ocultar;
     if (this.props.Idioma === "Por") {
       LabelPais = "País";
       LabelProvincia = "Província";
@@ -120,6 +128,9 @@ class ContactarDistribuidor extends React.Component {
         superficie: Superficie,
         modelo: Modelo,
         precio: Precio,
+        preciom2: PrecioPorM2,
+        cotizacionCajas: CotizacionCajas,
+        cotizacionPegamento: CotizacionPegamento,
         moneda: Moneda,
         cajas: Cajas,
         baldes: Baldes,
@@ -127,6 +138,7 @@ class ContactarDistribuidor extends React.Component {
     }).then((response) => {
       if (response.data.msg === "success") {
         alert(MensajeEnviado);
+        OcultarModal();
       } else if (response.data.msg === "fail") {
         alert(Error);
       }
@@ -146,6 +158,8 @@ class ContactarDistribuidor extends React.Component {
         dist.value = x.Mail;
         dist.text = x.Localidad;
         return SelectDistribuidor.appendChild(dist);
+      } else {
+        return "";
       }
     });
   }
@@ -188,13 +202,17 @@ class ContactarDistribuidor extends React.Component {
     }
     SelectProvincia.appendChild(PrimeraOpcion);
     Provincias.map((x) => {
-      if (x.idPais == Pais) {
-        if (x.TieneDistribuidores == "1") {
+      if (x.idPais === parseInt(Pais)) {
+        if (x.TieneDistribuidores === 1) {
           var provincia = document.createElement("option");
           provincia.value = x.idProvincia;
           provincia.text = x.Provincia;
           return SelectProvincia.appendChild(provincia);
+        } else {
+          return "";
         }
+      } else {
+        return "";
       }
     });
   }

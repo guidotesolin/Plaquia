@@ -199,11 +199,13 @@ class Formulario extends Component {
     }
     // Cargar provincias
     Provincias.map((x) => {
-      if (Pais == x.idPais) {
+      if (parseInt(Pais) === x.idPais) {
         var provincia = document.createElement("option");
         provincia.value = x.Provincia;
         provincia.text = x.Provincia;
         return SelectProvincia.appendChild(provincia);
+      } else {
+        return "";
       }
     });
   }

@@ -188,9 +188,8 @@ class Cotizador extends React.Component {
                       <option value="0">Peso argentino</option>
                       <option value="1">Dólar</option>
                       <option value="2">Boliviano</option>
-                      <option value="3">Real</option>
+
                       <option value="4">Guaraní</option>
-                      <option value="5">Peso uruguayo</option>
                     </Form.Control>
                   </Form.Group>
                 </Col>
@@ -210,6 +209,7 @@ class Cotizador extends React.Component {
                 Modelo={this.state.modelo}
                 PrecioCaja={this.state.PrecioCaja}
                 PrecioBalde={this.state.PrecioBalde}
+                Ocultar={this.props.onHide}
               />
             </div>
           </Modal.Body>
@@ -231,3 +231,5 @@ class Cotizador extends React.Component {
 }
 
 export default Cotizador;
+//<option value="5">Peso uruguayo</option>
+// <option value="3">Real</option>

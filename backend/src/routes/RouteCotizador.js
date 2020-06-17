@@ -34,6 +34,9 @@ router.post("/cotizar", (req, res, next) => {
     superficie,
     modelo,
     precio,
+    preciom2,
+    cotizacionCajas,
+    cotizacionPegamento,
     moneda,
     cajas,
     baldes,
@@ -49,8 +52,8 @@ router.post("/cotizar", (req, res, next) => {
             <li>Cotización pedida a: ${EnviarA}</li>
         </ul>
         <h3>Pedido cotizado:</h3>
-        <ul>${superficie} m2 de placas modelo ${modelo}</ul>
-        <ul>Por un precio de ${precio} ${moneda}</ul>
+        <ul>${superficie} m2 de placas modelo ${modelo} (${preciom2} el m2)</ul>
+        <ul>Por un precio de ${precio} ${moneda} (${moneda}${cotizacionCajas} en cajas y ${moneda}${cotizacionPegamento} en pegamento)</ul>
         <ul>Cajas de Plaquia: ${cajas}</ul> 
         <ul>Baldes de pegamento: ${baldes}</ul>
   `;

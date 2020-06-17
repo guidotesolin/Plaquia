@@ -6,9 +6,15 @@ import Button from "react-bootstrap/Button";
 
 import ContactarDistribuidor from "./Contactar";
 
-var SubtotalCajas;
-var SubtotalPegamento;
+var CotizacionCajas;
+var CotizacionPegamento;
 var Total;
+var PrecioPorM2;
+
+var SubtotalCajasFormateado;
+var SubtotalPegamentoFormateado;
+var TotalFormateado;
+var PrecioPorM2Formateado;
 
 var TextResultados;
 var TextSuperficie;
@@ -19,6 +25,7 @@ var TextCostoPegamento;
 var TextTotal;
 var TextContactar;
 var TextDist;
+
 class ResultadosCotizador extends React.Component {
   Iniciar() {
     // Textos dependiendo el idioma
@@ -60,11 +67,35 @@ class ResultadosCotizador extends React.Component {
   }
 
   Calcular() {
-    SubtotalCajas =
+    CotizacionCajas =
       Math.round(this.props.Cajas * this.props.PrecioCaja * 100) / 100;
-    SubtotalPegamento =
+    CotizacionPegamento =
       Math.round(this.props.Baldes * this.props.PrecioBalde * 100) / 100;
-    Total = Math.round(((SubtotalPegamento + SubtotalCajas) * 100) / 100);
+    Total = Math.round(((CotizacionCajas + CotizacionPegamento) * 100) / 100);
+    PrecioPorM2 = Math.round(
+      ((CotizacionCajas / this.props.Cajas) * 100) / 100
+    );
+    // Formatear
+    SubtotalCajasFormateado = new Intl.NumberFormat("de-DE", {
+      style: "decimal",
+      currency: "EUR",
+      minimumFractionDigits: 0,
+    }).format(CotizacionCajas);
+    SubtotalPegamentoFormateado = new Intl.NumberFormat("de-DE", {
+      style: "decimal",
+      currency: "EUR",
+      minimumFractionDigits: 0,
+    }).format(CotizacionPegamento);
+    TotalFormateado = new Intl.NumberFormat("de-DE", {
+      style: "decimal",
+      currency: "EUR",
+      minimumFractionDigits: 0,
+    }).format(Total);
+    PrecioPorM2Formateado = new Intl.NumberFormat("de-DE", {
+      style: "decimal",
+      currency: "EUR",
+      minimumFractionDigits: 0,
+    }).format(PrecioPorM2);
   }
 
   render() {
@@ -88,14 +119,16 @@ class ResultadosCotizador extends React.Component {
           </Col>
           <Col>
             <p>
-              {TextCostoPlaquia} {SubtotalCajas} {this.props.Moneda}
+              {TextCostoPlaquia} {SubtotalCajasFormateado} {this.props.Moneda}
             </p>
             <p>
-              {TextCostoPegamento} {SubtotalPegamento} {this.props.Moneda}
+              {TextCostoPegamento} {SubtotalPegamentoFormateado}{" "}
+              {this.props.Moneda}
             </p>
             <p>
               <strong>
-                {TextTotal} {Total} {this.props.Moneda}
+                {TextTotal} {TotalFormateado} {this.props.Moneda} (
+                {PrecioPorM2Formateado} por m2)
               </strong>
             </p>
           </Col>
@@ -114,9 +147,13 @@ class ResultadosCotizador extends React.Component {
             Superficie={this.props.Sup}
             Modelo={this.props.Modelo}
             PrecioCotizado={Total}
+            PrecioPorM2={PrecioPorM2}
+            CotizacionCajas={CotizacionCajas}
+            CotizacionPegamento={CotizacionPegamento}
             Moneda={this.props.Moneda}
             CantCajas={this.props.Cajas}
             CantBaldes={this.props.Baldes}
+            Ocultar={this.props.Ocultar}
           />
         </div>
       </div>

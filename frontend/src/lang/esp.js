@@ -22,46 +22,46 @@ class RenderizarSpa extends Component {
         <div>
           <Top Idioma="Esp" />
         </div>
-        <div id="Funcionamiento" className="Funcionamiento">
+        <Container fluid id="Funcionamiento" className="Funcionamiento">
           <Container fluid>
             <h1 id="TituloSeccion">¿CÓMO FUNCIONA?</h1>
             <br />
             <Funcionamiento Idioma="Esp" />
           </Container>
-        </div>
-        <div id="Colocacion" className="Colocacion">
+        </Container>
+        <Container fluid id="Colocacion" className="Colocacion">
           <Container>
             <h1 id="TituloSeccion">COLOCACIÓN</h1>
             <br />
             <Colocacion Idioma="Esp" />
           </Container>
-        </div>
-        <div id="Modelos" className="Modelos">
+        </Container>
+        <Container fluid id="Modelos" className="Modelos">
           <h1 id="TituloSeccion">MODELOS DISPONIBLES</h1>
           <br />
           <Modelos />
           <br />
-        </div>
-        <div id="Resultados" className="Resultados">
+        </Container>
+        <Container fluid id="Resultados" className="Resultados">
           <h1 id="TituloSeccion">RESULTADOS</h1>
           <br />
           <SliderResultados />
           <br />
-        </div>
-        <div id="Distribuidores" className="Distribuidores">
+        </Container>
+        <Container fluid id="Distribuidores" className="Distribuidores">
           <Container>
             <h1 id="TituloSeccion">DISTRIBUIDORES</h1>
             <br />
             <Distribuidores />
           </Container>
-        </div>
-        <div id="Contacto" className="Contacto">
+        </Container>
+        <Container fluid id="Contacto" className="Contacto">
           <h1 id="TituloSeccion">CONTACTO</h1>
           <br />
           <Container>
             <Contacto Idioma="Esp" />
           </Container>
-        </div>
+        </Container>
         <div id="Footer">
           <br />
           <Footer />

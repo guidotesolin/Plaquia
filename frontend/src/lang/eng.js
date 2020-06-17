@@ -22,47 +22,47 @@ class RenderEng extends Component {
         <div>
           <Top Idioma="Eng" />
         </div>
-        <div id="Operation" className="Funcionamiento">
+        <Container fluid id="Operation" className="Funcionamiento">
           <Container fluid>
             <h1 id="TituloSeccion">HOW IT WORKS?</h1>
             <br />
             <Funcionamiento Idioma="Eng" />
           </Container>
-        </div>
-        <div id="Placement" className="Colocacion">
+        </Container>
+        <Container fluid id="Placement" className="Colocacion">
           <Container>
             <h1 id="TituloSeccion">PLACEMENT</h1>
             <br />
             <Colocacion Idioma="Eng" />
           </Container>
-        </div>
-        <div id="Models" className="Modelos">
+        </Container>
+        <Container fluid id="Models" className="Modelos">
           <h1 id="TituloSeccion">MODELS</h1>
           <br />
           <Modelos Idioma="Eng" />
           <br />
-        </div>
-        <div id="Results" className="Resultados">
+        </Container>
+        <Container fluid id="Results" className="Resultados">
           <h1 id="TituloSeccion">RESULTS</h1>
           <br />
           <SliderResultados Idioma="Eng" />
           <br />
-        </div>
-        <div id="Distributors" className="Distribuidores">
+        </Container>
+        <Container fluid id="Distributors" className="Distribuidores">
           <Container>
             <h1 id="TituloSeccion">DISTRIBUITORS</h1>
             <br />
             <Distribuidores Idioma="Eng" />
           </Container>
-        </div>
+        </Container>
 
-        <div id="Contact" className="Contacto">
+        <Container fluid id="Contact" className="Contacto">
           <h1 id="TituloSeccion">CONTACT</h1>
           <br />
           <Container>
             <Contacto Idioma="Eng" />
           </Container>
-        </div>
+        </Container>
         <div id="Footer">
           <br />
           <Footer Idioma="Eng" />

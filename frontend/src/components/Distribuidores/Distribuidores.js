@@ -119,7 +119,11 @@ class Distribuidores extends React.Component {
               </Table>
             </div>
           );
+        } else {
+          return "";
         }
+      } else {
+        return "";
       }
     });
   }
@@ -127,7 +131,7 @@ class Distribuidores extends React.Component {
   ListarDistribuidores(idProv) {
     const ListaDistribuidores = this.state.Distribuidores;
     return ListaDistribuidores.map((dist) => {
-      if (dist.idProvincia == idProv) {
+      if (dist.idProvincia === idProv) {
         return (
           <tr>
             <td>{dist.Localidad}</td>
@@ -135,6 +139,8 @@ class Distribuidores extends React.Component {
             <td>{dist.Telefono}</td>
           </tr>
         );
+      } else {
+        return "";
       }
     });
   }
