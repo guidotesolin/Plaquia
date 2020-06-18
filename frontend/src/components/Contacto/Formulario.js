@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { loadReCaptcha } from "react-recaptcha-v3";
 import axios from "axios";
 
 var PrimeraOpcion;
@@ -39,6 +40,10 @@ class Formulario extends Component {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  componentDidMount() {
+    loadReCaptcha("6LeTXPIUAAAAAMBiOWlJz5I2rFeeK5VEbGvdlym0");
   }
 
   Iniciar() {

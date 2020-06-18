@@ -1,6 +1,7 @@
 import React from "react";
 
 import axios from "axios";
+import { loadReCaptcha } from "react-recaptcha-v3";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -81,6 +82,7 @@ class ContactarDistribuidor extends React.Component {
   componentDidMount() {
     this.getProvincias();
     this.getDistribuidores();
+    loadReCaptcha("6LeTXPIUAAAAAMBiOWlJz5I2rFeeK5VEbGvdlym0");
     this.setState({ DatosCargados: true });
   }
 
